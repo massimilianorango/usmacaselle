@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+
+  root 'welcome#index'
+
+  resources :sectors, only: [:index, :show]
+
+  namespace :admin do
+    get '', to: 'sessions#new'
+    delete 'logout', to: 'sessions#destroy'
+    #get 'change_pwd', to: 'sectors#edit'
+    resources :sessions, only: [:new, :create, :destroy]
+    resources :sectors, only: [:show, :update, :edit]
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
