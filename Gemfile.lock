@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/comfy/active_link_to
+  revision: 3659baa2f88e30b816596ae3b8698ab15d5c61fd
+  specs:
+    active_link_to (1.0.2)
+      actionpack
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -122,6 +129,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_link_to!
   bcrypt-ruby (= 3.1.1)
   bootstrap-sass (= 3.1.1.1)
   coffee-rails (~> 4.0.0)
