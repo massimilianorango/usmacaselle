@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+  get 'upload/new'
+  end
+
+  namespace :admin do
+  get 'password_resets/new'
+  end
+
   root 'welcome#index'
 
   resources :sectors, only: [:index, :show]
@@ -10,6 +18,7 @@ Rails.application.routes.draw do
     #get 'change_pwd', to: 'sectors#edit'
     resources :sessions, only: [:new, :create, :destroy]
     resources :sectors, only: [:show, :update, :edit]
+    resources :password_resets
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
