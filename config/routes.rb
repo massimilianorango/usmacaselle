@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+  get 'files/new'
+  end
+
+  namespace :admin do
+  get 'files/create'
+  end
+
+  namespace :admin do
   get 'upload/new'
   end
 
@@ -19,6 +27,7 @@ Rails.application.routes.draw do
     resources :sessions, only: [:new, :create, :destroy]
     resources :sectors, only: [:show, :update, :edit]
     resources :password_resets
+    resources :files
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
