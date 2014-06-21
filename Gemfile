@@ -13,6 +13,7 @@ gem 'bootstrap-sass', '3.1.1.1'
 gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby', '3.1.1'
 gem 'active_link_to', :git => 'https://github.com/comfy/active_link_to'
+gem 'jquery-ui-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
