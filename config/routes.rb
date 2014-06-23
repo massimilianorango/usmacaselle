@@ -11,7 +11,11 @@ Rails.application.routes.draw do
     resources :sectors, only: [:show, :update, :edit]
     resources :password_resets, only: [:new, :create, :edit, :update]
     resources :files, only: [:new, :create]
-    resources :slides, except: [:edit, :show]
+    resources :slides, except: [:edit, :show] do
+      collection do
+        post 'reorder'
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

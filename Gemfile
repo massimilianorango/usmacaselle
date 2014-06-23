@@ -14,6 +14,9 @@ gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby', '3.1.1'
 gem 'active_link_to', :git => 'https://github.com/comfy/active_link_to'
 gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
+gem 'rmagick', '2.13.2'
+gem "paperclip", "~> 4.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
