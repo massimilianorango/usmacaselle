@@ -1,0 +1,2 @@
+module AuthAdminHelper
+end

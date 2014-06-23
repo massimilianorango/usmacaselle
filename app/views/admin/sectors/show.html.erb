@@ -1,0 +1,9 @@
+<% provide(:title, @sector.name + ' - gestione') %>
+<ol class="breadcrumb">
+  <li class="active">Home</li>
+</ol>
+<% if @is_root %>
+  <%= render 'layouts/root_admin' %>
+<% else %>
+  <%= render 'layouts/sector_admin' %>
+<% end %>

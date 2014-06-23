@@ -1,0 +1,12 @@
+<div class="row row-sortable slide" id="<%= slide.id %>">
+  <div class="col-md-12">
+    <div class="sortable-default">
+      <span class="helper"></span><%= image_tag(slide.image.url, class: "img-sortable") %>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <%= link_to "Elimina", [:admin, slide], method: :delete,
+                                     data: { confirm: "Sei sicuro di voler eliminare la slide?" },
+                                     title: slide.text, :class => "btn btn-danger delete-btn" %>
+  </div>
+</div>

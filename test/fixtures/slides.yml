@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: MyString
+  text: MyString
+  link: MyString
+  sector_id: 1
+
+two:
+  image: MyString
+  text: MyString
+  link: MyString
+  sector_id: 1

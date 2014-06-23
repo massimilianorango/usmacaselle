@@ -1,0 +1,180 @@
+@import "bootstrap";
+
+/* COLORS */
+$black: #000000;
+$darkBlue: $brand-primary;
+$lightBlue: #d9edf7;
+//admin colors:
+$adminGray: #8f8f8f;
+$adminBlue: #53bbf4;
+$adminOrange: #ffac00;
+$adminGreen: #b1eb00;
+$adminPink: #ff85cb;
+$adminRed: #ff432e;
+
+/* DIMENSIONS */
+$standard-spacing: 20px;//1.5em;
+$small-width: 400px;//30em;
+$large-width: 600px;//50em;
+$admin-btn-height: 120px;//6em;
+$sortable-height: 200px;//20em;
+//$sortable-width: 700px;
+$footer-height: 60px;//5em;
+
+
+html, body { height: 100%; }
+
+body { padding-top: 50px; /* same as navbar height */ }
+
+.bg-info {padding: 15px; border-radius: 4px;}
+
+@mixin admin-leaderboard-color($class, $color) {
+    .admin-leaderboard-#{$class} {
+        @extend .carousel-caption;
+        position:static;
+        background: $color;
+        height: 150px;//10em;
+        width:100%;
+        margin-bottom: $standard-spacing;
+    }
+}
+
+@include admin-leaderboard-color(segreteria, $adminGray);
+@include admin-leaderboard-color(calcio, $adminGreen);
+@include admin-leaderboard-color(basket, $adminOrange);
+@include admin-leaderboard-color(volley, $adminBlue);
+@include admin-leaderboard-color(atletica, $adminRed);
+@include admin-leaderboard-color(motoria, $adminPink);
+
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -$footer-height;
+}
+
+.admin-btn {
+    width:100%;
+    height:$admin-btn-height;
+    margin-bottom: $standard-spacing;
+    line-height: (3*$admin-btn-height)/4;
+    font-size: 1.8em;
+}
+
+/* FORM */
+.form-center {
+    max-width: $small-width;
+    margin: 0 auto;
+    .form-control {
+        height:auto;
+        padding: 10px;
+        font-size: 16px;
+    }
+    input[type="submit"] {
+        margin: $standard-spacing 0;
+    }
+}
+
+.form-center-lg {
+    @extend .form-center;
+    max-width:$large-width;
+}
+
+.form-select-input {
+    @extend .form-center;
+    select {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+
+    }
+    input[type="password"] {
+        margin-top: -1px;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+}
+
+.form-3-input {
+    @extend .form-center;
+    input.first {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    input.second {
+        margin-top: -1px;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    input.third {
+        margin-top: -2px;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+}
+
+.form-3-input-lg {
+    @extend .form-3-input;
+    max-width: $large-width;
+}
+
+.admin-carousel {
+    max-width:600px;
+    margin: 0 auto;
+}
+
+/* SORTABLE */
+#sortable {
+    list-style: none; 
+    padding-left:0;
+}
+.row-sortable {
+    margin-bottom:$standard-spacing;
+}
+.sortable-default { 
+    @extend .img-rounded;
+    text-align: center;
+    //margin-bottom:$standard-spacing;
+    height: $sortable-height; /* equals max image height */
+    background: $gray-light;
+    width:100%;
+}
+.sortable-highlight { 
+    @extend .img-rounded;
+    margin-bottom:$standard-spacing;
+    height: $sortable-height;
+    border: 1px solid $darkBlue; 
+    background: $lightBlue; 
+}
+  .helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+ .img-sortable {
+    @extend .img-rounded;
+    padding: 1px;
+    vertical-align: middle;
+    max-height: $sortable-height;
+    max-width:100%;
+ }
+
+ .delete-btn {
+    @extend .pull-right;
+    width:20%;
+    margin-top:1px;
+}
+
+#push {
+    height: $footer-height;
+}
+
+footer {
+    background-color:$gray-dark;
+    height: $footer-height;
+    p {
+        margin:$standard-spacing 0
+    }
+}     

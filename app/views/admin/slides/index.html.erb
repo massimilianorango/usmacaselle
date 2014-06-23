@@ -1,0 +1,22 @@
+<% provide(:title, "Carousel") %>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li class="active">Carousel</li>
+</ol>
+<div class="container-fluid">
+  <h2>Carousel - slide presenti:
+    <%= @sector.slides.count %>
+  </h2>
+  <p class="bg-info">Per ordinare le slide trascinale nella corretta posizione, dopodiché premi SALVA ORDINAMENTO. Le slide più in alto sono le prime ad essere visualizzate.</p>
+  <div class="row">
+    <div class="col-md-8"><%= link_to 'Nuova slide', new_admin_slide_path, :class => "btn btn-primary btn-lg admin-btn" %></div>
+    <div class="col-md-4"><%= link_to 'Salva ordinamento', '', 
+                                #data: { confirm: "Sei sicuro di voler salvare l'ordine?" },
+                                :class => "btn btn-success btn-lg admin-btn", :id => "btn_order" %></div>
+  </div>
+  <% if @sector.slides.any? %>
+    <ul id="sortable">
+      <%= render @slides %>
+    </ul>
+  <% end %>
+</diV>

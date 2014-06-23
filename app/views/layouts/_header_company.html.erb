@@ -1,0 +1,40 @@
+<header class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to image_tag(image_path('logo.gif'), :class => "navbar-brand"), root_url %>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="<%= 'active' if params[:controller] == 'welcome' && params[:action] == 'index' %>">
+          <%= link_to 'Home', root_url %></li>
+        <li class="dropdown <%= 'active' if params[:controller] == 'welcome' && params[:action] == 'sectors' %>">
+          <%= link_to 'Settori <b class="caret"></b>'.html_safe, '#', 
+          :data => {:toggle=>"dropdown"}, :class => "dropdown-toggle"  %>
+          <ul class="dropdown-menu">
+            <li><a href="#">Calcio</a></li>
+            <li><a href="#">Basket</a></li>
+            <li><a href="#">Volley</a></li>
+            <li><a href="#">Atletica</a></li>
+            <li><a href="#">Motoria</a></li>
+          </ul>
+        </li>
+        <li class="<%= 'active' if params[:controller] == 'welcome' && params[:action] == 'news' %>">
+          <%= link_to 'News', '#' %></li>
+        <li class="<%= 'active' if params[:controller] == 'welcome' && params[:action] == 'photogallery' %>">
+          <%= link_to 'Photo Gallery', '#' %></li>
+        <li class="<%= 'active' if params[:controller] == 'welcome' && params[:action] == 'shop' %>">
+          <%= link_to 'Shop', '#' %></li>
+        <li class="<%= 'active' if params[:controller] == 'welcome' && params[:action] == 'corporation' %>">
+          <%= link_to 'La società', '#' %></li>
+        <li class="<%= 'active' if params[:controller] == 'welcome' && params[:action] == 'contacts' %>">
+          <%= link_to 'Contatti', '#' %></li>
+      </ul>
+    </div>
+  </div>
+</header>

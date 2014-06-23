@@ -1,0 +1,15 @@
+<% provide(:title, "Modifica password") %>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li class="active">Modifica password</li>
+</ol>
+<%= form_for(@sector, url:admin_sector_path) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="form-3-input">
+    <h2>Modifica password</h2>
+    <%= f.password_field :password_old, class: "form-control first", placeholder: "Vecchia password", :required => true, :autofocus => true %>
+    <%= f.password_field :password, class: "form-control second", placeholder: "Nuova password", :required => true %>
+    <%= f.password_field :password_confirmation, class: "form-control third", placeholder: "Conferma nuova password", :required => true %>
+    <%= f.submit "Cambia password", class: "btn btn-lg btn-primary btn-block" %>
+  </div>
+<% end %>
