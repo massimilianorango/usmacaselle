@@ -14,7 +14,8 @@ gem 'active_link_to', '1.0.2'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 gem 'rmagick', '2.13.2'
-gem "paperclip", "~> 4.1"
+gem "paperclip", "~> 4.1.1"
+gem 'paperclip-dropbox', '~> 1.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'

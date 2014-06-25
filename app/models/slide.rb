@@ -6,12 +6,17 @@ class Slide < ActiveRecord::Base
     validates :link, presence: {:message => 'Devi inserire un link ad una pagina.' }
     validates :sector_id, presence: true
     validates :priority, :presence => true
-    has_attached_file :image
+    has_attached_file :image, :storage => :dropbox,
+        :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
+        :dropbox_options => {
+            :path => proc {"/sectors/#{sector_id}/slides/#{id}_#{image.original_filename}"},
+            :unique_filename => true
+        }
     validates_attachment :image, attachment_presence: {:message => "Devi inserire un'immagine."},
-        :content_type => { :content_type => [ "image/jpg", "image/jpeg", "image/png", "image/gif"], 
-            message: "L'immagine deve essere in formato jpg, jpeg, png o gif."}
+        :content_type => { :content_type => [ "image/jpg", "image/jpeg", "image/png", "image/gif"],
+                                             message: "L'immagine deve essere in formato jpg, jpeg, png o gif."}
 
-    private
+        private
     def set_priority
         if self.priority.nil?
             first_slide = Slide.order('priority DESC').first
