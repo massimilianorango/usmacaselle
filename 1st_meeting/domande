@@ -1,5 +1,5 @@
 sport = settori
-blog = news anche senza immagine
+blog = news 
 
 1. Logo nuovo
 
@@ -10,8 +10,8 @@ blog = news anche senza immagine
 4. Carousel: raccoglitore + solo società - solo società - solo raccoglitore?
 solo società
 
-5. Blog: raccoglitore + solo società - solo società - solo raccoglitore?
-solo società
+5. News: raccoglitore + solo società - solo società - solo raccoglitore?
+solo società, anche senza immagine
 
 6. Sponsor: diversi per ogni sport? no.
 
