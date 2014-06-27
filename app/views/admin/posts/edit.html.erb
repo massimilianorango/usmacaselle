@@ -1,0 +1,15 @@
+<% provide(:title, "Nuovo Post") %>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li><%= link_to 'News', admin_posts_path %></li>
+  <li class="active">Modifica post</li>
+</ol>
+<%= form_for [:admin, @post], :html => {multipart: true, role: "form", class: "form-center-full"} do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <h2>Modifica post</h2>
+  <%= render 'form', object: f %>
+  <%= f.button(type: 'submit', class: "btn-save") do %>
+    <span class="icon"></span>
+    Salva modifiche
+  <% end %>
+<% end %>

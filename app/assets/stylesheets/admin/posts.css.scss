@@ -1,0 +1,28 @@
+// Place all the styles related to the admin/posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.posts {
+  margin: 10px 0 0 0;
+  .post {
+    padding: 10px 0;
+    border-top: 1px solid $lightGray;
+  }
+  .buttons {
+    a {
+      @extend .btn-xs;
+    }
+    margin-top:5px;
+  }
+}
+.post_title {
+  display: block;
+  font-size:18px;
+  font-weight: bold;
+}
+.post_timestamp {
+  color: $gray-light;
+}
+.preview-lead-image img{
+  @extend .img-thumbnail;
+  max-width: 300px;
+}

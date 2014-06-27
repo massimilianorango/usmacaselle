@@ -1,0 +1,11 @@
+<div class="post">
+  <span class="post_title"><%= post.title %></span>
+  <span class="post_timestamp">Scritto il
+    <%= l post.created_at, format: '%d %B %Y - %H:%M' %></span>
+  <div class="buttons">
+    <%= link_to raw('<span class="icon"></span> Modifica'), edit_admin_post_path(post), :class => "btn-edit" %>
+    <%= link_to raw('<span class="icon"></span> Elimina'), [:admin, post], method: :delete,
+                                     data: { confirm: "Sei sicuro di voler eliminare il post e tutto il suo contenuto?" },
+                                     title: "Elimina post", :class => "btn-delete" %>
+  </div>
+</div>

@@ -1,9 +1,8 @@
-@import "bootstrap";
-
 /* COLORS */
 $black: #000000;
 $darkBlue: $brand-primary;
 $lightBlue: #d9edf7;
+$lightGray: #D8D8D8;
 //admin colors:
 $adminGray: #8f8f8f;
 $adminBlue: #53bbf4;
@@ -21,12 +20,32 @@ $sortable-height: 200px;//20em;
 //$sortable-width: 700px;
 $footer-height: 60px;//5em;
 
+/* BUTTONS & ICONS */
+@mixin glyphicons($name, $icon, $btn) {
+    .btn-#{$name} {
+        @extend .btn;
+        @extend .btn-#{$btn};
+        .icon {
+            @extend .glyphicon;
+            @extend .glyphicon-#{$icon};
+        }
+    }
+}
+
+@include glyphicons(new, plus, primary);
+@include glyphicons(edit, pencil, info);
+@include glyphicons(delete, trash, danger);
+@include glyphicons(save, floppy-save, success);
 
 html, body { height: 100%; }
 
 body { padding-top: 50px; /* same as navbar height */ }
 
-.bg-info {padding: 15px; border-radius: 4px;}
+.breadcrumb { border: 1px solid $lightGray; }
+
+.bg-info {padding: 15px; border-radius: $border-radius-base; margin-bottom: 10px;}
+
+.pagination {margin: 5px 0;}
 
 @mixin admin-leaderboard-color($class, $color) {
     .admin-leaderboard-#{$class} {
@@ -70,7 +89,7 @@ body { padding-top: 50px; /* same as navbar height */ }
         padding: 10px;
         font-size: 16px;
     }
-    input[type="submit"] {
+    .btn-block {
         margin: $standard-spacing 0;
     }
 }
@@ -78,6 +97,11 @@ body { padding-top: 50px; /* same as navbar height */ }
 .form-center-lg {
     @extend .form-center;
     max-width:$large-width;
+}
+
+.form-center-full {
+    @extend .form-center;
+    max-width:100%;   
 }
 
 .form-select-input {
@@ -178,3 +202,7 @@ footer {
         margin:$standard-spacing 0
     }
 }     
+
+.debug_dump {
+    margin-top:$standard-spacing;
+}

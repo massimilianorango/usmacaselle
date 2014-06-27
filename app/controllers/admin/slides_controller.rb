@@ -6,7 +6,7 @@ class Admin::SlidesController < AuthAdminController
     end
 
     def new
-        @slide = current_sector.slides.build if signed_in?
+        @slide = current_sector.slides.build
     end
 
     def create

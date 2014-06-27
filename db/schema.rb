@@ -11,13 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140623172706) do
+ActiveRecord::Schema.define(version: 20140626151142) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "posts", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "sector_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "lead_image_file_name"
+    t.string   "lead_image_content_type"
+    t.integer  "lead_image_file_size"
+    t.datetime "lead_image_updated_at"
+  end
+
+  add_index "posts", ["sector_id", "created_at"], name: "index_posts_on_sector_id_and_created_at", using: :btree
 
   create_table "sectors", force: true do |t|
     t.string   "name"
     t.string   "icon"
     t.string   "color"
-    t.string   "lead_photo"
     t.string   "picasa_url"
     t.string   "email"
     t.string   "password_digest"

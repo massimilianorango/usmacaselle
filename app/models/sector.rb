@@ -1,4 +1,5 @@
 class Sector < ActiveRecord::Base
+    default_scope -> { order('id') }
 
     before_save { self.email = email.downcase }
     before_create :create_remember_token
@@ -17,6 +18,7 @@ class Sector < ActiveRecord::Base
     has_secure_password
 
     has_many :slides, dependent: :destroy
+    has_many :posts, dependent: :destroy
 
     def send_password_reset
         begin
