@@ -84,6 +84,7 @@ body { padding-top: 50px; /* same as navbar height */ }
 .form-center {
     max-width: $small-width;
     margin: 0 auto;
+    margin-bottom: 20px;
     .form-control {
         height:auto;
         padding: 10px;
@@ -202,7 +203,3 @@ footer {
         margin:$standard-spacing 0
     }
 }     
-
-.debug_dump {
-    margin-top:$standard-spacing;
-}

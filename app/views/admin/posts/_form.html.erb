@@ -1,26 +1,41 @@
-<div class="bg-info">Ricorda di premere il tasto di <strong>salvataggio</strong> in fondo alla pagina, o le tue modifiche non verranno salvate.</div>
-<div class="form-group">
-  <%= object.label :title, 'Titolo del post' %>
-  <%= object.text_field :title, {class: "form-control", :required => true, :autofocus => true, placeholder: "Inserisci il titolo del post"} %>
-</div>
-<div class="form-group">
-  <%= object.label :lead_image, 'Immagine di copertina (opzionale)' %>
-  <%= object.file_field :lead_image %>
-  <p class="help-block">L'immagine di copertina rende il sito più piacevole da navigare e attira più utenti.</p>
-</div>
-<% if @post.lead_image.exists? %>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li><%= link_to 'News', admin_posts_path %></li>
+  <li class="active"><%= yield(:title) %></li>
+</ol>
+<%= form_for [:admin, @post], :html => {multipart: true, role: "form", class: "form-center-full"} do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <h2><%= yield(:title) %></h2>
+  <div class="bg-info">Ricorda di premere il tasto di
+    <strong>salvataggio</strong>
+    in fondo alla pagina, o le tue modifiche non verranno salvate.</div>
   <div class="form-group">
-    <%= label_tag @post.lead_image.url, 'Immagine di copertina attuale' %>
-    <div class="preview-lead-image"><%= image_tag @post.lead_image.url %></div>
-    <div class="checkbox">
-      <%= label_tag :delete_lead_image do %>
-        <%= check_box_tag :delete_lead_image, 'yes', false %>
-        Cancella copertina attuale
-      <% end %>
-    </div>
+    <%= f.label :title, 'Titolo del post' %>
+    <%= f.text_field :title, {class: "form-control", :required => true, :autofocus => true, placeholder: "Inserisci il titolo del post"} %>
   </div>
+  <div class="form-group">
+    <%= f.label :lead_image, 'Immagine di copertina (opzionale)' %>
+    <%= f.file_field :lead_image %>
+    <p class="help-block">L'immagine di copertina rende il sito più piacevole da navigare e attira più utenti.</p>
+  </div>
+  <% if @post.lead_image.exists? %>
+    <div class="form-group">
+      <%= label_tag @post.lead_image.url, 'Immagine di copertina attuale' %>
+      <div class="preview-lead-image"><%= image_tag @post.lead_image.url %></div>
+      <div class="checkbox">
+        <%= label_tag :delete_lead_image do %>
+          <%= check_box_tag :delete_lead_image, 'yes', false %>
+          Cancella copertina attuale
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :content, 'Contenuto del post' %>
+    <%= f.cktext_area :content %>
+  </div>
+  <%= f.button(type: 'submit', class: "btn-save btn-final") do %>
+    <span class="icon"></span>
+    <%= yield(:action) %>
+  <% end %>
 <% end %>
-<div class="form-group">
-  <%= object.label :content, 'Contenuto del post' %>
-  <%= object.cktext_area :content %>
-</div>
