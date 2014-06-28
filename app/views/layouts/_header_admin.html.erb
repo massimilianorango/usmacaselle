@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <%= active_link_to 'Home', admin_path, :wrap_tag => :li, :active => [['admin/sectors'], ['show', 'index']] %>
-            <%= active_link_to 'Upload file', new_admin_file_path, :wrap_tag => :li %>
+            <%= active_link_to 'Upload file', new_admin_uploaded_file_path, :wrap_tag => :li %>
             <%= active_link_to 'Cambia password', edit_admin_sector_path(@sector), :wrap_tag => :li, 
                                 :active => [['admin/sectors'], ['update', 'edit']] %>
             <li><%= link_to 'Visualizza il sito', root_path, :target => "_blank"  %></li>

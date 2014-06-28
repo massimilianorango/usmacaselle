@@ -4,12 +4,24 @@
   <li><%= link_to 'Carousel', admin_slides_path %></li>
   <li class="active">Nuova slide</li>
 </ol>
-<%= form_for [:admin, @slide], :html => {multipart: true, :class => "form-3-input-lg"} do |f| %>
+<%= form_for [:admin, @slide], :html => {multipart: true, :class => "form-center-full"} do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <h2>Nuova slide</h2>
-  <%= f.text_field :text, {class: "form-control first", :required => true, :autofocus => true, placeholder: "Inserisci il testo della slide..."} %>
-  <%= f.file_field :image, {class: "form-control second", :required => true} %>
-  <%= f.text_field :link, {class: "form-control third", :required => true, 
+  <div class="form-group">
+    <%= f.label :text, 'Testo della slide' %>
+    <%= f.text_field :text, {class: "form-control", :required => true, :autofocus => true, placeholder: "Inserisci il testo della slide..."} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image, 'Immagine' %>
+    <%= f.file_field :image, {:required => true} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :link, 'Link alla pagina di destinazione' %>
+    <%= f.text_field :link, {class: "form-control", :required => true, 
     placeholder: "Inserisci il link alla pagina destinazione..."} %>
-  <%= f.submit "Inserisci slide", class: "btn btn-lg btn-primary btn-block" %>
+  </div>
+  <%= f.button(type: 'submit', class: "btn-save btn-final") do %>
+    <span class="icon"></span>
+    Inserisci slide
+  <% end %>
 <% end %>

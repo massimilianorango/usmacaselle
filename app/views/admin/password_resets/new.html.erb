@@ -1,7 +1,7 @@
 <% provide(:title, "Ripristino password") %>
 <ol class="breadcrumb">
-  <li><%= link_to 'Home', admin_path %></li>
-  <li class="active">Reset password</li>
+  <li><%= link_to 'Login', admin_path %></li>
+  <li class="active">Ripristino password</li>
 </ol>
 <% unless @sectors.nil? %>
   <%= form_tag admin_password_resets_path, :class => 'form-center', :method => :post do %>

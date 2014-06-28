@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+  get 'uploaded_files/new'
+  end
+
   root 'welcome#index'
 
   resources :sectors, only: [:index, :show]
@@ -10,7 +14,7 @@ Rails.application.routes.draw do
     resources :sessions, only: [:new, :create, :destroy]
     resources :sectors, only: [:show, :update, :edit]
     resources :password_resets, only: [:new, :create, :edit, :update]
-    resources :files, only: [:new, :create]
+    resources :uploaded_files, only: [:new, :create]
     resources :slides, except: [:edit, :show] do
       collection do
         post 'reorder'

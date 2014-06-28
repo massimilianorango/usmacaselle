@@ -1,3 +1,59 @@
 // Place all the styles related to the admin/slides controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$slide-height: 150px;
+$slide-width: 400px;
+
+.slide-top-buttons {
+    margin-bottom: 10px;
+}
+
+.slides {
+    margin-bottom: 10px;  
+    max-width: $slide-width;  
+    .slide {
+        margin-bottom: $standard-spacing + 10px;
+        padding: 10px 0;
+    }
+}
+
+.sortable-default { 
+    @extend .img-rounded;
+    text-align: center;
+    height: $slide-height; /* equals max image height */
+    max-width: $slide-width;
+    background: $lightGray;
+}
+
+.sortable-highlight { 
+    @extend .img-rounded;
+    margin: $standard-spacing 0 10px 0;  
+    height: $slide-height;
+    max-width: $slide-width;
+    border: 1px solid $darkBlue; 
+    background: $lightBlue; 
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.img-sortable {
+    padding: 3px;
+    vertical-align: middle;
+    max-height: $slide-height;
+    max-width: 100%;
+}
+
+.slide_button {
+  @extend .pull-right;
+  a {
+      @extend .btn-xs;
+  }
+  margin-top:5px;
+} 
+
+

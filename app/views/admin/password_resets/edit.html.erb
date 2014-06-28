@@ -1,7 +1,7 @@
 <% provide(:title, "Ripristino password") %>
 <ol class="breadcrumb">
-  <li><%= link_to 'Home', admin_path %></li>
-  <li class="active">Ripristina password</li>
+  <li><%= link_to 'Login', admin_path %></li>
+  <li class="active">Conferma ripristino password</li>
 </ol>
 <%= form_for(@sector, url:admin_password_reset_path(params[:id])) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>

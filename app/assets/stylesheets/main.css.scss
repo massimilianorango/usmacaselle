@@ -13,40 +13,12 @@ $adminRed: #ff432e;
 
 /* DIMENSIONS */
 $standard-spacing: 20px;//1.5em;
-$small-width: 400px;//30em;
+$small-width: 350px;//30em;
 $large-width: 600px;//50em;
 $admin-btn-height: 120px;//6em;
-$sortable-height: 200px;//20em;
-//$sortable-width: 700px;
 $footer-height: 60px;//5em;
 
-/* BUTTONS & ICONS */
-@mixin glyphicons($name, $icon, $btn) {
-    .btn-#{$name} {
-        @extend .btn;
-        @extend .btn-#{$btn};
-        .icon {
-            @extend .glyphicon;
-            @extend .glyphicon-#{$icon};
-        }
-    }
-}
-
-@include glyphicons(new, plus, primary);
-@include glyphicons(edit, pencil, info);
-@include glyphicons(delete, trash, danger);
-@include glyphicons(save, floppy-save, success);
-
-html, body { height: 100%; }
-
-body { padding-top: 50px; /* same as navbar height */ }
-
-.breadcrumb { border: 1px solid $lightGray; }
-
-.bg-info {padding: 15px; border-radius: $border-radius-base; margin-bottom: 10px;}
-
-.pagination {margin: 5px 0;}
-
+/* LEADERBOARD */
 @mixin admin-leaderboard-color($class, $color) {
     .admin-leaderboard-#{$class} {
         @extend .carousel-caption;
@@ -64,6 +36,52 @@ body { padding-top: 50px; /* same as navbar height */ }
 @include admin-leaderboard-color(volley, $adminBlue);
 @include admin-leaderboard-color(atletica, $adminRed);
 @include admin-leaderboard-color(motoria, $adminPink);
+
+/* BUTTONS & ICONS */
+@mixin glyphicons($name, $icon, $btn) {
+    .btn-#{$name} {
+        @extend .btn;
+        @extend .btn-#{$btn};
+        .icon {
+            @extend .glyphicon;
+            @extend .glyphicon-#{$icon};
+        }
+    }
+}
+
+@include glyphicons(new, plus, primary);
+@include glyphicons(edit, pencil, info);
+@include glyphicons(delete, trash, danger);
+@include glyphicons(save, floppy-save, success);
+@include glyphicons(upload, cloud-upload, primary);
+
+
+html, body { height: 100%; }
+
+body { padding-top: 50px; /* same as navbar height */ }
+
+.breadcrumb { border: 1px solid $lightGray; }
+
+.bg-info {padding: 15px; border-radius: $border-radius-base; margin-bottom: 10px;}
+
+.btn-final { @extend .btn-lg; }
+
+.pagination {margin: 5px 0;}
+
+#push { height: $footer-height; }
+
+footer {
+    background-color:$gray-dark;
+    height: $footer-height;
+    p {
+        margin:$standard-spacing 0
+    }
+}
+
+#sortable {
+    list-style: none; 
+    padding-left:0;
+}
 
 #wrap {
     min-height: 100%;
@@ -145,61 +163,9 @@ body { padding-top: 50px; /* same as navbar height */ }
     max-width: $large-width;
 }
 
-.admin-carousel {
-    max-width:600px;
-    margin: 0 auto;
-}
+// .admin-carousel {
+//     max-width:600px;
+//     margin: 0 auto;
+// }
 
-/* SORTABLE */
-#sortable {
-    list-style: none; 
-    padding-left:0;
-}
-.row-sortable {
-    margin-bottom:$standard-spacing;
-}
-.sortable-default { 
-    @extend .img-rounded;
-    text-align: center;
-    //margin-bottom:$standard-spacing;
-    height: $sortable-height; /* equals max image height */
-    background: $gray-light;
-    width:100%;
-}
-.sortable-highlight { 
-    @extend .img-rounded;
-    margin-bottom:$standard-spacing;
-    height: $sortable-height;
-    border: 1px solid $darkBlue; 
-    background: $lightBlue; 
-}
-  .helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
- .img-sortable {
-    @extend .img-rounded;
-    padding: 1px;
-    vertical-align: middle;
-    max-height: $sortable-height;
-    max-width:100%;
- }
-
- .delete-btn {
-    @extend .pull-right;
-    width:20%;
-    margin-top:1px;
-}
-
-#push {
-    height: $footer-height;
-}
-
-footer {
-    background-color:$gray-dark;
-    height: $footer-height;
-    p {
-        margin:$standard-spacing 0
-    }
-}     
+   
