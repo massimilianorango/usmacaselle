@@ -3,14 +3,16 @@
   <li><%= link_to 'Home', admin_path %></li>
   <li class="active">News</li>
 </ol>
-<h2>News - post presenti:
-  <%= @sector.posts.count %>
-</h2>
-<%= link_to raw('<span class="icon"></span> Nuovo post'), new_admin_post_path, :class => "btn-new" %>
-<% if @sector.posts.any? %>
-  <%= will_paginate @posts %>
-  <div class="posts">
-    <%= render @posts %>
-  </div>
-  <%= will_paginate @posts %>
-<% end %>
+<div class="page-container">
+  <h2 class="page-header">News - post presenti:
+    <%= @sector.posts.count %>
+  </h2>
+  <%= link_to raw('<span class="icon"></span> Nuovo post'), new_admin_post_path, :class => "btn-new" %>
+  <% if @sector.posts.any? %>
+    <%= will_paginate @posts %>
+    <div class="posts">
+      <%= render @posts %>
+    </div>
+    <%= will_paginate @posts %>
+  <% end %>
+</div>

@@ -23,8 +23,9 @@
         </div>
       </div>
     </div>
-    <div class="admin-leaderboard-<%= @sector.name.downcase %>">
-      <h1>Gestione usmacaselle.it<%= " - " + @sector.name if !@sector.is_root %></h1>
+    <div class="admin-leaderboard-<%= @sector.sector_class %>">
+      <h1>Gestione usmacaselle.it</h1>
+      <p><%= @sector.name %></p>
     </div>
   </header>
 <% end %>

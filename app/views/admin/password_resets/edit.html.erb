@@ -3,12 +3,14 @@
   <li><%= link_to 'Login', admin_path %></li>
   <li class="active">Conferma ripristino password</li>
 </ol>
-<%= form_for(@sector, url:admin_password_reset_path(params[:id])) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="form-3-input">
-    <h2>Ripristina password</h2>
-    <%= f.password_field :password, class: "form-control first", placeholder: "Nuova password", :required => true %>
-    <%= f.password_field :password_confirmation, class: "form-control third", placeholder: "Conferma nuova password", :required => true %>
-    <%= f.submit "Aggiorna password", class: "btn btn-lg btn-primary btn-block" %>
-  </div>
-<% end %>
+<div class="page-container">
+  <%= form_for(@sector, url:admin_password_reset_path(params[:id])) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="form-3-input">
+      <h2>Ripristina password</h2>
+      <%= f.password_field :password, class: "form-control first", placeholder: "Nuova password", :required => true %>
+      <%= f.password_field :password_confirmation, class: "form-control third", placeholder: "Conferma nuova password", :required => true %>
+      <%= f.submit "Aggiorna password", class: "btn btn-lg btn-primary btn-block" %>
+    </div>
+  <% end %>
+</div>

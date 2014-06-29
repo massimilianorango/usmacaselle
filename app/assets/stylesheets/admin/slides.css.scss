@@ -7,10 +7,12 @@ $slide-width: 400px;
 
 .slide-top-buttons {
     margin-bottom: 10px;
+    a {
+        margin-right:10px;
+    }
 }
 
 .slides {
-    margin-bottom: 10px;  
     max-width: $slide-width;  
     .slide {
         margin-bottom: $standard-spacing + 10px;

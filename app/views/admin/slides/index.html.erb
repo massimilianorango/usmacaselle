@@ -3,19 +3,21 @@
   <li><%= link_to 'Home', admin_path %></li>
   <li class="active">Carousel</li>
 </ol>
-<h2>Carousel - slide presenti:
-  <%= @sector.slides.count %>
-</h2>
-<p class="bg-info">Per ordinare le slide trascinale nella corretta posizione, dopodiché premi
-  <strong>"Salva ordinamento"</strong>. Le slide più in alto saranno le prime ad essere visualizzate.</p>
-<div class="slide-top-buttons">
-<%= link_to raw('<span class="icon"></span> Nuova slide'), new_admin_slide_path, :class => "btn btn-new" %>
-<%= link_to raw('<span class="icon"></span> Salva ordinamento'), '', :class => "btn btn-save", :id => "btn_order" if @sector.slides.any? %>
-</div>
-<% if @sector.slides.any? %>
-  <div class="slides">
-    <ul id="sortable">
-      <%= render @slides %>
-    </ul>
+<div class="page-container">
+  <h2 class="page-header">Carousel - slide presenti:
+    <%= @sector.slides.count %>
+  </h2>
+  <p class="alert alert-info">Per ordinare le slide trascinale nella corretta posizione, dopodiché premi
+    <strong>"Salva ordinamento"</strong>. Le slide più in alto saranno le prime ad essere visualizzate.</p>
+  <div class="slide-top-buttons">
+    <%= link_to raw('<span class="icon"></span> Nuova slide'), new_admin_slide_path, :class => "btn btn-new" %>
+    <%= link_to raw('<span class="icon"></span> Salva ordinamento'), '', :class => "btn btn-save", :id => "btn_order" if @sector.slides.any? %>
   </div>
-<% end %>
+  <% if @sector.slides.any? %>
+    <div class="slides">
+      <ul id="sortable">
+        <%= render @slides %>
+      </ul>
+    </div>
+  <% end %>
+</div>

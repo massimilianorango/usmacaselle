@@ -3,10 +3,11 @@
   <li><%= link_to 'News', admin_posts_path %></li>
   <li class="active"><%= yield(:title) %></li>
 </ol>
+<div class="page-container">
 <%= form_for [:admin, @post], :html => {multipart: true, role: "form", class: "form-center-full"} do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <h2><%= yield(:title) %></h2>
-  <div class="bg-info">Ricorda di premere il tasto di
+  <h2 class="page-header"><%= yield(:title) %></h2>
+  <div class="alert alert-info">Ricorda di premere il tasto di
     <strong>salvataggio</strong>
     in fondo alla pagina, o le tue modifiche non verranno salvate.</div>
   <div class="form-group">
@@ -39,3 +40,4 @@
     <%= yield(:action) %>
   <% end %>
 <% end %>
+</div>

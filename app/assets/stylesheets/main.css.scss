@@ -4,11 +4,17 @@ $darkBlue: $brand-primary;
 $lightBlue: #d9edf7;
 $lightGray: #D8D8D8;
 //admin colors:
+$adminGrayFrom: $gray-dark;
 $adminGray: #8f8f8f;
+$adminBlueFrom: #3A83AB;
 $adminBlue: #53bbf4;
+$adminOrangeFrom: #B87C00;
 $adminOrange: #ffac00;
+$adminGreenFrom: #7CA400;
 $adminGreen: #b1eb00;
+$adminPinkFrom: #CC6AA2;
 $adminPink: #ff85cb;
+$adminRedFrom: #B22F20;
 $adminRed: #ff432e;
 
 /* DIMENSIONS */
@@ -19,23 +25,30 @@ $admin-btn-height: 120px;//6em;
 $footer-height: 60px;//5em;
 
 /* LEADERBOARD */
-@mixin admin-leaderboard-color($class, $color) {
+@mixin admin-leaderboard-color($class, $colorTo, $colorFrom) {
     .admin-leaderboard-#{$class} {
         @extend .carousel-caption;
+        background-color: $colorTo;
+        @include gradient-vertical($colorFrom, $colorTo);
         position:static;
-        background: $color;
-        height: 150px;//10em;
+        height: 230px;//10em;
         width:100%;
         margin-bottom: $standard-spacing;
+        h1 {
+            font-size: 60px;
+        }
+        p {
+            font-size: 24px;
+        }
     }
 }
 
-@include admin-leaderboard-color(segreteria, $adminGray);
-@include admin-leaderboard-color(calcio, $adminGreen);
-@include admin-leaderboard-color(basket, $adminOrange);
-@include admin-leaderboard-color(volley, $adminBlue);
-@include admin-leaderboard-color(atletica, $adminRed);
-@include admin-leaderboard-color(motoria, $adminPink);
+@include admin-leaderboard-color(society, $adminGray, $adminGrayFrom);
+@include admin-leaderboard-color(football, $adminGreen, $adminGreenFrom);
+@include admin-leaderboard-color(basket, $adminOrange, $adminOrangeFrom);
+@include admin-leaderboard-color(volley, $adminRed, $adminRedFrom);
+@include admin-leaderboard-color(athletics, $adminBlue, $adminBlueFrom);
+@include admin-leaderboard-color(motoria, $adminPink, $adminPinkFrom);
 
 /* BUTTONS & ICONS */
 @mixin glyphicons($name, $icon, $btn) {
@@ -60,9 +73,15 @@ html, body { height: 100%; }
 
 body { padding-top: 50px; /* same as navbar height */ }
 
-.breadcrumb { border: 1px solid $lightGray; }
+.admin-leaderboard {
 
-.bg-info {padding: 15px; border-radius: $border-radius-base; margin-bottom: 10px;}
+}
+
+.page-container {@extend .container; margin-bottom:20px; width:100%}
+
+.page-header {margin-top:0;}
+
+.breadcrumb { border: 1px solid $lightGray; }
 
 .btn-final { @extend .btn-lg; }
 
@@ -102,7 +121,6 @@ footer {
 .form-center {
     max-width: $small-width;
     margin: 0 auto;
-    margin-bottom: 20px;
     .form-control {
         height:auto;
         padding: 10px;
@@ -163,9 +181,18 @@ footer {
     max-width: $large-width;
 }
 
-// .admin-carousel {
-//     max-width:600px;
-//     margin: 0 auto;
-// }
+.callout {
+    padding: 20px 20px 10px 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    h3 {
+        margin-top:0;
+    }
+}
 
-   
+.callout-info {
+    @extend .callout;
+    border-left-color: $brand-info;
+}

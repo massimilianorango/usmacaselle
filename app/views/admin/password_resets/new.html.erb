@@ -3,6 +3,7 @@
   <li><%= link_to 'Login', admin_path %></li>
   <li class="active">Ripristino password</li>
 </ol>
+<div class="page-container">
 <% unless @sectors.nil? %>
   <%= form_tag admin_password_resets_path, :class => 'form-center', :method => :post do %>
     <h2>Password dimenticata</h2>
@@ -10,3 +11,4 @@
     <%= submit_tag "Ripristina password", class: "btn btn-lg btn-primary btn-block" %>
   <% end %>
 <% end %>
+</div>

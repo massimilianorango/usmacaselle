@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-  get 'uploaded_files/new'
-  end
-
   root 'welcome#index'
 
   resources :sectors, only: [:index, :show]
@@ -21,6 +17,7 @@ Rails.application.routes.draw do
       end
     end
     resources :posts, except: [:show]
+    get 'gallery', to: 'static_pages#gallery'  
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

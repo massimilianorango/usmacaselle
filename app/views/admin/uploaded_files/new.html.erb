@@ -3,35 +3,37 @@
   <li><%= link_to 'Home', admin_path %></li>
   <li class="active">Upload file</li>
 </ol>
-<% if params[:uploaded_url].nil? %>
-  <div class="bg-info">Dopo il caricamento del file ti verrà restituito un link utilizzabile all'interno del sito.</div>
-<% else %>
-  <div class="form-group">
-    <%= label_tag :uploaded_url, "Conserva il seguente link per poter utilizzare il file all'interno del sito:" %>
-    <div class="input-group">
-      <span class="input-group-addon"><strong>Premi CTRL + C per copiare il link.</strong></span>
-      <%= text_field_tag :uploaded_url, params[:uploaded_url], class: "form-control", :autofocus => true %>
+<div class="page-container">
+  <h2 class="page-header">Upload file</h2>
+  <% if params[:uploaded_url].nil? %>
+    <div class="alert alert-info">Dopo il caricamento del file ti verrà restituito un link utilizzabile all'interno del sito.</div>
+  <% else %>
+    <div class="form-group">
+      <%= label_tag :uploaded_url, "Conserva il seguente link per poter utilizzare il file all'interno del sito:" %>
+      <div class="input-group">
+        <span class="input-group-addon"><strong>Premi CTRL + C per copiare il link.</strong></span>
+        <%= text_field_tag :uploaded_url, params[:uploaded_url], class: "form-control", :autofocus => true %>
+      </div>
     </div>
-  </div>
-<% end %>
-<%= form_for [:admin, @new_uploaded_file], :html => {multipart: true, :class => "form-upload"} do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <h2>Upload file</h2>
-  <div class="form-group">
-    <%= f.label :attachment, 'Scegli un file da caricare' %>
-    <%= f.file_field :attachment, :required => true, :autofocus => true %>
-  </div>
-  <div class="form-group">
-    <%= f.label :att_type, 'Tipo:'%>
-    <label class="radio-inline">
-      <%= f.radio_button(:att_type, "imgs", :checked => true)%>Immagine
-    </label>
-    <label class="radio-inline">
-      <%= f.radio_button(:att_type, "docs")%>Documento
-    </label>
-  </div>
-  <%= f.button(att_type: 'submit', class: "btn-upload btn-final btn-block") do %>
-    <span class="icon"></span>
-    Carica il file
   <% end %>
-<% end %>
+  <%= form_for [:admin, @new_uploaded_file], :html => {multipart: true, :class => "form-upload"} do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="form-group">
+      <%= f.label :attachment, 'Scegli un file da caricare' %>
+      <%= f.file_field :attachment, :required => true, :autofocus => true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :att_type, 'Tipo di file:'%>
+      <label class="radio-inline">
+        <%= f.radio_button(:att_type, "imgs", :checked => true)%>Immagine
+      </label>
+      <label class="radio-inline">
+        <%= f.radio_button(:att_type, "docs")%>Documento
+      </label>
+    </div>
+    <%= f.button(att_type: 'submit', class: "btn-upload btn-final") do %>
+      <span class="icon"></span>
+      Carica il file
+    <% end %>
+  <% end %>
+</div>

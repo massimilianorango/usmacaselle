@@ -1,9 +1,0 @@
-<div class="bg-info">Dopo il caricamento del file ti verrà restituito un link utilizzabile all'interno del sito:
-  <%= @uploaded_file.attachment.url %>.</div>
-<div class="form-group">
-  <%= label_tag :attachment, "Conserva il seguente link per poter utilizzare il file all'interno del sito:" %>
-  <div class="input-group">
-    <span class="input-group-addon"><strong>Premi CTRL + C per copiare il link.</strong></span>
-    <%= text_field_tag :attachment, @uploaded_file.attachment.url, class: "form-control", :autofocus => true %>
-  </div>
-</div>

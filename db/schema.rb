@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140628002549) do
+ActiveRecord::Schema.define(version: 20140629215133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20140628002549) do
     t.string   "remember_token"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.string   "gallery_url"
+    t.string   "sector_class"
   end
 
   add_index "sectors", ["remember_token"], name: "index_sectors_on_remember_token", using: :btree
