@@ -4,7 +4,6 @@ class CreateItems < ActiveRecord::Migration
       t.string :name
       t.string :price
       t.integer :sector_id
-      t.integer :priority, null:false
 
       t.timestamps
     end

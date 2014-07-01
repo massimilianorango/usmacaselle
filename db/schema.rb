@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20140701080231) do
     t.string   "name"
     t.string   "price"
     t.integer  "sector_id"
-    t.integer  "priority",           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"

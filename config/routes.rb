@@ -20,9 +20,6 @@ Rails.application.routes.draw do
     get 'gallery', to: 'static_pages#gallery'  
     resources :items, except: [:edit, :show] do
       post :sort, on: :collection
-      collection do
-        post 'reorder'
-      end
     end
   end
 

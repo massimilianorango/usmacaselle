@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-    acts_as_list
+    acts_as_list :scope => :sector
     default_scope -> { order('position ASC') }
 
     belongs_to :sector
@@ -7,7 +7,7 @@ class Item < ActiveRecord::Base
     validates :name, presence: {:message => "Devi inserire il nome dell'articolo." }, 
                     length: { maximum: 80, :message => 'Il nome non può superare 80 caratteri.' }
     validates :price, presence: {:message => "Devi inserire il prezzo dell'articolo." }
-    validates :priority, :presence => true
+    
     has_attached_file :image, :storage => :dropbox,
         :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
         :dropbox_options => {

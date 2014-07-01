@@ -11,6 +11,7 @@ class Admin::ItemsController < AuthAdminController
 
     def create
         @item = current_sector.items.build(item_params)
+        @item.position = 0
         if @item.save
             flash[:success] = "Articolo inserito con successo!"
             redirect_to admin_items_url
@@ -23,21 +24,6 @@ class Admin::ItemsController < AuthAdminController
     def destroy
         @item.destroy
         redirect_to admin_items_path
-    end
-
-    def reorder
-        @item_ids = params[:objects].reverse
-        n = 1
-        ActiveRecord::Base.transaction do
-            @item_ids.each do |id|
-                item = Item.find(id)
-                item.priority = n
-                n += 1
-                item.save
-            end
-        end
-        flash[:success] = "Ordinamento salvato con successo!"
-        render index
     end
 
     def sort

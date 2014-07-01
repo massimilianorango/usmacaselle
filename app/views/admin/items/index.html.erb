@@ -7,11 +7,10 @@
   <h2 class="page-header">Shop - articoli presenti:
     <%= @sector.items.count %>
   </h2>
-  <p class="alert alert-info">Per ordinare gli articoli trascinali nella corretta posizione, dopodiché premi
-    <strong>"Salva ordinamento"</strong>. Gli articoli più in alto a sinistra saranno i primi ad essere visualizzati.</p>
+  <p class="alert alert-info"> Vuoi <strong>ordinare</strong> gli articoli? Trascinali e l'ordine verrà registrato. <strong>Ricorda:</strong> l'ordine va da sinistra a destra, dall'alto al basso.</p>
   <div class="item-top-buttons">
     <%= link_to raw('<span class="icon"></span> Nuovo articolo'), new_admin_item_path, :class => "btn btn-new" %>
-    <%= link_to raw('<span class="icon"></span> Salva ordinamento'), '', :class => "btn btn-save", :id => "btn-order" if @sector.items.any? %>
+    <%#= link_to raw('<span class="icon"></span> Salva ordinamento'), '', :class => "btn btn-save", :id => "btn-order" if @sector.items.any? %>
     <span class="controller">items</span>
   </div>
   <% if @sector.items.any? %>
