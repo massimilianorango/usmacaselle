@@ -29,6 +29,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts_as_list (0.4.0)
+      activerecord (>= 3.0)
     arel (5.0.1.20140414130214)
     autoprefixer-rails (2.0.0.20140622)
       execjs
@@ -56,7 +58,6 @@ GEM
       json
     erubis (2.7.0)
     execjs (2.2.0)
-    flickraw (0.9.8)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (2.1.1)
@@ -157,13 +158,13 @@ PLATFORMS
 
 DEPENDENCIES
   active_link_to (= 1.0.2)
+  acts_as_list
   autoprefixer-rails (= 2.0.0.20140622)
   bcrypt-ruby (= 3.1.1)
   bootstrap-sass (~> 3.2.0)
   bootstrap-will_paginate (= 0.0.10)
   ckeditor (= 4.0.11)
   coffee-rails (= 4.0.1)
-  flickraw
   jbuilder (~> 2.0)
   jquery-rails (= 3.1.1)
   jquery-turbolinks

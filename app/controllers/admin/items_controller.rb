@@ -40,6 +40,15 @@ class Admin::ItemsController < AuthAdminController
         render index
     end
 
+    def sort
+        @items = @sector.items
+        @items.each do |item|
+            item.position = params['item'].index(item.id.to_s) + 1
+            item.save
+        end
+        render :nothing => true
+    end
+
     private
     def item_params
         params.require(:item).permit(:name, :image, :price)
