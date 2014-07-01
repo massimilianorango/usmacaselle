@@ -1,6 +1,6 @@
 class Admin::PasswordResetsController < AdminController
     before_action :not_signed_in_sector
-    
+
     def new
         all_sectors
     end
@@ -13,15 +13,16 @@ class Admin::PasswordResetsController < AdminController
     end
 
     def edit
-        @sector = Sector.find_by_password_reset_token!(params[:id])
+        @sector = Sector.find_by_password_reset_token(params[:id])
+        if @sector.nil? || @sector.password_reset_sent_at < 2.hours.ago
+            flash[:danger] = "La richiesta di ripristino è scaduta."
+            redirect_to new_admin_password_reset_path
+        end
     end
 
     def update
         @sector = Sector.find_by_password_reset_token!(params[:id])
-        if @sector.password_reset_token.nil? || @sector.password_reset_sent_at < 2.hours.ago
-            flash[:danger] = "La richiesta di ripristino è scaduta."
-            redirect_to new_admin_password_reset_path
-        elsif @sector.update_attributes(params.require(:sector).permit(:password, :password_confirmation))
+        if @sector.update_attributes(params.require(:sector).permit(:password, :password_confirmation))
             @sector.update_attribute('password_reset_token', nil)
             flash[:success] = "La password è stata riprisinata correttamente!"
             redirect_to admin_path
