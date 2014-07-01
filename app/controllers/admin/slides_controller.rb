@@ -25,19 +25,13 @@ class Admin::SlidesController < AuthAdminController
         redirect_to admin_slides_path
     end
 
-    def reorder
-        @slide_ids = params[:objects].reverse
-        n = 1
-        ActiveRecord::Base.transaction do
-            @slide_ids.each do |id|
-                slide = Slide.find(id)
-                slide.priority = n
-                n += 1
-                slide.save
-            end
+    def sort
+        @slides = @sector.slides
+        @slides.each do |slide|
+            slide.position = params['slide'].index(slide.id.to_s) + 1
+            slide.save
         end
-        flash[:success] = "Ordinamento salvato con successo!"
-        render index
+        render :nothing => true
     end
 
     private

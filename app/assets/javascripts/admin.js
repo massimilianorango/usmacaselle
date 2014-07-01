@@ -15,7 +15,7 @@ $(document).ready(function(){
                 complete: function(request){
                     $(".sortable").effect('highlight');
                 },
-            url: '/admin/items/sort'})
+            url: '/admin/'+controller+'/sort'})
         }
     });
 });
