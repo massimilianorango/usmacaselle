@@ -1,0 +1,32 @@
+<% provide(:title, "Nuovo Articolo") %>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li><%= link_to 'Shop', admin_items_path %></li>
+  <li class="active">Nuovo articolo</li>
+</ol>
+<div class="page-container">
+  <h2 class="page-header">Nuovo articolo</h2>
+  <%= form_for [:admin, @item], :html => {multipart: true, :class => "form-center-full"} do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="form-group">
+      <%= f.label :name, "Nome dell'articolo" %>
+      <%= f.text_field :name, {class: "form-control", :required => true, :autofocus => true, placeholder: "Inserisci il nome dell'articolo..."} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :image, 'Immagine' %>
+      <%= f.file_field :image, {:required => true} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :price, "Prezzo dell'articolo" %>
+      <div class="input-group">
+        <div class="input-group-addon">€</div>
+        <%= f.text_field :price, {class: "form-control", :required => true, 
+    placeholder: "Inserisci il prezzo dell'articolo"} %>
+      </div>
+    </div>
+    <%= f.button(type: 'submit', class: "btn-save btn-final") do %>
+      <span class="icon"></span>
+      Inserisci articolo
+    <% end %>
+  <% end %>
+</div>

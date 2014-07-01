@@ -1,0 +1,14 @@
+<div class="shop_item-cell" id="<%= item.id %>">
+  <div class="shop_item">
+    <div class="shop_item-name"><%= item.name %></div>
+    <div class="shop_item-img-container">
+      <span class="center-img-helper"></span><%= image_tag(item.image.url, class: "img-shop_item") %>
+    </div>
+    <div class="shop_item-bottom">
+      € <%= item.price %>
+      <%= link_to raw('<span class="icon"></span> Elimina'), [:admin, item], method: :delete,
+                                     data: { confirm: "Sei sicuro di voler eliminare l'articolo?" },
+                                     title: item.name, :class => "btn-delete shop_item-btn-delete" %>
+    </div>
+  </div>
+</div>

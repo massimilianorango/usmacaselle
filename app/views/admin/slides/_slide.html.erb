@@ -1,10 +1,15 @@
-<li class="slide" id="<%= slide.id %>">
-  <div class="sortable-default">
-    <span class="helper"></span><%= image_tag(slide.image.url, class: "img-sortable") %>
-  </div>
-  <div class="slide_button">
-    <%= link_to raw('<span class="icon"></span> Elimina'), [:admin, slide], method: :delete,
+<div class="slide-cell" id="<%= slide.id %>">
+  <div class="slide">
+    <div class="slide-img-container">
+      <span class="center-img-helper"></span><%= image_tag(slide.image.url, class: "img-slide") %>
+      <div class="slide-text">
+        <h1><%= slide.text %></h1>
+      </div>
+    </div>
+    <div class="slide-bottom">
+      <%= link_to raw('<span class="icon"></span> Elimina'), [:admin, slide], method: :delete,
                                      data: { confirm: "Sei sicuro di voler eliminare la slide?" },
-                                     title: slide.text, :class => "btn-delete" %>
+                                     title: slide.text, :class => "btn-delete slide-btn-delete" %>
+    </div>
   </div>
-</li>
+</div>

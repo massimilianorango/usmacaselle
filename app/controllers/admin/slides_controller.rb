@@ -26,7 +26,7 @@ class Admin::SlidesController < AuthAdminController
     end
 
     def reorder
-        @slide_ids = params[:slides].reverse
+        @slide_ids = params[:objects].reverse
         n = 1
         ActiveRecord::Base.transaction do
             @slide_ids.each do |id|

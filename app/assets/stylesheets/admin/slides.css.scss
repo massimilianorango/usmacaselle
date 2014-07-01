@@ -2,60 +2,72 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$slide-height: 150px;
-$slide-width: 400px;
+$slide-height: 200px;
+$slide-img-height: ($slide-height - 20px)*(85/100);
+$slide-border-height: ($slide-height - 20px)*(15/100);
 
-.slide-top-buttons {
-    margin-bottom: 10px;
-    a {
-        margin-right:10px;
-    }
-}
-
-.slides {
-    max-width: $slide-width;  
-    .slide {
-        margin-bottom: $standard-spacing + 10px;
-        padding: 10px 0;
-    }
-}
-
-.sortable-default { 
-    @extend .img-rounded;
-    text-align: center;
-    height: $slide-height; /* equals max image height */
-    max-width: $slide-width;
-    background: $lightGray;
-}
-
-.sortable-highlight { 
-    @extend .img-rounded;
-    margin: $standard-spacing 0 10px 0;  
+.slide-cell {
+    @extend .col-md-4;
+    padding:10px;
     height: $slide-height;
-    max-width: $slide-width;
-    border: 1px solid $darkBlue; 
-    background: $lightBlue; 
 }
 
-.helper {
-    display: inline-block;
+.slides-placeholder {
+    @extend .slide-cell;
+    border: 1px solid $darkBlue;
+    background: $lightBlue;
+    border-radius: 4px;
+    @include box-shadow($placeholder-shadow);
+    box-shadow: $placeholder-shadow;
+}
+
+.slide {
+    border: 1px solid $lightGray;
+    border-radius: 4px;
     height: 100%;
-    vertical-align: middle;
+    margin: 0 auto;
+    padding:0;
 }
 
-.img-sortable {
-    padding: 3px;
+.slide-text {
+    color:white;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    position: absolute; 
+    text-align:center;
+    bottom:5%;
+    left:15%; 
+    right:15%;
+    h1 {
+        font-size: 16px;
+    }
+}
+
+.slide-img-container {
+    position:relative;
+    background-color: $gray-light;
+    height: $slide-img-height;
+    text-align: center;
+}
+
+.img-slide {
     vertical-align: middle;
-    max-height: $slide-height;
+    max-height: $slide-img-height;
     max-width: 100%;
+    margin: 0 auto;
 }
 
-.slide_button {
-  @extend .pull-right;
-  a {
-      @extend .btn-xs;
-  }
-  margin-top:5px;
-} 
+.slide-bottom {
+    @include border-bottom-radius(2px);
+    position: relative;
+    height: $slide-border-height;
+    background-color:black;
+    color: white;
+    padding-left:15px;
+}
 
-
+.slide-btn-delete {
+    @extend .btn-xs;
+    position: absolute;
+    bottom:10%;
+    right: 1%;
+}

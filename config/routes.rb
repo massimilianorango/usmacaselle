@@ -18,6 +18,11 @@ Rails.application.routes.draw do
     end
     resources :posts, except: [:show]
     get 'gallery', to: 'static_pages#gallery'  
+    resources :items, except: [:edit, :show] do
+      collection do
+        post 'reorder'
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

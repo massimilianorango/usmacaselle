@@ -23,6 +23,7 @@ $small-width: 350px;//30em;
 $large-width: 600px;//50em;
 $admin-btn-height: 120px;//6em;
 $footer-height: 60px;//5em;
+$placeholder-shadow: 0 0 10px #888;
 
 /* LEADERBOARD */
 @mixin admin-leaderboard-color($class, $colorTo, $colorFrom) {
@@ -35,7 +36,7 @@ $footer-height: 60px;//5em;
         width:100%;
         margin-bottom: $standard-spacing;
         h1 {
-            font-size: 60px;
+            font-size: 58px;
         }
         p {
             font-size: 24px;
@@ -72,10 +73,6 @@ $footer-height: 60px;//5em;
 html, body { height: 100%; }
 
 body { padding-top: 50px; /* same as navbar height */ }
-
-.admin-leaderboard {
-
-}
 
 .page-container {@extend .container; margin-bottom:20px; width:100%}
 
@@ -195,4 +192,14 @@ footer {
 .callout-info {
     @extend .callout;
     border-left-color: $brand-info;
+}
+
+.controller { display: none; }
+
+.sortable { margin-top: 10px; }
+
+.center-img-helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
 }

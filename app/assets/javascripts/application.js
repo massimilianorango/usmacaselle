@@ -17,3 +17,27 @@
 //= require jquery.turbolinks
 //= require ckeditor/init
 //= require_tree .
+
+$(function () {
+    $(".sortable").sortable({
+        tolerance: 'pointer',
+        revert: '200',
+        placeholder: $(".controller").text() + '-placeholder',
+        forceHelperSize: true
+    });
+    $(".sortable").disableSelection();
+});
+
+$(document).ready(function(){
+    $("#btn-order").click(
+      function(event, ui){
+        var confirmation = confirm("Sei sicuro di voler salvare l'ordinamento?");
+        if(confirmation) {
+            var itm_arr = $(".sortable").sortable('toArray');
+            var pobj = {objects: itm_arr};
+            var controller = $(".controller").text();
+            $.post("/admin/"+controller+"/reorder", pobj);
+        }
+      }
+    );
+})

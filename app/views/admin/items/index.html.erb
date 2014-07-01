@@ -1,0 +1,24 @@
+<% provide(:title, "Shop") %>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li class="active">Shop</li>
+</ol>
+<div class="page-container">
+  <h2 class="page-header">Shop - articoli presenti:
+    <%= @sector.items.count %>
+  </h2>
+  <p class="alert alert-info">Per ordinare gli articoli trascinali nella corretta posizione, dopodiché premi
+    <strong>"Salva ordinamento"</strong>. Gli articoli più in alto a sinistra saranno i primi ad essere visualizzati.</p>
+  <div class="item-top-buttons">
+    <%= link_to raw('<span class="icon"></span> Nuovo articolo'), new_admin_item_path, :class => "btn btn-new" %>
+    <%= link_to raw('<span class="icon"></span> Salva ordinamento'), '', :class => "btn btn-save", :id => "btn-order" if @sector.items.any? %>
+    <span class="controller">items</span>
+  </div>
+  <% if @sector.items.any? %>
+    <div class="container-fluid">
+      <div class="sortable row">
+        <%= render @items %>
+      </div>
+    </div>
+  <% end %>
+</div>
