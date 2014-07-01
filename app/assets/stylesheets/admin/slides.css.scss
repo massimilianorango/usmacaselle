@@ -24,6 +24,7 @@ $slide-border-height: ($slide-height - 20px)*(15/100);
 .slide {
     border: 1px solid $lightGray;
     border-radius: 4px;
+    max-width:400px;
     height: 100%;
     margin: 0 auto;
     padding:0;

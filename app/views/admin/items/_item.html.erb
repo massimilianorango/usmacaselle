@@ -2,7 +2,7 @@
   <div class="shop_item">
     <div class="shop_item-name"><%= item.name %></div>
     <div class="shop_item-img-container">
-      <span class="center-img-helper"></span><%= image_tag(item.image.url, class: "img-shop_item") %>
+      <span class="center-img-helper"></span><%= image_tag(item.image_url_small, class: "img-shop_item") %>
     </div>
     <div class="shop_item-bottom">
       € <%= item.price %>

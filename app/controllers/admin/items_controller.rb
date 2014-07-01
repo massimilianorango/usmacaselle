@@ -13,6 +13,7 @@ class Admin::ItemsController < AuthAdminController
         @item = current_sector.items.build(item_params)
         @item.position = 0
         if @item.save
+            @item.set_image_url
             flash[:success] = "Articolo inserito con successo!"
             redirect_to admin_items_url
         else

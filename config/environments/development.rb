@@ -48,7 +48,7 @@ Rails.application.configure do
   enable_starttls_auto: true  }
 
   # Per Paperclip
-  #Paperclip.options[:command_path] = "/usr/bin/"
+  Paperclip.options[:command_path] = "/usr/bin/"
 
   # Per gli orari
   config.i18n.available_locales = :it

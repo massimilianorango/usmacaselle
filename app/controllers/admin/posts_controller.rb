@@ -12,6 +12,7 @@ class Admin::PostsController < AuthAdminController
     def create
         @post = current_sector.posts.build(post_params)
         if @post.save
+            @post.set_image_url
             flash[:success] = "Post inserito con successo!"
             redirect_to admin_posts_url
         else
@@ -27,6 +28,7 @@ class Admin::PostsController < AuthAdminController
     def update
         @post.lead_image.clear if params[:delete_lead_image] == 'yes'
         if @post.update_attributes(post_params)
+            @post.set_image_url
             flash[:success] = "Post modificato correttamente!"
             redirect_to admin_posts_url
         else

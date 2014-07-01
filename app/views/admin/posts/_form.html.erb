@@ -19,10 +19,10 @@
     <%= f.file_field :lead_image %>
     <p class="help-block">L'immagine di copertina rende il sito più piacevole da navigare e attira più utenti.</p>
   </div>
-  <% if @post.lead_image.exists? %>
+  <% if !@post.lead_image_updated_at.nil? %>
     <div class="form-group">
-      <%= label_tag @post.lead_image.url, 'Immagine di copertina attuale' %>
-      <div class="preview-lead-image"><%= image_tag @post.lead_image.url %></div>
+      <%= label_tag @post.lead_image_url, 'Immagine di copertina attuale' %>
+      <div class="preview-lead-image"><%= image_tag @post.lead_image_url_small %></div>
       <div class="checkbox">
         <%= label_tag :delete_lead_image do %>
           <%= check_box_tag :delete_lead_image, 'yes', false %>

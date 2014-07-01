@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140701124923) do
+ActiveRecord::Schema.define(version: 20140701193330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20140701124923) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "position"
+    t.string   "image_url"
+    t.string   "image_url_small"
+    t.string   "image_url_normal"
   end
 
   add_index "items", ["sector_id", "created_at"], name: "index_items_on_sector_id_and_created_at", using: :btree
@@ -41,6 +44,9 @@ ActiveRecord::Schema.define(version: 20140701124923) do
     t.string   "lead_image_content_type"
     t.integer  "lead_image_file_size"
     t.datetime "lead_image_updated_at"
+    t.string   "lead_image_url"
+    t.string   "lead_image_url_small"
+    t.string   "lead_image_url_normal"
   end
 
   add_index "posts", ["sector_id", "created_at"], name: "index_posts_on_sector_id_and_created_at", using: :btree
@@ -72,6 +78,9 @@ ActiveRecord::Schema.define(version: 20140701124923) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "position"
+    t.string   "image_url"
+    t.string   "image_url_small"
+    t.string   "image_url_normal"
   end
 
   add_index "slides", ["sector_id", "created_at"], name: "index_slides_on_sector_id_and_created_at", using: :btree
