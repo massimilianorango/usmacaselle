@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
+  get 'ie_compatibility', to: 'static_pages#ie_compatibility'
 
   resources :sectors, only: [:index, :show]
 

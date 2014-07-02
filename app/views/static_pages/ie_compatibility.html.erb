@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <style type="text/css">
+      body {
+          text-align: center;
+      }
+      img {
+          width:200px;
+          padding:20px;
+      }
+      td {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>OPS! IL TUO BROWSER E` TROPPO VECCHIO.</h1>
+    <p>Per poter accedere al sito, per favore aggiorna il tuo browser.</p>
+    <p>Tra i tanti
+      <b>gratuiti</b>
+      a tua disposizione ti suggeriamo:</p>
+    <table align="center">
+      <tr>
+        <td><a href="https://www.google.com/intl/it/chrome/browser/" target="_blank"><%= image_tag('browser-icons/chrome.png') %></a></td>
+        <td><a href="http://www.mozilla.org/it/firefox/new/" target="_blank"><%= image_tag('browser-icons/firefox.png') %></a></td>
+        <td><a href="https://www.apple.com/it/safari/" target="_blank"><%= image_tag('browser-icons/safari.png') %></a></td>
+        <td><a href="http://www.opera.com/it" target="_blank"><%= image_tag('browser-icons/opera.png') %></a></td>
+        <td><a href="http://windows.microsoft.com/it-it/internet-explorer/download-ie" target="_blank"><%= image_tag('browser-icons/ie.png') %></td>
+      </tr>
+      <tr>
+        <td><a href="https://www.google.com/intl/it/chrome/browser/" target="_blank">Google Chrome V25+</a></td>
+        <td><a href="http://www.mozilla.org/it/firefox/new/" target="_blank">Mozilla Firefox V15+</a></td>
+        <td><a href="https://www.apple.com/it/safari/" target="_blank">Safari V5+</a></td>
+        <td><a href="http://www.opera.com/it" target="_blank">Opera V10+</a></td>
+        <td><a href="http://windows.microsoft.com/it-it/internet-explorer/download-ie" target="_blank">Internet Explorer V10+</a></td>
+      </tr>
+    </table>
+  </body>
+</html>
