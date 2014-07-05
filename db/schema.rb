@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140701193330) do
+ActiveRecord::Schema.define(version: 20140703191113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "banners", force: true do |t|
+    t.string   "link"
+    t.boolean  "is_horizontal",      default: false, null: false
+    t.integer  "position"
+    t.string   "image_url"
+    t.string   "image_url_small"
+    t.string   "image_url_normal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "image"
+  end
 
   create_table "items", force: true do |t|
     t.string   "name"
@@ -84,6 +100,21 @@ ActiveRecord::Schema.define(version: 20140701193330) do
   end
 
   add_index "slides", ["sector_id", "created_at"], name: "index_slides_on_sector_id_and_created_at", using: :btree
+
+  create_table "sponsors", force: true do |t|
+    t.string   "link"
+    t.boolean  "is_horizontal",      null: false
+    t.integer  "position"
+    t.string   "image_url"
+    t.string   "image_url_small"
+    t.string   "image_url_normal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "uploaded_files", force: true do |t|
     t.string   "att_type"

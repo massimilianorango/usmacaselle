@@ -17,13 +17,21 @@ Rails.application.routes.draw do
     resources :uploaded_files, only: [:new, :create]
     resources :posts, except: [:show]
 
-    resources :slides, except: [:edit, :show] do
+    resources :slides, except: [:edit, :update, :show] do
       post :sort, on: :collection
     end
 
-    resources :items, except: [:edit, :show] do
+    resources :items, except: [:edit, :update, :show] do
       post :sort, on: :collection
+    end
+
+    resources :banners, except: [:edit, :update, :show] do
+      get 'new_vertical', on: :new
+      get 'new_horizontal', on: :new
+      post :v_sort, on: :collection
+      post :h_sort, on: :collection
     end
 
   end
+
 end

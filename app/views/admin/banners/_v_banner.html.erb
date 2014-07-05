@@ -1,0 +1,14 @@
+<div class="banner-cell" id="v_banner_<%= v_banner.id %>">
+  <div class="banner">
+    <div class="v_banner">
+      <div class="v_banner-img-container">
+        <%= image_tag(v_banner.image.url(:vertical), class: "v_img-banner") %>
+      </div>
+    </div>
+    <div class="banner-bottom">
+      <%= link_to raw('<span class="icon"></span> Elimina'), [:admin, v_banner], method: :delete,
+                                     data: { confirm: "Sei sicuro di voler eliminare il banner?" },
+                                     :class => "btn-delete banner-btn-delete" %>
+    </div>
+  </div>
+</div>

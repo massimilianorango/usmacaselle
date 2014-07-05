@@ -23,6 +23,9 @@ gem "autoprefixer-rails", '2.0.0.20140622'
 gem 'ckeditor', '4.0.11'
 gem "acts_as_list", '0.4.0'
 #gem 'flickraw'
+#gem "paperclip-storage-ftp"
+gem 'carrierwave-ftp'
+gem 'mini_magick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'

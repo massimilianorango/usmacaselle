@@ -1,0 +1,12 @@
+<div class="banner-cell" id="h_banner_<%= h_banner.id %>">
+  <div class="banner">
+    <div class="banner-img-container">
+      <span class="center-img-helper"></span><%= image_tag(h_banner.image.url(:horizontal), class: "img-banner") %>
+    </div>
+    <div class="banner-bottom">
+      <%= link_to raw('<span class="icon"></span> Elimina'), [:admin, h_banner], method: :delete,
+                                     data: { confirm: "Sei sicuro di voler eliminare il banner?" },
+                                     :class => "btn-delete banner-btn-delete" %>
+    </div>
+  </div>
+</div>

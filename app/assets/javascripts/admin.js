@@ -6,7 +6,12 @@ $(document).ready(function(){
         opacity: 0.4,
         scroll: true,
         revert: '200',
-        placeholder: controller + '-placeholder',
+        placeholder: controller + '-placeholder', //TODO:
+        // connectWith: ".sortable",
+        // start: function(e, ui){
+        //     ui.placeholder.height(ui.item.height());
+        //     ui.placeholder.width(ui.item.width());
+        // },
         update: function(){
             $.ajax({
                 type: 'post',

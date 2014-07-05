@@ -1,0 +1,25 @@
+<% provide(:title, "Nuovo Banner") %>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li><%= link_to 'Sponsors', admin_banners_path %></li>
+  <li class="active">Nuovo banner</li>
+</ol>
+<div class="page-container">
+  <h2 class="page-header">Nuovo banner</h2>
+  <%= form_for [:admin, @banner], :html => {multipart: true, :class => "form-center-full"} do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="form-group">
+      <%= f.label :image, 'Immagine' %>
+      <%= f.file_field :image, {:required => true} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :link, "Link alla pagina dello sponsor" %>
+      <%= f.text_field :link, {class: "form-control", :required => true, placeholder: "Inserisci il link alla pagina dello sponsor"} %>
+    </div>
+    <%= f.hidden_field :is_horizontal, value: is_horizontal %>
+    <%= f.button(type: 'submit', class: "btn-save btn-final") do %>
+      <span class="icon"></span>
+      Inserisci banner
+    <% end %>
+  <% end %>
+</div>

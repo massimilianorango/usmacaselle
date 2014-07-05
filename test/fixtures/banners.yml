@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  link: MyString
+  is_horizontal: 
+  'null': 
+  position: 1
+  image_url: MyString
+  image_url_small: MyString
+  image_url_normal: MyString
+
+two:
+  link: MyString
+  is_horizontal: 
+  'null': 
+  position: 1
+  image_url: MyString
+  image_url_small: MyString
+  image_url_normal: MyString
