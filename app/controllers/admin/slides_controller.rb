@@ -11,13 +11,12 @@ class Admin::SlidesController < AuthAdminController
 
     def create
         @slide = current_sector.slides.build(slide_params)
+        @slide.image = params[:slide][:image]
         @slide.position = 0
         if @slide.save
-            @slide.set_image_url
             flash[:success] = "Slide inserita con successo!"
             redirect_to admin_slides_url
         else
-            @slide.errors.delete(:image)
             render 'new'
         end
     end

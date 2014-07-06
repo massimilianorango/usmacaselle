@@ -5,7 +5,7 @@ class Banner < ActiveRecord::Base
 
     mount_uploader :image, ImgBannerUploader
 
-    validates_presence_of :image
     validates :link, presence: {:message => "Devi inserire il link alla pagina dello sponsor." }
+    validates_presence_of :image
     
 end

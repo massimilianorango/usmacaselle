@@ -11,51 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140703191113) do
+ActiveRecord::Schema.define(version: 20140702140337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "banners", force: true do |t|
+    t.string   "image"
     t.string   "link"
     t.boolean  "is_horizontal", default: false, null: false
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image"
   end
 
   create_table "items", force: true do |t|
     t.string   "name"
+    t.string   "image"
     t.string   "price"
+    t.integer  "position"
     t.integer  "sector_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.integer  "position"
-    t.string   "image_url"
-    t.string   "image_url_small"
-    t.string   "image_url_normal"
   end
 
   add_index "items", ["sector_id", "created_at"], name: "index_items_on_sector_id_and_created_at", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"
+    t.string   "lead_image"
     t.text     "content"
     t.integer  "sector_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "lead_image_file_name"
-    t.string   "lead_image_content_type"
-    t.integer  "lead_image_file_size"
-    t.datetime "lead_image_updated_at"
-    t.string   "lead_image_url"
-    t.string   "lead_image_url_small"
-    t.string   "lead_image_url_normal"
   end
 
   add_index "posts", ["sector_id", "created_at"], name: "index_posts_on_sector_id_and_created_at", using: :btree
@@ -78,19 +66,13 @@ ActiveRecord::Schema.define(version: 20140703191113) do
   add_index "sectors", ["remember_token"], name: "index_sectors_on_remember_token", using: :btree
 
   create_table "slides", force: true do |t|
+    t.string   "image"
     t.string   "text"
     t.string   "link"
+    t.integer  "position"
     t.integer  "sector_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.integer  "position"
-    t.string   "image_url"
-    t.string   "image_url_small"
-    t.string   "image_url_normal"
   end
 
   add_index "slides", ["sector_id", "created_at"], name: "index_slides_on_sector_id_and_created_at", using: :btree

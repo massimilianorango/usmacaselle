@@ -2,6 +2,7 @@ class CreatePost < ActiveRecord::Migration
     def change
         create_table :posts do |t|
             t.string :title
+            t.string :lead_image
             t.text :content
             t.integer :sector_id
 
