@@ -17,7 +17,8 @@ class Admin::BannersController < AuthAdminController
     def create
         @banner = Banner.new(banner_params)
         @banner.image = params[:banner][:image]
-        @banner.position = 0
+        @banner.position = 1
+        increment_position (params[:banner][:is_horizontal] == 'true')
         if @banner.save
             flash[:success] = "Banner inserito con successo!"
             redirect_to admin_banners_url
@@ -35,13 +36,27 @@ class Admin::BannersController < AuthAdminController
     end
 
     def destroy
-        Banner.find(params[:id]).destroy
+        del_banner = Banner.find(params[:id]).destroy
+        @banners = Banner.where("is_horizontal = ? AND position > ?", del_banner.is_horizontal, del_banner.position)
+        @banners.each do |banner|
+            banner.position = banner.position - 1
+            banner.save
+        end
         redirect_to admin_banners_path
     end
 
     private
     def banner_params
         params.require(:banner).permit(:image, :link, :is_horizontal)
+    end
+
+    private
+    def increment_position is_h
+        @banners = Banner.where(is_horizontal: is_h)
+        @banners.each do |banner|
+            banner.position = banner.position + 1
+            banner.save
+        end
     end
 
     private
