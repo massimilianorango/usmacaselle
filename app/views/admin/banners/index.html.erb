@@ -18,11 +18,13 @@
   <div class="row">
     <div class="horizontal_banners">
       <span class="controller">banners</span>
-      <h3 class="page-header">Banner orizzontali:
-        <%= @h_banners.count %></h3>
+      <h3 class="page-header">Banner orizzontali: <%= @h_banners.count %> su 2</h3>
+      <p>Il primo sarà posizionato in testa ad ogni pagina, il secondo in fondo.</p>
+      <% if @h_banners.count < 2 %>
       <div class="banner-top-buttons">
         <%= link_to raw('<span class="icon"></span> Nuovo banner orizzontale'), new_horizontal_new_admin_banner_path, :class => "btn btn-new" %>
       </div>
+      <% end %>
       <% if @h_banners.any? %>
         <div class="container-fluid">
           <div class="h_sortable row">
