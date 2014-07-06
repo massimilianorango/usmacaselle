@@ -18,17 +18,10 @@ ActiveRecord::Schema.define(version: 20140703191113) do
 
   create_table "banners", force: true do |t|
     t.string   "link"
-    t.boolean  "is_horizontal",      default: false, null: false
+    t.boolean  "is_horizontal", default: false, null: false
     t.integer  "position"
-    t.string   "image_url"
-    t.string   "image_url_small"
-    t.string   "image_url_normal"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
     t.string   "image"
   end
 
@@ -69,16 +62,17 @@ ActiveRecord::Schema.define(version: 20140703191113) do
 
   create_table "sectors", force: true do |t|
     t.string   "name"
+    t.string   "lead_photo"
     t.string   "email"
     t.string   "password_digest"
     t.boolean  "is_root",                null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "remember_token"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
     t.string   "gallery_url"
     t.string   "sector_class"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "sectors", ["remember_token"], name: "index_sectors_on_remember_token", using: :btree
@@ -101,29 +95,12 @@ ActiveRecord::Schema.define(version: 20140703191113) do
 
   add_index "slides", ["sector_id", "created_at"], name: "index_slides_on_sector_id_and_created_at", using: :btree
 
-  create_table "sponsors", force: true do |t|
-    t.string   "link"
-    t.boolean  "is_horizontal",      null: false
-    t.integer  "position"
-    t.string   "image_url"
-    t.string   "image_url_small"
-    t.string   "image_url_normal"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
   create_table "uploaded_files", force: true do |t|
+    t.string   "attachment"
     t.string   "att_type"
+    t.integer  "uploaded_by"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "attachment_file_name"
-    t.string   "attachment_content_type"
-    t.integer  "attachment_file_size"
-    t.datetime "attachment_updated_at"
   end
 
 end

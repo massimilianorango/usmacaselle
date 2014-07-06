@@ -5,6 +5,7 @@
 </ol>
 <div class="page-container">
   <h2 class="page-header">Upload file</h2>
+  <%= render 'shared/error_messages', object: @uploaded_file unless @uploaded_file.nil? %>
   <% if params[:uploaded_url].nil? %>
     <div class="alert alert-info">Dopo il caricamento del file ti verrà restituito un link utilizzabile all'interno del sito.</div>
   <% else %>
@@ -17,7 +18,6 @@
     </div>
   <% end %>
   <%= form_for [:admin, @new_uploaded_file], :html => {multipart: true, :class => "form-upload"} do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
     <div class="form-group">
       <%= f.label :attachment, 'Scegli un file da caricare' %>
       <%= f.file_field :attachment, :required => true, :autofocus => true %>

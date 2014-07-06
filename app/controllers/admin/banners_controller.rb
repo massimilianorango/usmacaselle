@@ -1,5 +1,5 @@
 class Admin::BannersController < AuthAdminController
-    before_action :correct_sector, only: [] #TODO
+    before_action :correct_sector, only: []
 
     def index
         @h_banners = Banner.where(is_horizontal: true)
@@ -22,7 +22,6 @@ class Admin::BannersController < AuthAdminController
             flash[:success] = "Banner inserito con successo!"
             redirect_to admin_banners_url
         else
-            @banner.errors.delete(:image)
             render 'new_horizontal'
         end
     end
@@ -42,14 +41,13 @@ class Admin::BannersController < AuthAdminController
 
     private
     def banner_params
-        params.require(:banner).permit(:link, :is_horizontal)
+        params.require(:banner).permit(:image, :link, :is_horizontal)
     end
 
     private
     def sort is_h
         @banners = Banner.where(is_horizontal: is_h)
         banner_type = is_h ? 'h_banner' : 'v_banner'
-        logger.debug(banner_type.inspect)
         @banners.each do |banner|
             banner.position = params[banner_type].index(banner.id.to_s) + 1
             banner.save

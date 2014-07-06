@@ -1,11 +1,6 @@
 <% if object.errors.any? %>
   <div class="alert alert-danger">
     Sono presenti i seguenti errori:
-<!--     <ul>
-      <% object.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul> -->
     <ul>
       <% object.errors.values.each do |msg| %>
         <li><%= msg.first %></li>

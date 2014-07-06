@@ -7,12 +7,12 @@ class Admin::UploadedFilesController < AuthAdminController
 
     def create
         @uploaded_file = UploadedFile.new(uploaded_file_params)
-        @uploaded_file.sector_id = current_sector.id
+        @uploaded_file.uploaded_by = current_sector.id
         if @uploaded_file.save
             flash[:success] = "Caricamento effettuato con successo!"
             redirect_to new_admin_uploaded_file_path(:uploaded_url => @uploaded_file.attachment.url)
         else
-            @uploaded_file.errors.delete(:attachment)
+            @new_uploaded_file = UploadedFile.new
             render 'new'
         end
     end

@@ -35,6 +35,14 @@ class ImgBannerUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
+  def is_horizontal? picture
+    model.is_horizontal
+  end
+
+  def is_vertical? picture
+    !is_horizontal? picture
+  end
+
   # Create different versions of your uploaded files:
   version :horizontal do
     process :resize_to_fit => [720, 200]
@@ -42,15 +50,6 @@ class ImgBannerUploader < CarrierWave::Uploader::Base
 
   version :vertical do
     process :resize_to_fit => [250, nil]
-  end
-
-  def is_horizontal? picture
-    Rails.logger.debug("ORIZZONTALE: " + model.is_horizontal.inspect)
-    model.is_horizontal
-  end
-
-  def is_vertical? picture
-    !is_horizontal? picture
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -62,7 +61,7 @@ class ImgBannerUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
-     "#{secure_token}.#{file.extension}" if original_filename.present?
+    "#{secure_token}.#{file.extension}" if original_filename.present?
   end
 
   protected
