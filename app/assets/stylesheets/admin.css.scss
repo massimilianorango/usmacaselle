@@ -1,3 +1,78 @@
 // Place all the styles related to the Admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar-admin {
+    @extend .navbar;
+    @extend .navbar-default;
+    @extend .navbar-fixed-top;
+    box-shadow: 0 1px 10px $gray-dark;
+}
+
+.nav-admin {
+    @extend .nav; 
+    @extend .navbar-nav;
+}
+
+.nav-admin-right {
+    @extend .nav-admin;
+    @extend .navbar-right;
+}
+
+.public-navbar-brand {
+    @extend .navbar-brand;
+}
+
+.public-navbar-collapse {
+    @extend .navbar-collapse;
+}
+
+@media(max-width:768px) {
+    .navbar-admin .navbar-brand {
+        padding:0;
+        height: 50px;
+        img {
+            height:100%;
+        }
+    }
+}
+
+@media(min-width:768px) {
+    #body-admin {
+        padding-top:50px;
+    }
+    .navbar-admin .nav-admin {
+        height: 50px;
+        li {
+            height: 100%;
+            a {
+                padding-left:20px;
+                padding-right:20px;
+                font-size:15px;
+                line-height: 20px;
+                height: 100%;
+            }
+        }
+
+    }
+
+    .navbar-admin .navbar-brand {
+        padding:5px;
+        height: 50px;
+        margin-right: 20px;
+        img {
+            margin-left:15px;
+            height:100%;
+        }
+    }
+
+    @media(max-width: 1200px) {
+        .navbar-admin .nav-admin {
+            li > a {
+                padding-left:10px;
+                padding-right:10px;
+                font-size:15px;
+            }
+        }
+    }
+}

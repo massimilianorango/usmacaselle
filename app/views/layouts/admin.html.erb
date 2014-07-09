@@ -1,9 +1,2 @@
-<% if params[:controller] == "static_pages" && params[:action] == "ie_compatibility" %>
-  <%= yield %>
-<% else %>
-  <!--[if lt IE 10]>
-    <meta HTTP-EQUIV="REFRESH" content="0; url=<%= ie_compatibility_url %>">
-  <![endif]-->
-  <% provide(:header, "header_admin") %>
-  <%= render 'layouts/structure' %>
-<% end %>
+<% provide(:structure, "structure_admin") %>
+<%= render 'layouts/structure' %>

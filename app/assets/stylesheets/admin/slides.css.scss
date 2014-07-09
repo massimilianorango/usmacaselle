@@ -21,7 +21,7 @@ $slide-border-height: ($slide-height - 20px)*(15/100);
     box-shadow: $placeholder-shadow;
 }
 
-.slide {
+.slide-content {
     border: 1px solid $lightGray;
     border-radius: 4px;
     max-width:400px;

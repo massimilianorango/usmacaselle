@@ -10,6 +10,8 @@ class ImgSlideUploader < CarrierWave::Uploader::Base
   storage :ftp
   # storage :fog
 
+
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
@@ -38,8 +40,44 @@ class ImgSlideUploader < CarrierWave::Uploader::Base
   end
 
   version :normal do
-    process :resize_to_fit => [500, 500] #TODO choose public size
+    process :resize_to_fit => [nil, 400]
+    # process :convert_and_scale
+    # def full_filename(for_file)
+    #    super.chomp(File.extname(super)) + ".png"
+    # end
   end
+
+  def convert_and_scale
+    manipulate! do |img|
+
+      #process :convert => 'png'
+      img.format 'png'
+
+      #process :resize_to_fit => [800, 400]
+      img.resize 'x400'
+
+      #process :resize_and_pad => [800, 400, :transparent, 'Center']
+      # img.combine_options do |cmd|
+      #   cmd.thumbnail "1200x400>"
+      #   cmd.background "rgba(255, 255, 255, 0.0)"
+      #   cmd.gravity 'Center'
+      #   cmd.extent "1200x400"
+      # end
+
+      img
+
+    end
+
+  end
+
+  # private
+  # def resize_to_fill_modfied(width, height, gravity=::Magick::CenterGravity)
+  #   manipulate! do |img|
+  #     img.crop_resized!(width, height, gravity) unless (img.columns <= width && img.rows <= height)
+  #     img = yield(img) if block_given?
+  #     img
+  #   end
+  # end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

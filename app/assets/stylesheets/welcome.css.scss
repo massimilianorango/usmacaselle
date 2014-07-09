@@ -1,3 +1,79 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  background-color:$gray-light;
+  //background: url('bg.gif');
+  height: 400px;
+  h1 {
+    text-shadow: 3px 3px 3px $gray-dark;
+    font-family: "Boogaloo" !important;
+    font-weight: normal !important;
+    font-size: 5em;
+  }
+}
+
+.carousel-indicators > li, .carousel-indicators > li .active {
+  background-color: white;
+  border: 1px solid $gray-dark;
+  box-shadow: 1px 1px 1px $gray-dark inset;
+  width:16px;
+  height: 16px;
+}
+
+.carousel-indicators .active {
+    width:16px !important;
+    height: 16px !important;
+    margin: 1px;
+    background-color: gold;
+}
+
+/* Declare heights because of positioning of img element */
+
+.carousel .item {
+  max-height: 400px;
+  //background-color: #777;
+  text-align: center;
+  a {
+    color: white;
+  }
+  &:hover a {
+    color:gold;
+    text-decoration:none;
+  }
+
+}
+
+.carousel-inner > .item {
+  line-height: 400px;
+}
+
+.carousel-inner > .item > a > img {
+  //position: absolute;
+  //max-height: 400px;
+  //max-width: 100%;
+  //width: 100%;
+  display: inline;
+  //max-height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media(max-width:768px) {
+  #public-carousel {
+    max-height: 200px;
+    .carousel-inner .item {
+      max-height: 200px;
+      line-height: 200px;
+    }
+  }
+}
+
+.public-page-container {
+  background: url('dark-metal-grid-1.jpg')
+}
