@@ -3,6 +3,7 @@
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Boogaloo">
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,15 +13,51 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body>
+<body id="body-public">
+  <div id="fb-root"></div>
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
   <div id="wrap">
     <%= render 'layouts/header_public' %>
     <div class="container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
-      <%= yield %>
-      <%= debug(params) if Rails.env.development? %>
+      <div class="page-container">
+        <div class="row">
+          <div class="col-md-3 v_banners-public">
+            <% first_v_banner = @v_banners.first %>
+            <div class="banner-public">
+                <%= link_to image_tag(first_v_banner.image.url(:vertical), class: "img-banner-public"), first_v_banner.link %>
+              </div>
+            <div class="fb-like-box banner-public" data-href="https://www.facebook.com/usmacalcio" data-width="100%" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="false"></div>
+            <% @v_banners[1..-1].each do |v_banner| %>
+              <div class="banner-public">
+                <%= link_to image_tag(v_banner.image.url(:vertical), class: "img-banner-public"), v_banner.link %>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-9">
+            <% first_banner = @h_banners.first %>
+            <div class="banner-public">
+              <%= link_to image_tag(first_banner.image.url(:horizontal), class: "img-banner-public"), first_banner.link unless first_banner.nil? %>
+            </div>
+            <%= yield %>
+            <% last_banner = @h_banners.last %>
+            <div class="banner-public">
+              <%= link_to image_tag(last_banner.image.url(:horizontal), class: "img-banner-public"), last_banner.link unless last_banner.nil? %>
+            </div>
+            <%#= debug(params) if Rails.env.development? %>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="push"></div>
   </div>

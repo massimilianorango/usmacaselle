@@ -8,7 +8,6 @@
 /* Carousel base class */
 .carousel {
   background-color:$gray-light;
-  //background: url('bg.gif');
   height: 400px;
   h1 {
     text-shadow: 3px 3px 3px $gray-dark;
@@ -37,7 +36,6 @@
 
 .carousel .item {
   max-height: 400px;
-  //background-color: #777;
   text-align: center;
   a {
     color: white;
@@ -54,12 +52,7 @@
 }
 
 .carousel-inner > .item > a > img {
-  //position: absolute;
-  //max-height: 400px;
-  //max-width: 100%;
-  //width: 100%;
   display: inline;
-  //max-height: 100%;
   width: 100%;
   margin: 0 auto;
 }
@@ -67,6 +60,9 @@
 @media(max-width:768px) {
   #public-carousel {
     max-height: 200px;
+    h1 {
+      font-size:40px;
+    }
     .carousel-inner .item {
       max-height: 200px;
       line-height: 200px;
@@ -74,6 +70,126 @@
   }
 }
 
-.public-page-container {
-  background: url('dark-metal-grid-1.jpg')
+#body-public {
+  background: url('dark-metal-grid-1.jpg');
+  color: white;
 }
+
+.banner-public {
+  margin-bottom: 20px;
+}
+
+.img-banner-public {
+  width:100%;
+  border-radius:3px;
+}
+
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+    width: 100% !important;
+    background-color: white;
+}
+
+@media(max-width:991px) {
+  .v_banners-public {
+    display: none;
+  }
+}
+
+@mixin sector-link-public($class, $color) {
+  
+  .sector-link-public-#{$class} {
+    @extend .btn;
+    @extend .btn-lg;
+    @extend .btn-#{$color};
+    @extend .admin-btn;
+    border-radius:2px;
+    .sector-icon-public {
+      //background: url('icon-'+$class+'.png');
+      height: 30px;
+      color:white;
+    }
+  }
+}
+
+.sectors-public {
+  @extend .row;
+  .sector-public {
+    @extend .col-md-6;
+    @include sector-link-public(football, success);
+    @include sector-link-public(basket, warning);
+    @include sector-link-public(volley, danger);
+    @include sector-link-public(athletics, primary);
+    
+  }
+  .sector-public-MOTORIA { //TODO: remove
+    @extend .col-md-12;
+    @include sector-link-public(motoria, info);
+    .sector-link-public-motoria {
+      background-color: $adminPink;
+      border: solid 1px $adminPinkFrom;
+      &:hover{
+        background-color: $adminPinkFrom;
+        border: solid 1px $adminPinkFrom;
+      }
+    }
+  }
+}
+
+.news-public {
+  @extend .row;
+  .post-public-cell {
+    @extend .col-md-6;
+    .post-public {
+      position: relative;
+      background: white;
+      color:black;
+      border-radius:3px;
+      margin-bottom: 20px;
+
+      .post-date-public {
+        position:absolute;
+        top:-2px;
+        left:-2px;
+        background-color:$usma-secondary;
+        height: 60px;
+        width:60px;
+        box-shadow: 1px 1px 1px $gray-dark;
+        padding-top: 5px;
+        font-family: "Boogaloo", sans-serif;
+        font-size:35px;
+        line-height: 28px;
+        text-align: center;
+        color:white;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+        .month {
+          display: block;
+          font-size:18px;
+          text-transform: uppercase;
+        }
+      }
+      .post-text-public {
+        padding:0 25px 25px 25px;
+        .post-title-public {
+          text-align: center;
+          a {
+            font-size: 21px;
+            font-weight:bold;
+            color: $usma-secondary;
+          }
+        }
+        .post-content-public {
+          color: $gray-light;
+          text-align: justify;
+        }
+      }
+      .post-img-public {
+        background-color: $gray-light;
+        &>img {
+           width: 100%;
+           border-top-right-radius:3px;
+        }
+      }
+    }
+  }
+}
+

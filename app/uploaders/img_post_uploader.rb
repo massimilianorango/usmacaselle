@@ -34,11 +34,11 @@ class ImgPostUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :small do
-    process :resize_to_fit => [550, 200]
+    process :resize_to_fit => [660, 400]
   end
 
   version :normal do
-    process :resize_to_fit => [700, 400] #TODO choose public size
+    process :resize_to_fit => [700, 400] #TODO choose single post size
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

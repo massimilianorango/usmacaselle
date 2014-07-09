@@ -79,23 +79,3 @@ $banner-border-height: ($banner-height - 20px)*(15/100);
     bottom:10%;
     right: 0.5%;
 }
-
-
-//TODO: SPOSTARE IN PUBLIC
-
-.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
-    width: 100% !important;
-}
-
-// <div class="fb-like-box" style="width:100%" data-href="https://www.facebook.com/FacebookDevelopers" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
-
-// <div id="fb-root"></div>
-// <script>
-//   (function(d, s, id) {
-//     var js, fjs = d.getElementsByTagName(s)[0];
-//     if (d.getElementById(id)) return;
-//     js = d.createElement(s); js.id = id;
-//     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-//     fjs.parentNode.insertBefore(js, fjs);
-//   }(document, 'script', 'facebook-jssdk'));
-// </script>
