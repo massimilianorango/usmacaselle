@@ -13,6 +13,7 @@ gem 'bcrypt-ruby', '3.1.1'
 gem 'active_link_to', '1.0.2'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
+#gem 'jquery-dotdotdot-rails', "1.6.5"
 gem 'rmagick', '2.13.2'
 gem "paperclip", "~> 4.1.1"
 gem 'paperclip-dropbox', '~> 1.2.1'
@@ -26,7 +27,6 @@ gem "acts_as_list", '0.4.0'
 gem 'carrierwave-ftp', '0.2.6'
 gem 'mini_magick', '3.8.0'
 gem "html_truncator", "0.4.0"
-gem 'jquery-dotdotdot-rails', "1.6.5"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
