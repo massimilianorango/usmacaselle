@@ -11,10 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.dotdotdot
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery.ui.sortable
 //= require jquery.turbolinks
 //= require ckeditor/init
-//= require jquery.dotdotdot
 //= require_tree .
