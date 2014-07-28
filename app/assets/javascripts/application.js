@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.dotdotdot
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery.ui.sortable
