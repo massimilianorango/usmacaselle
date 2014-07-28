@@ -16,6 +16,9 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require ckeditor/init
+//= require ckeditor/config
+//= require ckeditor/plugins/youtube/plugin
+//= require_tree ./ckeditor/plugins/youtube/images
 //= require_tree ./admin
 //= require admin
 //= require welcome
