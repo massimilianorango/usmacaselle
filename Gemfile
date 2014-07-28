@@ -13,7 +13,7 @@ gem 'bcrypt-ruby', '3.1.1'
 gem 'active_link_to', '1.0.2'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
-#gem 'jquery-dotdotdot-rails', "1.6.5"
+gem 'jquery-dotdotdot-rails', "1.6.5"
 gem 'rmagick', '2.13.2'
 gem "paperclip", "~> 4.1.1"
 gem 'paperclip-dropbox', '~> 1.2.1'
