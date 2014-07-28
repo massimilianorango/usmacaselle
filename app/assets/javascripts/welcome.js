@@ -1,4 +1,4 @@
-$(document).ready(functon() {
+$(document).ready(function() {
     $(".post-text-public").dotdotdot({
         /*  The HTML to add as ellipsis. */
         ellipsis    : '... ',
