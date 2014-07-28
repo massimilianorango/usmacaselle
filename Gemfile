@@ -11,12 +11,10 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby', '3.1.1'
 gem 'active_link_to', '1.0.2'
-gem 'jquery-ui-rails'
+gem 'jquery-ui-sass-rails'
 gem 'jquery-dotdotdot-rails', "1.6.5"
 gem 'jquery-turbolinks'
 gem 'rmagick', '2.13.2'
-gem "paperclip", "~> 4.1.1"
-gem 'paperclip-dropbox', '~> 1.2.1'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'will_paginate', '3.0.5'
 gem 'bootstrap-will_paginate', '0.0.10'
