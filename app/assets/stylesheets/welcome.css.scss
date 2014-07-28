@@ -11,7 +11,7 @@
   height: 400px;
   h1 {
     text-shadow: 3px 3px 3px $gray-dark;
-    font-family: "Boogaloo" !important;
+    font-family: "Boogaloo", sans-serif;
     font-weight: normal !important;
     font-size: 5em;
   }
@@ -44,17 +44,26 @@
     color:gold;
     text-decoration:none;
   }
-
 }
 
 .carousel-inner > .item {
-  line-height: 400px;
-}
-
-.carousel-inner > .item > a > img {
-  display: inline;
-  width: 100%;
-  margin: 0 auto;
+  height: 400px;
+  .item-bg {
+    position: relative; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+    img {
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      bottom: 0; 
+      margin: auto; 
+      width: 50%;
+    }
+  }
 }
 
 @media(max-width:768px) {
@@ -71,7 +80,7 @@
 }
 
 #body-public {
-  background: url('dark-metal-grid-1.jpg');
+  background: url('bg-2.png');
   color: white;
 }
 
@@ -89,24 +98,26 @@
     background-color: white;
 }
 
-@media(max-width:991px) {
-  .v_banners-public {
-    display: none;
-  }
-}
-
 @mixin sector-link-public($class, $color) {
-  
   .sector-link-public-#{$class} {
     @extend .btn;
     @extend .btn-lg;
-    @extend .btn-#{$color};
+    @extend .btn-info;
     @extend .admin-btn;
+    text-shadow: 1px 1px 1px $gray-dark;
+    font-family: "Boogaloo", sans-serif;
+    font-size: 4.5em;
     border-radius:2px;
+    background-color: $color;
+    border: solid 1px darken($color, 5%);
+    &:hover{
+      background-color: darken($color, 12%);
+      border: solid 1px darken($color, 25%);
+    }
     .sector-icon-public {
-      //background: url('icon-'+$class+'.png');
-      height: 30px;
-      color:white;
+      height: 80%;
+      color: white;
+      margin:-20px 10px 0 0;
     }
   }
 }
@@ -114,23 +125,31 @@
 .sectors-public {
   @extend .row;
   .sector-public {
-    @extend .col-md-6;
-    @include sector-link-public(football, success);
-    @include sector-link-public(basket, warning);
-    @include sector-link-public(volley, danger);
-    @include sector-link-public(athletics, primary);
-    
+    @include sector-link-public(football, $btn-success-bg);
+    @include sector-link-public(basket, $btn-warning-bg);
+    @include sector-link-public(volley, $btn-danger-bg);
+    @include sector-link-public(athletics, $btn-info-bg);
+    @include sector-link-public(motoria, $adminPink);
   }
-  .sector-public-MOTORIA { //TODO: remove
-    @extend .col-md-12;
-    @include sector-link-public(motoria, info);
-    .sector-link-public-motoria {
-      background-color: $adminPink;
-      border: solid 1px $adminPinkFrom;
-      &:hover{
-        background-color: $adminPinkFrom;
-        border: solid 1px $adminPinkFrom;
-      }
+}
+
+/* > SMARTPHONE - TABLET 7 */
+@media(min-width:991px) {
+  .post-img-public {
+    height: 250px;
+    line-height: 248px;
+  }
+  .post-text-public {
+    height: 200px;
+  }
+  /* TABLET 10 */
+  @media(max-width: 1200px) {
+    .post-img-public {
+      height:200px;
+      line-height: 198px;
+    }
+    .post-text-public {
+      height: 200px;
     }
   }
 }
@@ -142,10 +161,9 @@
     .post-public {
       position: relative;
       background: white;
-      color:black;
+      color:$black;
       border-radius:3px;
       margin-bottom: 20px;
-
       .post-date-public {
         position:absolute;
         top:-2px;
@@ -160,7 +178,7 @@
         line-height: 28px;
         text-align: center;
         color:white;
-        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+        text-shadow: 0 1px 2px rgba(0,0,0,.6);
         .month {
           display: block;
           font-size:18px;
@@ -174,7 +192,7 @@
           a {
             font-size: 21px;
             font-weight:bold;
-            color: $usma-secondary;
+            //color: $usma-secondary;
           }
         }
         .post-content-public {
@@ -182,14 +200,35 @@
           text-align: justify;
         }
       }
-      .post-img-public {
-        background-color: $gray-light;
-        &>img {
-           width: 100%;
-           border-top-right-radius:3px;
+      .post-img-link-public {
+        &:hover ~ .post-text-public > .post-title-public > h3 {
+          text-decoration: underline;
+          &>a {
+            color:#2a6496;
+          }
         }
+        .post-img-public {
+          background-color: $lightGray;
+          text-align: center;
+          .post-img {
+            max-height: 100%;
+            max-width:100%;
+          }
+        } 
       }
     }
   }
 }
 
+/* > SMARTPHONE */
+@media(min-width:991px) {
+  .post-public {
+    max-width: 380px;
+  }
+  /* TABLET 10 */
+  @media(max-width:1200px) {
+    .post-public {
+      max-width: 300px;
+    }
+  }
+}

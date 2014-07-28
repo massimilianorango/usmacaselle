@@ -15,6 +15,7 @@
     <div class="form-group">
       <%= f.label :image, 'Immagine' %>
       <%= f.file_field :image, {:required => true} %>
+      <p class="help-block">Le dimensioni consigliate sono 1200x800 pixel, ma questo non è obbligatorio. Immagini troppo grandi saranno automaticamente ridimensionate.</p>
     </div>
     <div class="form-group">
       <%= f.label :link, 'Link alla pagina di destinazione' %>

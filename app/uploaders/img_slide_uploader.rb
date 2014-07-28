@@ -18,7 +18,6 @@ class ImgSlideUploader < CarrierWave::Uploader::Base
     "sectors/sector_#{model.sector_id}/#{model.class.to_s.underscore}/#{model.id}"
   end
 
-  # TODO
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
@@ -36,38 +35,11 @@ class ImgSlideUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :small do
-    process :resize_to_fit => [400, 200]
+    process :resize_to_fit => [400, nil]
   end
 
   version :normal do
-    process :resize_to_fit => [nil, 400]
-    # process :convert_and_scale
-    # def full_filename(for_file)
-    #    super.chomp(File.extname(super)) + ".png"
-    # end
-  end
-
-  def convert_and_scale
-    manipulate! do |img|
-
-      #process :convert => 'png'
-      img.format 'png'
-
-      #process :resize_to_fit => [800, 400]
-      img.resize 'x400'
-
-      #process :resize_and_pad => [800, 400, :transparent, 'Center']
-      # img.combine_options do |cmd|
-      #   cmd.thumbnail "1200x400>"
-      #   cmd.background "rgba(255, 255, 255, 0.0)"
-      #   cmd.gravity 'Center'
-      #   cmd.extent "1200x400"
-      # end
-
-      img
-
-    end
-
+    process :resize_to_fit => [1200, nil]
   end
 
   # private

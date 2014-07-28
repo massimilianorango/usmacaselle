@@ -32,6 +32,7 @@ $slide-border-height: ($slide-height - 20px)*(15/100);
 
 .slide-text {
     color:white;
+    font-family: "Boogaloo", sans-serif;
     text-shadow: 0 1px 2px rgba(0,0,0,.6);
     position: absolute; 
     text-align:center;
@@ -39,22 +40,32 @@ $slide-border-height: ($slide-height - 20px)*(15/100);
     left:15%; 
     right:15%;
     h1 {
-        font-size: 16px;
+        font-size: 20px;
     }
 }
 
 .slide-img-container {
     position:relative;
-    background-color: $gray-light;
     height: $slide-img-height;
+    background-color: $gray-light;
     text-align: center;
-}
-
-.img-slide {
-    vertical-align: middle;
-    max-height: $slide-img-height;
-    max-width: 100%;
-    margin: 0 auto;
+    overflow: hidden;
+    .slide-img{
+        position:relative;
+        top: -50%; 
+        left: -50%; 
+        width: 200%; 
+        height: 200%;
+        .img-slide {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            bottom: 0; 
+            margin: auto; 
+            width: 50%;
+        }
+    }  
 }
 
 .slide-bottom {

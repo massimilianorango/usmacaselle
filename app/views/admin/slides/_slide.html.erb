@@ -1,7 +1,7 @@
 <div class="slide-cell" id="slide_<%= slide.id %>">
   <div class="slide-content">
     <div class="slide-img-container">
-      <span class="center-img-helper"></span><%= image_tag(slide.image.url(:small), class: "img-slide") %>
+      <div class="slide-img"><%= image_tag(slide.image.url(:small), class: "img-slide") %></div>
       <div class="slide-text">
         <h1><%= slide.text %></h1>
       </div>

@@ -9,7 +9,7 @@
   </h2>
   <%= link_to raw('<span class="icon"></span> Nuovo post'), new_admin_post_path, :class => "btn-new" %>
   <% if @sector.posts.any? %>
-    <%= will_paginate @posts %>
+    <%= will_paginate @posts %><!-- #TODO: overlapping pagination -->
     <div class="posts">
       <%= render @posts %>
     </div>

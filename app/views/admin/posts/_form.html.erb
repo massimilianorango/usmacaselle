@@ -17,7 +17,7 @@
   <div class="form-group">
     <%= f.label :lead_image, 'Immagine di copertina (opzionale)' %>
     <%= f.file_field :lead_image %>
-    <p class="help-block">L'immagine di copertina rende il sito più piacevole da navigare e attira più utenti.</p>
+    <p class="help-block">Le dimensioni consigliate sono 760x500 pixel, ma questo non è obbligatorio. Immagini troppo grandi saranno automaticamente ridimensionate.</p>
   </div>
   <% unless @post.lead_image.url.nil? %>
     <div class="form-group">
@@ -26,7 +26,7 @@
       <div class="checkbox">
         <%= f.label :remove_lead_image do %>
           <%= f.check_box :remove_lead_image %>
-          Cancella copertina attuale (seleziona se vuoi che non ci sia una copertina)
+          Cancella copertina attuale (sarà impostata la copertina di default)
         <% end %>
       </div>
     </div>

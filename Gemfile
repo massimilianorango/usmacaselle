@@ -23,9 +23,10 @@ gem "autoprefixer-rails", '2.0.0.20140622'
 gem 'ckeditor', '4.0.11'
 gem "acts_as_list", '0.4.0'
 #gem 'flickraw'
-gem 'carrierwave-ftp'
-gem 'mini_magick'
-gem "html_truncator", "~>0.4.0"
+gem 'carrierwave-ftp', '0.2.6'
+gem 'mini_magick', '3.8.0'
+gem "html_truncator", "0.4.0"
+gem 'jquery-dotdotdot-rails', "1.6.5"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

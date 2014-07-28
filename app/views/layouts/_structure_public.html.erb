@@ -1,9 +1,7 @@
 <head>
   <title><%= full_title(yield(:title)) %></title>
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Boogaloo">
-  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Boogaloo' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -32,19 +30,7 @@
       <% end %>
       <div class="page-container">
         <div class="row">
-          <div class="col-md-3 v_banners-public">
-            <% first_v_banner = @v_banners.first %>
-            <div class="banner-public">
-                <%= link_to image_tag(first_v_banner.image.url(:vertical), class: "img-banner-public"), first_v_banner.link %>
-              </div>
-            <div class="fb-like-box banner-public" data-href="https://www.facebook.com/usmacalcio" data-width="100%" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="false"></div>
-            <% @v_banners[1..-1].each do |v_banner| %>
-              <div class="banner-public">
-                <%= link_to image_tag(v_banner.image.url(:vertical), class: "img-banner-public"), v_banner.link %>
-              </div>
-            <% end %>
-          </div>
-          <div class="col-md-9">
+          <div class="h_banners-public">
             <% first_banner = @h_banners.first %>
             <div class="banner-public">
               <%= link_to image_tag(first_banner.image.url(:horizontal), class: "img-banner-public"), first_banner.link unless first_banner.nil? %>
@@ -54,7 +40,21 @@
             <div class="banner-public">
               <%= link_to image_tag(last_banner.image.url(:horizontal), class: "img-banner-public"), last_banner.link unless last_banner.nil? %>
             </div>
-            <%#= debug(params) if Rails.env.development? %>
+            <%= debug(params) if Rails.env.development? %>
+          </div>
+          <div class="v_banners-public">
+            <% first_v_banner = @v_banners.first %>
+            <div class="banner-public">
+              <%= link_to image_tag(first_v_banner.image.url(:vertical), class: "img-banner-public"), first_v_banner.link unless first_v_banner.nil? %>
+            </div>
+            <div class="fb-like-box banner-public" data-href="https://www.facebook.com/usmacalcio" data-width="100%" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="false"></div>
+            <% unless @v_banners[1..-1].nil? %>
+              <% @v_banners[1..-1].each do |v_banner| %>
+                <div class="banner-public">
+                  <%= link_to image_tag(v_banner.image.url(:vertical), class: "img-banner-public"), v_banner.link %>
+                </div>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>
