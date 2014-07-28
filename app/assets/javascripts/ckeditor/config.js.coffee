@@ -19,3 +19,4 @@ CKEDITOR.editorConfig = (config) ->
   ]
   config.toolbar = 'Pure'
   true
+
