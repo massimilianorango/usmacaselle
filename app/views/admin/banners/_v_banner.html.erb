@@ -1,9 +1,7 @@
 <div class="banner-cell" id="v_banner_<%= v_banner.id %>">
   <div class="banner">
-    <div class="v_banner">
-      <div class="v_banner-img-container">
-        <%= image_tag(v_banner.image.url(:vertical), class: "v_img-banner") %>
-      </div>
+    <div class="banner-img-container">
+      <%= image_tag(v_banner.image.url(:vertical), class: "img-banner") %>
     </div>
     <div class="banner-bottom">
       <%= link_to raw('<span class="icon"></span> Elimina'), [:admin, v_banner], method: :delete,

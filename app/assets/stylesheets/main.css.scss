@@ -91,7 +91,7 @@ body { padding-top: 50px; /* same as navbar height */ }
 
 footer {
     background-color:$gray-light;
-    height: $footer-height;
+    min-height: $footer-height;
     p {
         text-align: center;
         color:white;

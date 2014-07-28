@@ -34,34 +34,14 @@ $banner-border-height: ($banner-height - 20px)*(15/100);
     padding:0;
 }
 
-.v_banner {
-    @extend .banner;
-    display: table;
-    min-height: 220px;
-}
-
 .banner-img-container {
     position:relative;
     background: $gray-lighter;
-    height: $banner-img-height;
     text-align: center;
 }
 
-.v_banner-img-container {
-    @extend .banner-img-container;
-    display: table-cell;
-    vertical-align: middle;
-}
-
 .img-banner {
-    vertical-align: middle;
-    max-height: $banner-img-height;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.v_img-banner {
-    max-width: 100%;
+    width: 100%;
 }
 
 .banner-bottom {

@@ -49,7 +49,7 @@ class ImgBannerUploader < CarrierWave::Uploader::Base
   end
 
   version :vertical do
-    process :resize_to_fit => [250, nil]
+    process :resize_to_fit => [600, nil]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

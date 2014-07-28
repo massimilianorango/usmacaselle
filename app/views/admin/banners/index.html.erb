@@ -16,6 +16,23 @@
   <p class="alert alert-warning"><strong>Attenzione!</strong>
     L'ordinamento non funziona se adblock o altri servizi per bloccare la pubblicità sono attivati sul proprio browser.</p>
   <div class="row">
+    <div class="vertical_banners">
+      <h3 class="page-header">Banner verticali:
+        <%= @v_banners.count %></h3>
+      <div class="banner-top-buttons">
+        <%= link_to raw('<span class="icon"></span> Nuovo banner verticale'), new_vertical_new_admin_banner_path, :class => "btn btn-new" %>
+      </div>
+      <% if @v_banners.any? %>
+        <div class="container-fluid">
+          <div class="v_sortable row" style="text-align: center;">
+            <% @v_banners.each do |v_banner| %>
+              <%= render 'v_banner', v_banner: v_banner %>
+            <% end %>
+            
+          </div>
+        </div>
+      <% end %>
+    </div>
     <div class="horizontal_banners">
       <span class="controller">banners</span>
       <h3 class="page-header">Banner orizzontali: <%= @h_banners.count %> su 2</h3>
@@ -31,23 +48,6 @@
             <% @h_banners.each do |h_banner| %>
               <%= render 'h_banner', h_banner: h_banner %>
             <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <div class="vertical_banners">
-      <h3 class="page-header">Banner verticali:
-        <%= @v_banners.count %></h3>
-      <div class="banner-top-buttons">
-        <%= link_to raw('<span class="icon"></span> Nuovo banner verticale'), new_vertical_new_admin_banner_path, :class => "btn btn-new" %>
-      </div>
-      <% if @v_banners.any? %>
-        <div class="container-fluid">
-          <div class="v_sortable row" style="text-align: center;">
-            <% @v_banners.each do |v_banner| %>
-              <%= render 'v_banner', v_banner: v_banner %>
-            <% end %>
-            
           </div>
         </div>
       <% end %>
