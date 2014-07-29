@@ -28,7 +28,7 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   #config.assets.compile = false
-  #Impostato perché non andava jquery su heroku
+  #Impostato perché non andava ckeditor su heroku
   config.assets.compile = true
 
   # Generate digests for assets URLs.
