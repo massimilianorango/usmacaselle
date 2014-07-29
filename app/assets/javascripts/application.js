@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery.ui.sortable
+//= require jquery.dotdotdot
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require ckeditor/init
