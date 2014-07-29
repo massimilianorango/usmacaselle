@@ -70,7 +70,7 @@
   #public-carousel {
     max-height: 200px;
     h1 {
-      font-size:40px;
+      font-size:25px;
     }
     .carousel-inner .item {
       max-height: 200px;
@@ -115,8 +115,16 @@
       border: solid 1px darken($color, 25%);
     }
     .sector-icon-public {
-      height: 80%;
       color: white;
+      margin:-20px 10px 0 0;
+    }
+  }
+  @media(max-width:768px) {
+    .sector-link-public-#{$class} {
+      font-size: 3.5em;
+    }
+    .sector-icon-public {
+      height: 50px;
       margin:-20px 10px 0 0;
     }
   }
