@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140702140337) do
   add_index "posts", ["sector_id", "created_at"], name: "index_posts_on_sector_id_and_created_at", using: :btree
 
   create_table "sectors", force: true do |t|
+    t.string   "unique_name"
     t.string   "name"
     t.string   "lead_photo"
     t.string   "email"

@@ -1,6 +1,7 @@
 class CreateSectors < ActiveRecord::Migration
   def change
     create_table :sectors do |t|
+      t.string :unique_name
       t.string :name
       t.string :lead_photo
       t.string :email

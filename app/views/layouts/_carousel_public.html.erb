@@ -1,25 +1,27 @@
 <% if @slides.any? %>
   <!-- Carousel ================================================== -->
-  <div id="public-carousel" class="carousel slide" data-ride="carousel" data-interval="5000" data-pause="hover">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <% (0..@slides.count-1).each do |i| %>
-        <li data-target="#public-carousel" data-slide-to="<%= i %>" class="<%= 'active' if i == 0 %>"></li>
-      <% end %>
-    </ol>
-    <div class="carousel-inner">
-      <% @slides.each do |slide| %>
-        <div class="item <%= "active" if slide.first? %>">
-          <div class="item-bg"><%= link_to image_tag(image_path(slide.image.url(:normal))), slide.link %></div>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1><%= link_to slide.text, slide.link %></h1>
+  <div class="carousel-container">
+    <div id="public-carousel" class="carousel slide" data-ride="carousel" data-interval="5000" data-pause="hover">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <% (0..@slides.count-1).each do |i| %>
+          <li data-target="#public-carousel" data-slide-to="<%= i %>" class="<%= 'active' if i == 0 %>"></li>
+        <% end %>
+      </ol>
+      <div class="carousel-inner">
+        <% @slides.each do |slide| %>
+          <div class="item <%= "active" if slide.first? %>">
+            <div class="item-bg"><%= link_to image_tag(image_path(slide.image.url(:normal))), slide.link %></div>
+            <div class="container">
+              <div class="carousel-caption">
+                <h1><%= link_to slide.text, slide.link %></h1>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
-    </div>
-    <a class="left carousel-control" href="#public-carousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-    <a class="right carousel-control" href="#public-carousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-  </div><!-- /.carousel -->
+        <% end %>
+      </div>
+      <a class="left carousel-control" href="#public-carousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#public-carousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+  </div>
 <% end %>

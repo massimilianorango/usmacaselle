@@ -35,11 +35,11 @@ class ImgSlideUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :small do
-    process :resize_to_fit => [400, nil]
+    process :resize_to_fit => [480, nil]
   end
 
   version :normal do
-    process :resize_to_fit => [1200, nil]
+    process :resize_to_fit => [1920, nil]
   end
 
   # private

@@ -79,7 +79,7 @@ body { padding-top: 50px; /* same as navbar height */ }
 
 .page-container {@extend .container; margin-top: 20px; margin-bottom:20px; width:100%}
 
-.page-header {margin-top:0;}
+.page-header {margin-top:0; }
 
 .breadcrumb { border: 1px solid $lightGray; }
 
@@ -92,6 +92,7 @@ body { padding-top: 50px; /* same as navbar height */ }
 footer {
     background-color:$gray-light;
     min-height: $footer-height;
+    box-shadow: 0 1px 10px $gray-dark;
     p {
         text-align: center;
         color:white;
@@ -332,6 +333,134 @@ footer {
     }
 }
 
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+.carousel-container {
+    @extend .container;
+    padding:0;
+}
+
+/* Carousel base class */
+#public-carousel {
+  background-color:$gray-light;
+  box-shadow: 0 1px 10px $gray-dark;
+  height: 400px;
+  //max-width: 1920px;
+  //max-width: 1170px;
+  margin: 0 auto;
+  h1 {
+    text-shadow: 3px 3px 3px $gray-dark;
+    font-family: "Boogaloo", sans-serif;
+    font-weight: normal !important;
+    font-size: 4em;
+  }
+  .carousel-indicators > li, .carousel-indicators > li .active {
+    background-color: white;
+    border: 1px solid $gray-dark;
+    box-shadow: 1px 1px 1px $gray-dark inset;
+    width:16px;
+    height: 16px;
+  }
+
+  .carousel-indicators .active {
+    width:16px !important;
+    height: 16px !important;
+    margin: 1px;
+    background-color: gold;
+  }
+
+  /* Declare heights because of positioning of img element */
+    
+  .carousel-inner > .item {
+    height: 400px;
+    max-height: 400px;
+    text-align: center;
+    a {
+      color: white;
+    }
+    &:hover a {
+      color:gold;
+      text-decoration:none;
+    }
+    .item-bg {
+      position: relative; 
+      top: -50%; 
+      left: -50%; 
+      width: 200%; 
+      height: 200%;
+      img {
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        right: 0; 
+        bottom: 0; 
+        margin: auto; 
+        width: 50%;
+      }
+    }
+  }
+
+}
+
+@media(max-width:768px) {
+  #public-carousel {
+    max-height: 200px;
+    h1 {
+      font-size:25px;
+    }
+    .carousel-inner .item {
+      max-height: 200px;
+      line-height: 200px;
+    }
+  }
+}
+
+.main-container {
+    @extend .container;
+    background-color: $gray-lighter;
+}
+
+@mixin body_bg($sector) {
+    .body-public-#{$sector} {
+        background: url('bg-#{$sector}.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position-top:70px;
+        color: $lightBlack;
+    }
+    @media(max-width: 768px) {
+        .body-public-#{$sector} {
+            background-position-top:50px;
+        }
+    }
+}
+
+@include body_bg(societa);
+@include body_bg(calcio);
+@include body_bg(basket);
+@include body_bg(atletica);
+@include body_bg(volley);
+@include body_bg(motoria);
+
+.page-header-public {
+    @extend .page-header; 
+    border: none; 
+    text-align: center; 
+    font-size: 50px; 
+    font-family: "Oswald", sans-serif; 
+    font-weight: bold;
+    text-shadow: 2px 2px 5px $gray-light;
+}
+
+.banner-public {
+  margin-bottom: 20px;
+  border-radius:2px;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);
+}
+
 .h_banners-public {
     @extend .col-md-9;
     @extend .col-md-push-3;
@@ -342,3 +471,118 @@ footer {
     @extend .col-md-pull-9;
 }
 
+.img-banner-public {
+  width:100%;
+  border-radius:2px;
+}
+
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+    width: 100% !important;
+    background-color: white;
+}
+.uiBoxLightblue {
+    background-color: #000;
+}
+
+
+/* > SMARTPHONE - TABLET 7 */
+@media(min-width:991px) {
+  .post-img-public {
+    height: 250px;
+    line-height: 248px;
+  }
+  .post-text-public {
+    height: 200px;
+  }
+  /* TABLET 10 */
+  @media(max-width: 1200px) {
+    .post-img-public {
+      height:200px;
+      line-height: 198px;
+    }
+    .post-text-public {
+      height: 200px;
+    }
+  }
+}
+
+.news-public {
+  @extend .row;
+  margin-top: 20px;
+  .post-public-cell {
+    @extend .col-md-6;
+    .post-public {
+      position: relative;
+      background: white;
+      color:$black;
+      border-radius:2px;
+      box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);  
+      margin-bottom: 20px;
+      .post-date-public {
+        position:absolute;
+        top:-2px;
+        left:-2px;
+        background-color:$usma-secondary;
+        height: 60px;
+        width:60px;
+        box-shadow: 1px 1px 1px $gray-dark;
+        padding-top: 5px;
+        font-family: "Boogaloo", sans-serif;
+        font-size:35px;
+        line-height: 28px;
+        text-align: center;
+        color:white;
+        text-shadow: 0 1px 2px rgba(0,0,0,.6);
+        .month {
+          display: block;
+          font-size:18px;
+          text-transform: uppercase;
+        }
+      }
+      .post-text-public {
+        padding:0 25px 25px 25px;
+        .post-title-public {
+          text-align: center;
+          a {
+            font-size: 21px;
+            font-weight:bold;
+            //color: $usma-secondary;
+          }
+        }
+        .post-content-public {
+          color: $gray-light;
+          text-align: justify;
+        }
+      }
+      .post-img-link-public {
+        &:hover ~ .post-text-public > .post-title-public > h3 {
+          text-decoration: underline;
+          &>a {
+            color:#2a6496;
+          }
+        }
+        .post-img-public {
+          background-color: $lightGray;
+          text-align: center;
+          .post-img {
+            max-height: 100%;
+            max-width:100%;
+          }
+        } 
+      }
+    }
+  }
+}
+
+/* > SMARTPHONE */
+@media(min-width:991px) {
+  .post-public {
+    max-width: 380px;
+  }
+  /* TABLET 10 */
+  @media(max-width:1200px) {
+    .post-public {
+      max-width: 300px;
+    }
+  }
+}

@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index'
-  get 'ie_compatibility', to: 'static_pages#ie_compatibility'
-
-  resources :sectors, only: [:index, :show]
-
   namespace :admin do
     get '', to: 'sessions#new'
     delete 'logout', to: 'sessions#destroy'
@@ -33,5 +28,11 @@ Rails.application.routes.draw do
     end
 
   end
+  
+  root 'welcome#index'
+  get 'ie_compatibility', to: 'static_pages#ie_compatibility'
+
+  resources :sectors, only: [:show]
+  get ':unique_name', to: 'sectors#show', as: :public_sector
 
 end

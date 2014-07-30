@@ -1,35 +1,17 @@
 <% provide(:title, 'Home') %>
+<%= provide(:nav_public, 'nav_public_root') %>
 <% provide(:header_bottom, 'carousel_public') %>
 <div class="container-fluid">
   <div class="sectors-public">
-    <h2 class="page-header">I nostri settori</h2>
+    <h2 class="page-header-public">I NOSTRI SETTORI</h2>
     <% sec_size = @sectors.size %>
     <% @sectors[0..-1].each_with_index do |sector, index| %>
     <% sector_size_class = "col-md-6" %>
     <% sector_size_class = "col-md-12" if index == sec_size - 1 %>
       <div class="sector-public <%= sector_size_class %>">
-        <%= link_to raw(image_tag("icon-"+sector.sector_class+".png", class: "sector-icon-public")+ sector.name), sector, class:"sector-link-public-"+sector.sector_class %>
+        <%= link_to raw(image_tag("icon-"+sector.sector_class+".png", class: "sector-icon-public")+ sector.name), public_sector_path(sector.unique_name), class:"sector-link-public-"+sector.sector_class %>
       </div>
     <% end %>
   </div>
-  <div class="news-public">
-    <h2 class="page-header">Le ultime news</h2>
-    <% @posts.each do |post| %>
-      <div class="post-public-cell">
-        <div class="post-public">
-          <div class="post-date-public"><%= raw(l post.created_at, format: '%-d <span class="month">%b</span>') %></div>
-          <%= link_to raw('<div class="post-img-public"><span class="center-img-helper"></span>' + image_tag(post.lead_image.url(:small), class:"post-img") + '</div>'), 'post', class:"post-img-link-public" %>
-          <div class="post-text-public">
-            <div class="post-title-public">
-              <h3><%= link_to post.title, 'post' %></h3>
-            </div>
-            <div class="post-content-public">
-              <%= sanitize(post.content, tags: %w(p)) %>
-              <%= link_to 'Leggi tutto »', 'post', class:"readmore" %>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <%= render 'layouts/latest_news' %>
 </div>

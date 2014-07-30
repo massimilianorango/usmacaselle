@@ -1,0 +1,48 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin sector-link-public($class, $color) {
+  .sector-link-public-#{$class} {
+    @extend .btn;
+    @extend .btn-lg;
+    @extend .btn-info;
+    @extend .admin-btn;
+    text-shadow: 1px 1px 1px $gray-dark;
+    font-family: "Boogaloo", sans-serif;
+    font-size: 4.5em;
+    border-radius:1px;
+    background-color: $color;
+    border: solid 1px darken($color, 5%);
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);
+    &:hover{
+      background-color: darken($color, 12%);
+      border: solid 1px darken($color, 25%);
+    }
+    .sector-icon-public {
+      color: white;
+      margin:-20px 10px 0 0;
+    }
+  }
+  @media(max-width:768px) {
+    .sector-link-public-#{$class} {
+      font-size: 3.5em;
+    }
+    .sector-icon-public {
+      height: 50px;
+      margin:-20px 10px 0 0;
+    }
+  }
+}
+
+.sectors-public {
+  @extend .row;
+  .sector-public {
+    @include sector-link-public(football, $btn-success-bg);
+    @include sector-link-public(basket, $btn-warning-bg);
+    @include sector-link-public(volley, $btn-danger-bg);
+    @include sector-link-public(athletics, $btn-info-bg);
+    @include sector-link-public(motoria, $adminPink);
+  }
+  margin-top: 20px;
+}

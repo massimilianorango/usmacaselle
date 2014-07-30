@@ -13,22 +13,7 @@
       </div>
       <div class="collapse public-navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="public-nav">
-          <%= active_link_to 'Home', root_path, :wrap_tag => :li %>
-          <li class="dropdown <%= 'active' if params[:controller] == 'welcome' && params[:action] == 'sectors' %>">
-            <%= link_to 'Settori <b class="caret"></b>'.html_safe, '#', :data => {:toggle=>"dropdown"}, :class => "dropdown-toggle"  %>
-            <% if !@sectors.blank? %>
-              <ul class="dropdown-menu">
-                <% @sectors.each do |sec| %>
-                  <li><%= link_to sec.name, '#' %></li>
-                <% end %>
-              </ul>
-            <% end %>
-          </li>
-          <%= active_link_to 'News', '#', :wrap_tag => :li %>
-          <%= active_link_to 'Photo Gallery', '#', :wrap_tag => :li %>
-          <%= active_link_to 'Shop', '#', :wrap_tag => :li %>
-          <%= active_link_to 'La società', '#', :wrap_tag => :li %>
-          <%= active_link_to 'Contatti', '#', :wrap_tag => :li %>
+          <%= render 'layouts/' + yield(:nav_public) unless yield(:nav_public).empty?%>
         </ul>
       </div><!--/.public-navbar-collapse -->
     </div>
