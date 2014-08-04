@@ -4,7 +4,7 @@
   <li class="active">Upload file</li>
 </ol>
 <div class="page-container">
-  <h2 class="page-header">Upload file</h2>
+  <h2 class="page-header-private">Upload file</h2>
   <%= render 'shared/error_messages', object: @uploaded_file unless @uploaded_file.nil? %>
   <% if params[:uploaded_url].nil? %>
     <div class="alert alert-info">Dopo il caricamento del file ti verrà restituito un link utilizzabile all'interno del sito.</div>

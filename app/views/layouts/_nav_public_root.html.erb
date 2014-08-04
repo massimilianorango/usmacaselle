@@ -4,12 +4,12 @@
   <% if !@sectors.blank? %>
     <ul class="dropdown-menu">
       <% @sectors.each do |sec| %>
-        <li><%= link_to sec.name, public_sector_path(sec.unique_name) %></li>
+        <li><%= link_to sec.name, sector_path(sec.unique_name) %></li>
       <% end %>
     </ul>
   <% end %>
 </li>
-<%= active_link_to 'News', '#', :wrap_tag => :li %>
+<%= active_link_to 'News', sector_posts_path(@sector), :wrap_tag => :li %>
 <%= active_link_to 'Photo Gallery', '#', :wrap_tag => :li %>
 <%= active_link_to 'Shop', '#', :wrap_tag => :li %>
 <li class="dropdown <%= 'active' if params[:controller] == 'welcome' && params[:action] == 'society' %>">

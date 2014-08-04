@@ -32,7 +32,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'ie_compatibility', to: 'static_pages#ie_compatibility'
 
-  resources :sectors, only: [:show]
-  get ':unique_name', to: 'sectors#show', as: :public_sector
+  resources :sectors, only: [:show], :path => '/' do
+    resources :posts, only: [:index, :show]
+  end
+  #get ':unique_name', to: 'sectors#show', as: :public_sector
 
 end

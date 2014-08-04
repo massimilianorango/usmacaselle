@@ -5,7 +5,7 @@
   <li class="active">Nuovo articolo</li>
 </ol>
 <div class="page-container">
-  <h2 class="page-header">Nuovo articolo</h2>
+  <h2 class="page-header-private">Nuovo articolo</h2>
   <%= form_for [:admin, @item], :html => {multipart: true, :class => "form-center-full"} do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="form-group">

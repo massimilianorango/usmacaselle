@@ -34,7 +34,7 @@
       <% end %>
       <div class="page-container">
         <div class="row">
-          <div class="h_banners-public">
+          <div class="content-public">
             <% first_banner = @h_banners.first %>
             <div class="banner-public">
               <%= link_to image_tag(first_banner.image.url(:horizontal), class: "img-banner-public"), first_banner.link unless first_banner.nil? %>

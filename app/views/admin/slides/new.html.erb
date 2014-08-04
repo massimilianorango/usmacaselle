@@ -7,7 +7,7 @@
 <div class="page-container">
   <%= form_for [:admin, @slide], :html => {multipart: true, :class => "form-center-full"} do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    <h2 class="page-header">Nuova slide</h2>
+    <h2 class="page-header-private">Nuova slide</h2>
     <div class="form-group">
       <%= f.label :text, 'Testo della slide' %>
       <%= f.text_field :text, {class: "form-control", :required => true, :autofocus => true, placeholder: "Inserisci il testo della slide..."} %>

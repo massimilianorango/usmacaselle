@@ -20,6 +20,10 @@ class Sector < ActiveRecord::Base
     has_many :posts, dependent: :destroy
     has_many :items, dependent: :destroy
 
+    def to_param
+        unique_name
+    end
+
     def send_password_reset
         begin
             self.password_reset_token = Sector.new_remember_token

@@ -1,4 +1,7 @@
-<% provide(:title, 'Home') %>
-<%= provide(:nav_public, 'nav_public_sector') %>
+<% provide(:title, @sector.name) %>
+<% provide(:nav_public, 'nav_public_sector') %>
 <% provide(:header_bottom, 'carousel_public') %>
-<%= render 'layouts/latest_news' %>
+<div class="news-public">
+  <h2 class="page-header-public">LE ULTIME NEWS</h2>
+  <%= render 'layouts/posts' %>
+</div>

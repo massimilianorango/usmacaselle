@@ -6,4 +6,11 @@ class ApplicationController < ActionController::Base
     def not_found
         raise ActionController::RoutingError.new('Not Found')
     end
+
+    def public_parameters
+        @sectors = Sector.where('is_root = ?', false)
+        @h_banners = Banner.where('is_horizontal = ?', true)
+        @v_banners = Banner.where('is_horizontal = ?', false)
+        @sector = Sector.find_by_unique_name(params[:sector_id])
+    end
 end

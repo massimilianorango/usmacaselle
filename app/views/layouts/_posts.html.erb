@@ -1,0 +1,17 @@
+<% @posts.each do |post| %>
+  <div class="post-public-cell">
+    <div class="post-public">
+      <div class="post-date-public"><%= raw(l post.created_at, format: '%-d <span class="month">%b</span>') %></div>
+      <%= link_to raw('<div class="post-img-public"><span class="center-img-helper"></span>' + image_tag(post.lead_image.url(:small), class:"post-img") + '</div>'), sector_post_path(@sector, post), class:"post-img-link-public" %>
+      <div class="post-text-public">
+        <div class="post-title-public">
+          <h3><%= link_to post.title, sector_post_path(@sector, post) %></h3>
+        </div>
+        <div class="post-content-public">
+          <%= sanitize(post.content, tags: %w(p)) %>
+          <%= link_to 'Leggi tutto »', sector_post_path(@sector, post), class:"readmore" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

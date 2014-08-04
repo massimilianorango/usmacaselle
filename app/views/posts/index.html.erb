@@ -1,0 +1,8 @@
+<% provide(:title, 'News - ' + @sector.name) %>
+<% @sector.is_root ? provide(:nav_public, 'nav_public_root') : provide(:nav_public, 'nav_public_sector') %>
+<h2 class="page-header-public">ARCHIVIO NEWS</h2>
+<div class="pagination-div-public"><%= will_paginate @posts %></div>
+<div class="news-public">
+  <%= render 'layouts/posts' %>
+</div>
+<div class="pagination-div-public"><%= will_paginate @posts %></div>

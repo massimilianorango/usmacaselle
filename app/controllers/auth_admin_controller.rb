@@ -12,7 +12,7 @@ class AuthAdminController < AdminController
     end
 
     def correct_sector
-        @sector = Sector.find(params[:id])
+        @sector = Sector.find_by_unique_name(params[:id])
         unless current_sector?(@sector)
             flash[:danger] = "Non puoi modificare le impostazioni di un altro amministratore."
             redirect_to(admin_sector_url(current_sector))

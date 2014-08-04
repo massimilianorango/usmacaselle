@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .posts {
+  @extend .row;
   margin: 10px 0 10px 0;
   .post {
     padding: 10px 0;

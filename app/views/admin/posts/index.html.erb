@@ -4,15 +4,15 @@
   <li class="active">News</li>
 </ol>
 <div class="page-container">
-  <h2 class="page-header">News - post presenti:
+  <h2 class="page-header-private">News - post presenti:
     <%= @sector.posts.count %>
   </h2>
   <%= link_to raw('<span class="icon"></span> Nuovo post'), new_admin_post_path, :class => "btn-new" %>
   <% if @sector.posts.any? %>
-    <%= will_paginate @posts %><!-- #TODO: overlapping pagination -->
+    <div class="pagination-div"><%= will_paginate @posts %></div>
     <div class="posts">
       <%= render @posts %>
     </div>
-    <%= will_paginate @posts %>
+    <div class="pagination-div"><%= will_paginate @posts %></div>
   <% end %>
 </div>

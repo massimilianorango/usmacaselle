@@ -1,4 +1,5 @@
-<%= active_link_to 'Home', public_sector_path, :active => :exclusive, :wrap_tag => :li %>
+<li><%= link_to raw(image_tag(image_path('back.png'), class: "back-img") + 'Home'), root_path %></li>
+<%= active_link_to @sector.name, sector_path(@sector), :active => :exclusive, :wrap_tag => :li %>
 <% unless @categories.nil? %>
 <li class="dropdown <%= 'active' if params[:controller] == 'sector' && params[:action] == 'sectors' %>">
   <%= link_to 'Categorie <b class="caret"></b>'.html_safe, '#', :data => {:toggle=>"dropdown"}, :class => "dropdown-toggle"  %>
@@ -11,8 +12,7 @@
   <% end %>
 </li>
 <% end %>
-<%= active_link_to 'News', '#', :wrap_tag => :li %>
+<%= active_link_to 'News', sector_posts_path(@sector), :wrap_tag => :li %>
 <%= active_link_to 'Photo Gallery', '#', :wrap_tag => :li %>
 <%= active_link_to 'Shop', '#', :wrap_tag => :li %>
-<li><%= link_to raw('La società' + image_tag(image_path('back.png'), class: "back-img")), root_path %></li>
 <%= active_link_to 'Contatti', '#', :wrap_tag => :li %>

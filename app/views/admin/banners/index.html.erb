@@ -4,7 +4,7 @@
   <li class="active">Sponsors</li>
 </ol>
 <div class="page-container">
-  <h2 class="page-header">Sponsors - banner presenti:
+  <h2 class="page-header-private">Sponsors - banner presenti:
     <%= @h_banners.count + @v_banners.count %>
   </h2>
   <p class="alert alert-info">
@@ -17,7 +17,7 @@
     L'ordinamento non funziona se adblock o altri servizi per bloccare la pubblicità sono attivati sul proprio browser.</p>
   <div class="row">
     <div class="vertical_banners">
-      <h3 class="page-header">Banner verticali:
+      <h3 class="page-header-private">Banner verticali:
         <%= @v_banners.count %></h3>
       <div class="banner-top-buttons">
         <%= link_to raw('<span class="icon"></span> Nuovo banner verticale'), new_vertical_new_admin_banner_path, :class => "btn btn-new" %>
@@ -35,7 +35,7 @@
     </div>
     <div class="horizontal_banners">
       <span class="controller">banners</span>
-      <h3 class="page-header">Banner orizzontali: <%= @h_banners.count %> su 2</h3>
+      <h3 class="page-header-private">Banner orizzontali: <%= @h_banners.count %> su 2</h3>
       <p>Il primo sarà posizionato in testa ad ogni pagina, il secondo in fondo.</p>
       <% if @h_banners.count < 2 %>
       <div class="banner-top-buttons">

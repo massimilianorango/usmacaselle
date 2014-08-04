@@ -6,7 +6,7 @@
 <div class="page-container">
 <%= form_for [:admin, @post], :html => {multipart: true, role: "form", class: "form-center-full"} do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <h2 class="page-header"><%= yield(:title) %></h2>
+  <h2 class="page-header-private"><%= yield(:title) %></h2>
   <div class="alert alert-info">Ricorda di premere il tasto di
     <strong>salvataggio</strong>
     in fondo alla pagina, o le tue modifiche non verranno salvate.</div>

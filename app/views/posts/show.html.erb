@@ -1,0 +1,10 @@
+<% provide(:title, @post.title + ' - ' + @sector.name) %>
+<% @sector.is_root ? provide(:nav_public, 'nav_public_root') : provide(:nav_public, 'nav_public_sector') %>
+<div class="single-post-public">
+  <div class="single-post-img-public">
+    <div class="single-post-date-public"><%= raw(l @post.created_at, format: '%-d <span class="month">%b</span>') %></div>
+    <%= image_tag @post.lead_image.url(:normal), class: "single-post-img" %>
+    <h2 class="single-post-public-title"><%= @post.title %></h2>
+  </div>
+  <div class="single-post-public-content"><%= raw(@post.content) %></div>
+</div>
