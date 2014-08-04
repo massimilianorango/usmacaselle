@@ -59,6 +59,7 @@ $placeholder-shadow: 0 0 10px #888;
     .btn-#{$name} {
         @extend .btn;
         @extend .btn-#{$btn};
+        white-space: normal;
         .icon {
             @extend .glyphicon;
             @extend .glyphicon-#{$icon};
@@ -381,12 +382,12 @@ footer {
 .carousel-container {
     @extend .container;
     padding:0;
+    box-shadow: 0 0 40px 0 rgba(0,0,0,.3);
 }
 
 /* Carousel base class */
 #public-carousel {
   background-color:$gray-light;
-  box-shadow: 0 1px 10px $gray-dark;
   height: 400px;
   margin: 0 auto;
   .carousel-caption {
@@ -497,6 +498,7 @@ footer {
 .main-container {
     @extend .container;
     background-color: $gray-lighter;
+    box-shadow: 0 0 40px 0 rgba(0,0,0,.3);
 }
 
 @mixin body_bg($sector) {
@@ -653,6 +655,24 @@ footer {
             max-width:100%;
           }
         } 
+      }
+    }
+  }
+  .more-news {
+    @extend .col-md-12;
+    text-align: center;
+    margin-bottom: 20px;
+    & a {
+      @extend .btn;
+      @extend .btn-lg;
+      @extend .btn-default;
+      @extend a;
+      border-radius: 1px;
+      box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);
+      color: $brand-primary;
+      border: none;
+      &:hover {
+        color: darken($brand-primary, 20%);
       }
     }
   }
