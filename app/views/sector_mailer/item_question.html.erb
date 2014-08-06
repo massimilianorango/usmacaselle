@@ -1,0 +1,17 @@
+<h1>Richiesta di informazioni per l'articolo "<%= @item.name %>"</h1>
+<p>
+  E` stata effettuata una richiesta di informazioni riguardante l'articolo <strong>"<%= @item.name %>"</strong> del settore <strong><%= @sector.name %></strong>.
+</p>
+<p><strong>Link all'articolo: </strong><%= sector_item_url(@sector, @item) %></p>
+<p><strong>Prezzo: </strong> <%= @item.price %> €</p>
+<p>I dati inseriti dall'utente sono i seguenti:</p>
+<p><strong>Nome:</strong> <%= @name %></p>
+<p><strong>Cognome:</strong> <%= @surname %></p>
+<p><strong>Email:</strong> <%= @email %></p>
+<p><strong>Telefono:</strong> <%= @tel %></p>
+<p><strong>Domanda:</strong> <%= @question %></p>
+<p><strong>Per rispondere alla richiesta</strong>, invia una mail all'indirizzo inserito dall'utente: <%= mail_to @email %>.</p>
+<p>
+  Questa mail è stata inviata da un sistema automatico.<br/>
+  <strong>Non rispondere</strong> a questa mail, le mail inviate a questo indirizzo non verranno lette.<br/>
+</p>

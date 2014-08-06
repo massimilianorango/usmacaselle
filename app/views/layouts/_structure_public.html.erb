@@ -29,9 +29,6 @@
   <div id="wrap">
     <%= render 'layouts/header_public' %>
     <div class="main-container">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
       <div class="page-container">
         <div class="row">
           <div class="content-public">
@@ -39,6 +36,9 @@
             <div class="banner-public">
               <%= link_to image_tag(first_banner.image.url(:horizontal), class: "img-banner-public"), first_banner.link unless first_banner.nil? %>
             </div>
+            <% flash.each do |key, value| %>
+              <div class="public-alert alert alert-<%= key %>"><%= value %></div>
+            <% end %>
             <%= yield %>
             <% last_banner = @h_banners.last %>
             <div class="banner-public">

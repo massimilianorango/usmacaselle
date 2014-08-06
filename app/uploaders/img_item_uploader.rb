@@ -38,7 +38,7 @@ class ImgItemUploader < CarrierWave::Uploader::Base
   end
 
   version :normal do
-    process :resize_to_fit => [500, 500] #TODO choose public size
+    process :resize_to_fit => [825, nil]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

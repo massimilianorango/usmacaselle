@@ -1,0 +1,132 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.items-public {
+    @extend .row;
+    .shop_item-cell-public {
+        @extend .col-md-4;
+        @extend .col-sm-4;
+        padding:10px;
+        height: 370px;
+        .shop_item-public { 
+            max-width:300px;
+            height: 100%;
+            margin: 0 auto;
+            padding:0;
+            .shop_item-img-link-public {
+                &:hover ~ .shop_item-bottom-public > .shop_item-name-public {
+                    text-decoration: underline;
+                    &>a {
+                      color:#2a6496;
+                    }
+                }
+                .shop_item-img-container-public {
+                    position: relative;
+                    height: 300px;
+                    text-align: center;
+                    background-color: white;
+                    .img-shop_item-public {
+                        max-height: 300px;
+                        max-width: 100%;
+                        margin: 0 auto;
+                    }
+                    .shop_item-price-public {
+                        position:absolute;
+                        bottom:0;
+                        left:0;
+                        padding:10px;
+                        font-family: "Oswald", sans-serif;
+                        font-size: 30px;
+                        color:white;
+                        background-color:rgba(0, 0, 0, 0.7);
+                        @media(max-width:768px) {
+                            font-size: 30px;
+                        }
+                        .shop_item-price-text {
+                            color: $usma-primary;
+                        }
+                    }
+                } 
+            }
+            .shop_item-bottom-public {
+                text-align: center;
+                width:100%;
+                height:45px;
+                .shop_item-name-public {
+                    a {
+                        font-weight: bold;
+                        color: $lightBlack;
+                    }
+                    font-size:20px;
+                    margin:7px 0 5px;
+                }
+                .shop_item-price-public {
+                    margin:0;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.single-item-public {
+    margin-bottom: 20px;
+    text-align: center;
+    .single-item-name-public {
+        @extend .page-header-public;
+    }
+    .single-item-img-public {
+        position: relative;
+        .img-single-item-public {
+            width:100%;
+            .img-single-item-public {
+                width:100%;
+            }
+        }
+        .single-item-price-public {
+            position:absolute;
+            bottom:0;
+            left:0;
+            padding:13px;
+            font-family: "Oswald", sans-serif;
+            font-size: 50px;
+            color:white;
+            background-color:rgba(0, 0, 0, 0.7);
+            @media(max-width:768px) {
+                font-size: 40px;
+            }
+            @media(max-width:480px) {
+                font-size: 25px;
+            }
+            .single-item-price-text {
+                color: $usma-primary;
+            }
+        }
+    }
+}
+
+.form-question-item {
+    @extend .form-horizontal;
+    margin-top:30px;
+    .question-label {
+        @extend .col-sm-2;
+        @extend .control-label;
+    }
+    .question-checkbox {
+        text-align: left;
+    }
+    .form-control {
+        border-radius: 1px;
+    }
+    .btn-question {
+        text-align: left;
+    }
+    .btn-submit-question {
+        @extend .btn;
+        @extend .btn-primary;
+        @extend .btn-lg;
+        border-radius: 1px;
+    }
+}
+

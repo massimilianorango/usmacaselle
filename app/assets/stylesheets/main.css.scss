@@ -503,7 +503,7 @@ footer {
 
 @mixin body_bg($sector) {
     .body-public-#{$sector} {
-        background: url('bg-#{$sector}.jpg') no-repeat center center fixed;
+        background: url(image-path('bg-#{$sector}.jpg')) no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -538,6 +538,10 @@ footer {
     }
 }
 
+.fb-like-box {
+  border: 1px solid $lightGray;
+}
+
 .banner-public {
   margin-bottom: 20px;
   border-radius:2px;
@@ -565,6 +569,11 @@ footer {
 }
 .uiBoxLightblue {
     background-color: #000;
+}
+
+.public-alert {
+  border-radius:1px;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);  
 }
 
 

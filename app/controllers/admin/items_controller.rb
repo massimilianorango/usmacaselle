@@ -1,8 +1,9 @@
 class Admin::ItemsController < AuthAdminController
     before_action :correct_sector, only: [:destroy]
+    before_action :not_root
 
     def index
-        @items = @sector.items
+        @items = @sector.items #TODO: paginate
     end
 
     def new
@@ -43,5 +44,10 @@ class Admin::ItemsController < AuthAdminController
     def correct_sector
         @item = current_sector.items.find_by(id: params[:id])
         redirect_to admin_url if @item.nil?
+    end
+
+    private
+    def not_root
+        redirect_to admin_url if current_sector.is_root
     end
 end

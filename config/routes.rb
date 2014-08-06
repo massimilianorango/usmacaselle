@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  # ADMIN ROUTES
   namespace :admin do
     get '', to: 'sessions#new'
     delete 'logout', to: 'sessions#destroy'
@@ -29,12 +30,15 @@ Rails.application.routes.draw do
 
   end
   
+  # PUBLIC ROUTES
   root 'welcome#index'
   get 'ie_compatibility', to: 'static_pages#ie_compatibility'
 
   resources :sectors, only: [:show], :path => '/' do
     resources :posts, only: [:index, :show]
+    resources :items, only: [:index, :show, :question] do
+      post 'question', to: 'items#question'
+    end
   end
-  #get ':unique_name', to: 'sectors#show', as: :public_sector
 
 end

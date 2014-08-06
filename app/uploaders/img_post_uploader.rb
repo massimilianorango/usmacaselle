@@ -16,7 +16,6 @@ class ImgPostUploader < CarrierWave::Uploader::Base
     "sectors/sector_#{model.sector_id}/#{model.class.to_s.underscore}/#{model.id}"
   end
 
-  # TODO
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
     # For Rails 3.1+ asset pipeline compatibility:
@@ -38,7 +37,7 @@ class ImgPostUploader < CarrierWave::Uploader::Base
   end
 
   version :normal do
-    process :resize_to_fit => [700, 400] #TODO choose single post size
+    process :resize_to_fit => [825, 500]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

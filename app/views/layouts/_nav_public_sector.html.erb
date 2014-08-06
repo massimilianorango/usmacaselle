@@ -14,5 +14,5 @@
 <% end %>
 <%= active_link_to 'News', sector_posts_path(@sector), :wrap_tag => :li %>
 <%= active_link_to 'Photo Gallery', '#', :wrap_tag => :li %>
-<%= active_link_to 'Shop', '#', :wrap_tag => :li %>
+<%= active_link_to 'Shop', sector_items_path(@sector), :wrap_tag => :li %>
 <%= active_link_to 'Contatti', '#', :wrap_tag => :li %>
