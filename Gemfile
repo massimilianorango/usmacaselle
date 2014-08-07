@@ -21,11 +21,10 @@ gem 'bootstrap-will_paginate', '0.0.10'
 gem "autoprefixer-rails", '2.0.0.20140622'
 gem 'ckeditor', '4.0.11'
 gem "acts_as_list", '0.4.0'
-#gem 'flickraw'
+gem 'flickraw', '0.9.8'
 gem 'carrierwave-ftp', '0.2.6'
 gem 'mini_magick', '3.8.0'
-gem "html_truncator", "0.4.0"
-
+gem 'fancybox2-rails', '0.2.8'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'

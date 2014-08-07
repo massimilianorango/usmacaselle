@@ -17,4 +17,5 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require ckeditor/init
+//= require fancybox
 //= require_tree .

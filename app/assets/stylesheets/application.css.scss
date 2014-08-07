@@ -13,6 +13,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap-custom";
+@import "fancybox";
 @import "main";
 @import "admin";
 @import "admin/*";
@@ -20,3 +21,4 @@
 @import "sectors";
 @import "posts";
 @import "items";
+@import "photos";

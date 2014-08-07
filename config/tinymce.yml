@@ -1,8 +1,0 @@
-language: it
-menubar: false
-toolbar:
-  - styleselect | bold italic | undo redo | link image | hr
-  - table
-plugins:
-  - table
-  - image

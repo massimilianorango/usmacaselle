@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :show, :question] do
       post 'question', to: 'items#question'
     end
+    resources :photos, only: [:index, :show]
   end
 
 end

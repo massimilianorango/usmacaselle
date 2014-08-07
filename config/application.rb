@@ -2,7 +2,8 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 require 'carrierwave/storage/ftp'
-require "html_truncator"
+require 'will_paginate/array'
+
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

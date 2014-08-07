@@ -1,0 +1,82 @@
+// Place all the styles related to the photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.albums-public {
+    @extend .row;
+    .album-public-cell {
+        @extend .col-md-3;
+        @extend .col-sm-4;
+        @extend .col-xs-6;
+        .album-public {
+            position:relative;
+            margin: 0 auto 20px;
+            max-width:200px;
+            @media(max-width:480px) {
+                max-width: 150px;
+            }
+            text-align: center;
+            .album-img-public {
+                width:100%;
+            }
+            &:hover {
+                & > .album-bottom-public {
+                    height: 100%;
+                    color: $brand-info;
+                    text-decoration: none;
+                }
+                & > .album-bottom-info-public {
+                    visibility: visible;
+                }
+            }
+            .album-bottom-public {
+                position:absolute;
+                bottom:0;
+                left:0;
+                height: 46px;
+                width:100%;
+                color: white;
+                overflow: hidden;
+                background-color:rgba(0, 0, 0, 0.7);
+                -webkit-transition: height 0.2s; /* For Safari 3.1 to 6.0 */
+                transition: height 0.2s;
+                .album-title-public {
+                    font-weight: bold;
+                    padding: 5px;
+                }
+                @media(max-width:480px) {
+                    font-size: 10px;
+                }
+            }
+            .album-bottom-info-public {
+                visibility: hidden;
+                color: white;
+                -webkit-transition: visibility 0s linear 0.1s; /* For Safari 3.1 to 6.0 */
+                transition: visibility 0s linear 0.1s;
+                font-size:12px;
+                .album-photo_count-public, .album-date-public {
+                    padding:10px;
+                    position:absolute;
+                    bottom:0;
+                }
+                .album-photo_count-public {
+                    right: 0;
+                }
+                .album-date-public {
+                    font-style: italic;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+.photos-public {
+    margin-bottom: 20px;
+    text-align: center;
+    .back-to-gallery {
+        margin-bottom: 20px;
+    }
+    .photo-img-public {
+        margin-bottom: 4px;
+    }
+}

@@ -1,0 +1,13 @@
+<% provide(:title, @album_title + ' - ' + @sector.name) %>
+<% @sector.is_root ? provide(:nav_public, 'nav_public_root') : provide(:nav_public, 'nav_public_sector') %>
+<h2 class="page-header-public"><%= @album_title %></h2>
+<div class="pagination-div-public"><%= will_paginate @photos %></div>
+<%# TODO cache ("flickr_albums") do %>
+  <div class="photos-public">
+    <div class="back-to-gallery"><%= link_to 'Torna alla Photo Gallery', sector_photos_path(@sector) %></div>
+    <% @photos.each do |photo| %>
+      <%= link_to image_tag(photo[:small], class: "photo-img-public"), photo[:normal], class: "fancybox", rel: "gallery" %>
+    <% end %>
+  </div>
+  <%# end %>
+  <div class="pagination-div-public"><%= will_paginate @photos %></div>
