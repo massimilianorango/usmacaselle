@@ -24,3 +24,9 @@ Sector.create(unique_name: "atletica", name: "Atletica", email: ENV['ATHLETICS_E
 Sector.create(unique_name: "motoria", name: "Motoria", email: ENV['MOTORIA_EMAIL'], password: "motoria", password_confirmation: "motoria",
                             is_root: false, gallery_url: "https://www.flickr.com/photos/125769009@N02/collections/72157645028308879/", 
                             sector_class: "motoria")
+
+StaticPage.create(page_id: "contatti", title: "Contatti")
+StaticPage.create(page_id: "polisportiva", title: "La polisportiva")
+StaticPage.create(page_id: "statuto", title: "Statuto")
+StaticPage.create(page_id: "storia", title: "Storia")
+StaticPage.create(page_id: "codice_etico", title: "Codice Etico")

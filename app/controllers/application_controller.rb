@@ -12,5 +12,6 @@ class ApplicationController < ActionController::Base
         @h_banners = Banner.where('is_horizontal = ?', true)
         @v_banners = Banner.where('is_horizontal = ?', false)
         @sector = Sector.find_by_unique_name(params[:sector_id])
+        @categories = Category.where('sector_id = ?', @sector.id)
     end
 end

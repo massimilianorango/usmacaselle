@@ -19,6 +19,7 @@ class Sector < ActiveRecord::Base
     has_many :slides, dependent: :destroy
     has_many :posts, dependent: :destroy
     has_many :items, dependent: :destroy
+    has_many :categories, dependent: :destroy
 
     def to_param
         unique_name

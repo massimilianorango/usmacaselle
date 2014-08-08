@@ -3,12 +3,14 @@ CKEDITOR.editorConfig = (config) ->
   config.language = 'it'
   config.height = '500'
   config.extraPlugins = 'youtube';
+  config.allowedContent = true;
   config.removeDialogTabs = 'link:advanced;image:advanced';
   config.toolbar_Pure = [
     { name: 'document',    items: [ 'Undo','Redo','-','Templates','-','Preview'] },
+    { name: 'tools',       items: [ 'ShowBlocks', 'Maximize' ] },
     { name: 'clipboard',   items: [ 'Cut','Copy','Paste','PasteText','PasteFromWord'] },
     { name: 'editing',     items: [ 'Find','Replace','-','SelectAll'] },
-    { name: 'tools',       items: [ 'Maximize', 'ShowBlocks' ] },
+    { name: 'source',     items: [ 'Source' ] },
     { name: 'paragraph',   items: [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'] },
     '/',
     { name: 'styles',      items: [ 'Format','FontSize' ] },

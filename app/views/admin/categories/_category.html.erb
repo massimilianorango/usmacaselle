@@ -1,0 +1,16 @@
+<div class="category-cell" id="category_<%= category.id %>">
+  <div class="category">
+    <div class="category-name"><%= category.name %></div>
+    <div class="category-img-container">
+      <span class="center-img-helper"></span><%= image_tag(category.image.url(:small), class: "img-category") %>
+    </div>
+    <div class="category-bottom">
+      <div class="category-buttons">
+        <%= link_to raw('<span class="icon"></span> Modifica'), edit_admin_category_path(category), :class => "btn-edit" %>
+        <%= link_to raw('<span class="icon"></span> Elimina'), [:admin, category], method: :delete,
+                                       data: { confirm: "Sei sicuro di voler eliminare la categoria e tutte le informazioni ad essa associate?" },
+                                       title: "Elimina categoria", :class => "btn-delete" %>
+      </div>
+    </div>
+  </div>
+</div>

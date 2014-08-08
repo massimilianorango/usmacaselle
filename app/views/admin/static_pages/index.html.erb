@@ -1,0 +1,13 @@
+<% provide(:title, "Modifica pagine società") %>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li class="active">Modifica pagine società</li>
+</ol>
+<div class="page-container">
+  <div class="row">
+    <div class="col-md-6"><%= link_to 'La polisportiva', edit_admin_static_page_path('polisportiva'), :class => "btn btn-info btn-lg admin-btn" %></div>
+    <div class="col-md-6"><%= link_to 'Statuto', edit_admin_static_page_path('statuto'), :class => "btn btn-info btn-lg admin-btn" %></div>
+    <div class="col-md-6"><%= link_to 'Storia', edit_admin_static_page_path('storia'), :class => "btn btn-info btn-lg admin-btn" %></div>
+    <div class="col-md-6"><%= link_to 'Codice etico', edit_admin_static_page_path('codice_etico'), :class => "btn btn-info btn-lg admin-btn" %></div>
+  </div>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702140337) do
+ActiveRecord::Schema.define(version: 20140808141344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20140702140337) do
     t.string   "link"
     t.boolean  "is_horizontal", default: false, null: false
     t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.integer  "position"
+    t.integer  "sector_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -77,6 +86,14 @@ ActiveRecord::Schema.define(version: 20140702140337) do
   end
 
   add_index "slides", ["sector_id", "created_at"], name: "index_slides_on_sector_id_and_created_at", using: :btree
+
+  create_table "static_pages", force: true do |t|
+    t.string   "page_id"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "uploaded_files", force: true do |t|
     t.string   "attachment"

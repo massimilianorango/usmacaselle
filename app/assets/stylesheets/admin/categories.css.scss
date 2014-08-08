@@ -1,0 +1,72 @@
+// Place all the styles related to the admin/categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$shop_item-height: 350px;
+$shop_item-img-height: ($shop_item-height - 20px)*(78/100);
+$shop_item-border-height: ($shop_item-height - 20px)*(11/100);
+
+.shop_item-cell {
+    @extend .col-md-3;
+    @extend .col-sm-4;
+    padding:10px;
+    height: $shop_item-height;
+}
+
+.items-placeholder {
+    @extend .shop_item-cell;
+    border: 1px solid $darkBlue;
+    background: $lightBlue;
+    border-radius: 4px;
+    @include box-shadow($placeholder-shadow);
+    box-shadow: $placeholder-shadow;
+}
+
+.shop_item { 
+    max-width:300px;
+    height: 100%;
+    margin: 0 auto;
+    padding:0;
+}
+
+.shop_item-border {
+    background-color:black;
+    color: white;
+    height:$shop_item-border-height;
+    line-height:$shop_item-border-height;
+    padding-left:15px;
+}
+
+.shop_item-name {
+    @include border-top-radius(3px);
+    @extend .shop_item-border;
+}
+
+.shop_item-img-container {
+    border-left: 1px solid $lightGray;
+    border-right: 1px solid $lightGray;
+    background-color: $gray-lighter;
+    height: $shop_item-img-height;
+    text-align: center;
+}
+
+.img-shop_item {
+    vertical-align: middle;
+    max-height: $shop_item-img-height;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.shop_item-bottom {
+    @include border-bottom-radius(3px);
+    @extend .shop_item-border;
+    position: relative;
+}
+
+.shop_item-btn-delete {
+  @extend .pull-right;
+  @extend .btn-xs;
+  position: absolute;
+  bottom: 20%;
+  right: 5%;
+}

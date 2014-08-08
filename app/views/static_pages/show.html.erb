@@ -1,0 +1,6 @@
+<% provide(:title, @page.title) %>
+<% provide(:nav_public, 'nav_public_root') %>
+<h2 class="page-header-public"><%= @page.title %></h2>
+<div class="static_page_container">
+    <%= raw @page.content %>
+</div>

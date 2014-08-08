@@ -15,10 +15,10 @@
 <li class="dropdown <%= 'active' if params[:controller] == 'welcome' && params[:action] == 'society' %>">
   <%= link_to 'La società <b class="caret"></b>'.html_safe, '#', :data => {:toggle=>"dropdown"}, :class => "dropdown-toggle"  %>
     <ul class="dropdown-menu">
-        <li><%= link_to 'La polisportiva', '#' %></li>
-        <li><%= link_to 'Statuto', '#' %></li>
-        <li><%= link_to 'Storia', '#' %></li>
-        <li><%= link_to 'Codice etico', '#' %></li>
+        <li><%= link_to 'La polisportiva', polisportiva_path %></li>
+        <li><%= link_to 'Statuto', statuto_path %></li>
+        <li><%= link_to 'Storia', storia_path %></li>
+        <li><%= link_to 'Codice etico', codice_etico_path %></li>
     </ul>
 </li>
-<%= active_link_to 'Contatti', '#', :wrap_tag => :li %>
+<%= active_link_to 'Contatti', sector_contatti_path(@sector), :wrap_tag => :li %>

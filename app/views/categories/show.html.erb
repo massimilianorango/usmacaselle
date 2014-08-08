@@ -1,0 +1,10 @@
+<% provide(:title, @category.name + ' - ' + @sector.name) %>
+<% @sector.is_root ? provide(:nav_public, 'nav_public_root') : provide(:nav_public, 'nav_public_sector') %>
+<div class="single-category-public">
+  <h2 class="single-category-name-public"><%= @category.name %></h2>
+  <div class="single-category-img-public">
+    <%= image_tag @category.image.url(:normal), class: "img-single-category-public" %>
+  </div>
+</div>
+
+<!-- TODO: STYLE -->

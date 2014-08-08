@@ -1,0 +1,22 @@
+<% provide(:title, "Categorie") %>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li class="active">Categorie</li>
+</ol>
+<div class="page-container">
+  <h2 class="page-header-private">Categorie presenti:
+    <%= @sector.categories.count %>
+  </h2>
+  <p class="alert alert-info"> Vuoi <strong>ordinare</strong> le categorie? Trascinale e l'ordine verrà registrato. <strong>Ricorda:</strong> l'ordine va da sinistra a destra, dall'alto al basso.</p>
+  <div class="category-top-buttons">
+    <%= link_to raw('<span class="icon"></span> Nuova categoria'), new_admin_category_path, :class => "btn btn-new" %>
+    <span class="controller">categories</span>
+  </div>
+  <% if @sector.categories.any? %>
+    <div class="container-fluid">
+      <div class="sortable row">
+        <%= render @categories %>
+      </div>
+    </div>
+  <% end %>
+</div>
