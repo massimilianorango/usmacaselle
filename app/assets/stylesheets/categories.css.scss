@@ -4,14 +4,22 @@
 
 .nav-category {
   @extend .nav;
-  @extend .nav-tabs;
   @extend .nav-justified;
   margin-bottom: 40px;
+  margin-top:35px;
+  text-align: center;
   li > a {
-    border-radius: 3px 3px 0 0;
+    display: inline-block;
+    padding:0 0 3px;
+    border-bottom: solid 2px transparent;
+    &:hover {
+        -webkit-transition: border-color .218s; /* For Safari 3.1 to 6.0 */
+        transition: border-color .218s;
+        border-bottom: solid 2px $lightBlack;
+    }
   }
   li.active > a.active {
-    background-color: transparent;
+    border-bottom: solid 2px $lightBlack;
     font-weight: bold;
     color:#428bca;
   }
@@ -22,8 +30,12 @@
         @extend .page-header-public;
     }
     .single-category-img-public {
+        padding: 10px;
+        background-color: white;
+        border-radius:1px;
+        box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);
         margin: 0 auto;
-        margin-bottom:20px;
+        //margin-bottom:20px;
         .img-single-category-public {
             width: 100%;
         }
@@ -42,15 +54,29 @@
 
 .calendar-table-public {
     @extend .table;
-    @extend .table-bordered;
-    @extend .table-striped;
+    //@extend .table-bordered;
+    //@extend .table-striped;
+
+    background-color: white;//#e8edff;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);
+    border-radius:4px;
     text-align: center;
+    thead {
+        background-color:darken($gray-lighter,10%);//#b9c9fe;
+    }
+    tbody {
+        color: $gray;
+        tr:hover {
+            background-color:$gray-lighter;//#d0dafd;
+            color: black;
+        }
+    }
     th {
         text-align: center;
     }
-    & > tbody > tr:nth-child(2n+1) > td, & > tbody > tr:nth-child(2n+1) > th {
-        background-color: darken($gray-lighter, 3%);
-    }
+    // & > tbody > tr:nth-child(2n+1) > td, & > tbody > tr:nth-child(2n+1) > th {
+    //     background-color: darken($gray-lighter, 5%);
+    // }
 }
 
 .people-public {

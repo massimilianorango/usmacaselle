@@ -16,7 +16,7 @@ class Admin::StaticPagesController < AuthAdminController
         @page = StaticPage.find_by_page_id(params[:id]) || not_found
         if @page.update_attributes(static_page_params)
             flash[:success] = "Pagina modificata correttamente!"
-            redirect_to admin_url
+            redirect_to admin_static_pages_url
         else
             render 'edit'
         end

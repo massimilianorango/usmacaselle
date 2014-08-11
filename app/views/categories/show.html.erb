@@ -3,11 +3,12 @@
 <div class="single-category-public">
   <h2 class="single-category-name-public"><%= @category.name %></h2>
   <%= render 'category_common' %>
-  <div class="single-category-img-public">
-    <%= image_tag @category.image.url(:normal), class: "img-single-category-public" %>
-  </div>
+  <% unless @category.image.url.nil? %>
+    <div class="single-category-img-public">
+      <%= image_tag @category.image.url(:normal), class: "img-single-category-public" %>
+    </div>
+  <% end %>
   <div class="people-public">
-    <h3 class="staff-title">Il nostro staff</h3>
     <div class="row">
       <% @category.people.each do |person| %>
         <div class="person-cell-public">

@@ -360,6 +360,14 @@ footer {
 
     /* TABLET 7 */
     @media(max-width: 991px) {
+        .public-navbar .public-navbar-brand {
+            padding:0;
+            height: 60px;
+            margin-top:5px;
+            img {
+                height:100%;
+            }
+        }
         .public-navbar .public-nav li > a{
             font-size:14px;
         }
