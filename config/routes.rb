@@ -32,6 +32,18 @@ Rails.application.routes.draw do
 
     resources :categories, except: [:show] do
       post :sort, on: :collection
+      resources :calendars, except: [:show] do
+        post :sort, on: :collection
+        resources :matches, except: [:show] do
+          post :sort, on: :collection
+        end
+      end
+      resources :people, except: [:show] do
+        post :sort, on: :collection
+      end
+      resources :schedules, except: [:show] do
+        post :sort, on: :collection
+      end
     end
 
   end
@@ -45,7 +57,10 @@ Rails.application.routes.draw do
   get 'codice_etico', to: 'static_pages#show', defaults: { page_id: 'codice_etico', sector_id: 'societa' }
 
   resources :sectors, only: [:show], :path => '/' do
-    resources :categories, only: [:index, :show]
+    resources :categories, only: [:index, :show] do
+      get 'calendars', on: :member
+      get 'schedules', on: :member
+    end
     resources :posts, only: [:index, :show]
     resources :items, only: [:index, :show, :question] do
       post 'question', to: 'items#question'
@@ -53,8 +68,5 @@ Rails.application.routes.draw do
     resources :photos, only: [:index, :show]
     get 'contatti', to: 'static_pages#show', defaults: { page_id: 'contatti' }
   end
-
-  #get :page_id, to: 'static_pages#show'
-
 
 end

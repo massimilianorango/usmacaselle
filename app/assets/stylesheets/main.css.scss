@@ -294,6 +294,9 @@ footer {
                 }
             }
         }
+        .active > a, .active > a:focus {
+          background-color: $lightBlack;
+        }
     }
 
     .public-navbar-brand {
@@ -538,15 +541,21 @@ footer {
     }
 }
 
-.fb-like-box {
-  border: 1px solid $lightGray;
-}
-
 .banner-public {
   margin-bottom: 20px;
   border-radius:2px;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);
+  padding:10px;
+  background-color: white;
 }
+
+.fb-like-box {
+  @extend .banner-public;
+  border: 1px solid $lightGray;
+  padding:0;
+  background-color: transparent;
+}
+
 
 .content-public {
     @extend .col-md-9;
@@ -670,14 +679,10 @@ footer {
   .more-news {
     @extend .col-md-12;
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 40px;
     & a {
-      @extend .btn;
       @extend .btn-lg;
-      @extend .btn-default;
-      @extend a;
-      border-radius: 1px;
-      box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);
       color: $brand-primary;
       border: none;
       &:hover {

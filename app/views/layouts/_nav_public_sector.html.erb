@@ -1,6 +1,6 @@
 <li><%= link_to raw(image_tag(image_path('back.png'), class: "back-img") + 'Home'), root_path %></li>
 <%= active_link_to @sector.name, sector_path(@sector), :active => :exclusive, :wrap_tag => :li %>
-<% unless @categories.nil? %>
+<% unless @categories.nil? || @categories.empty? %>
 <li class="dropdown <%= 'active' if params[:controller] == 'categories' %>">
   <%= link_to 'Categorie <b class="caret"></b>'.html_safe, '#', :data => {:toggle=>"dropdown"}, :class => "dropdown-toggle"  %>
   <% if !@categories.blank? %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140808141344) do
+ActiveRecord::Schema.define(version: 20140810163102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20140808141344) do
     t.string   "link"
     t.boolean  "is_horizontal", default: false, null: false
     t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "calendars", force: true do |t|
+    t.string   "name"
+    t.string   "link"
+    t.integer  "position"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,6 +55,31 @@ ActiveRecord::Schema.define(version: 20140808141344) do
 
   add_index "items", ["sector_id", "created_at"], name: "index_items_on_sector_id_and_created_at", using: :btree
 
+  create_table "matches", force: true do |t|
+    t.string   "home"
+    t.string   "guests"
+    t.string   "where"
+    t.string   "day"
+    t.string   "date"
+    t.string   "time"
+    t.integer  "position"
+    t.integer  "calendar_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "image"
+    t.string   "role"
+    t.string   "description"
+    t.integer  "position"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: true do |t|
     t.string   "title"
     t.string   "lead_image"
@@ -56,6 +90,17 @@ ActiveRecord::Schema.define(version: 20140808141344) do
   end
 
   add_index "posts", ["sector_id", "created_at"], name: "index_posts_on_sector_id_and_created_at", using: :btree
+
+  create_table "schedules", force: true do |t|
+    t.string   "day"
+    t.string   "time"
+    t.string   "where"
+    t.text     "map"
+    t.integer  "position"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sectors", force: true do |t|
     t.string   "unique_name"

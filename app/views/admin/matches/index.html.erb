@@ -1,0 +1,10 @@
+<% provide(:title, "Partite") %>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li><%= link_to 'Categorie', admin_categories_path %></li>
+  <li><%= link_to 'Modifica ' + @category.name, edit_admin_category_path(@category) %></li>
+  <li><%= link_to 'Calendari', admin_category_calendars_path(@category) %></li>
+  <li><%= link_to 'Modifica ' + @calendar.name, edit_admin_category_calendar_path(@category, @calendar) %></li>
+  <li class="active"><%= yield(:title) %></li>
+</ol>
+<%= render 'matches_list' %>

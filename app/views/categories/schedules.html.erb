@@ -1,0 +1,28 @@
+<% provide(:title, @category.name + ' - ' + @sector.name) %>
+<% provide(:nav_public, 'nav_public_sector') %>
+<div class="single-category-public">
+  <h2 class="single-category-name-public"><%= @category.name %></h2>
+  <%= render 'category_common' %>
+  <% if @schedules.any? %>
+    <div class="schedules-public">
+      <% @category.schedules.each do |schedule| %>
+        <div class="schedule-cell-public">
+          <div class="schedule-public">
+            <div class="schedule-info-public">
+              <div class="schedule-day-public"><%= schedule.day %></div>
+              <div class="schedule-time-public"><%= schedule.time %></div>
+              <div class="schedule-where-public"><%= schedule.where %></div>
+            </div>
+            <% if !schedule.map.nil? %>
+              <div class="schedule-map-public">
+                <div class="schedule-google-maps-public">
+                  <iframe src="<%= schedule.map %>" width="400" height="300" frameborder="0" style="border:0"></iframe>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

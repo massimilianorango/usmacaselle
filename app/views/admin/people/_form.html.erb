@@ -1,0 +1,54 @@
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li><%= link_to 'Categorie', admin_categories_path %></li>
+  <li><%= link_to 'Modifica ' + @category.name, edit_admin_category_path(@category) %></li>
+  <li><%= link_to 'Staff', admin_category_people_path(@category) %></li>
+  <li class="active"><%= yield(:title) %></li>
+</ol>
+<div class="page-container">
+<%= form_for [:admin, @category, @person], :html => {role: "form", class: "form-center-full"} do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <h2 class="page-header-private"><%= yield(:title) %></h2>
+  <div class="alert alert-info">Ricorda di premere il tasto di
+    <strong>salvataggio</strong>
+    in fondo alla pagina, o le tue modifiche non verranno salvate.</div>
+  <div class="form-group">
+    <%= f.label :first_name, 'Nome della persona' %>
+    <%= f.text_field :first_name, {class: "form-control", :required => true, :autofocus => true, placeholder: "Inserisci il nome della persona"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :last_name, "Cognome della persona" %>
+    <%= f.text_field :last_name, {class: "form-control", :required => true, placeholder: "Inserisci il cognome della persona"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image, 'Foto personale' %>
+    <%= f.file_field :image %>
+    <p class="help-block">Le dimensioni consigliate sono 256x256 pixel, ma questo non è obbligatorio. Immagini troppo grandi saranno automaticamente ridimensionate.</p>
+  </div>
+  <% unless @person.image.url.nil? %>
+    <div class="form-group">
+      <%= label_tag @person.image_url, 'Foto attuale' %>
+      <div class="preview-lead-image"><%= image_tag @person.image.url(:small) %></div>
+      <div class="checkbox">
+        <%= f.label :remove_image do %>
+          <%= f.check_box :remove_image %>
+          Cancella foto attuale (sarà impostata la foto di default)
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :role, "Ruolo della persona" %>
+    <%= f.text_field :role, {class: "form-control", :required => true, placeholder: "Inserisci il ruolo della persona"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, "Descrizione (opzionale)" %>
+    <%= f.text_field :description, {class: "form-control", placeholder: "Inserisci una descrizione"} %>
+    <p class="help-block">Puoi inserire una breve descrizione della persona.</p>
+  </div>
+  <%= f.button(type: 'submit', class: "btn-save btn-final") do %>
+    <span class="icon"></span>
+    <%= yield(:action) %>
+  <% end %>
+<% end %>
+</div>

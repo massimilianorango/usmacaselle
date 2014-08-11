@@ -1,0 +1,24 @@
+<% provide(:title, "Staff") %>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li><%= link_to 'Categorie', admin_categories_path %></li>
+  <li><%= link_to 'Modifica ' + @category.name, edit_admin_category_path(@category) %></li>
+  <li class="active"><%= yield(:title) %></li>
+</ol>
+<div class="page-container">
+  <h2 class="page-header-private">Persone presenti:
+    <%= @category.people.count %>
+  </h2>
+  <p class="alert alert-info"> Vuoi <strong>ordinare</strong> le persone? Trascinale e l'ordine verrà registrato. <strong>Ricorda:</strong> l'ordine va dall'alto al basso e da sinistra verso destra.</p>
+  <div class="category-top-buttons">
+    <%= link_to raw('<span class="icon"></span> Nuova persona'), new_admin_category_person_path, :class => "btn btn-new" %>
+    <span class="controller">categories/<%= @category.id %>/people</span>
+  </div>
+  <% if @category.people.any? %>
+    <div class="container-fluid">
+      <div class="sortable row">
+        <%= render @people %>
+      </div>
+    </div>
+  <% end %>
+</div>

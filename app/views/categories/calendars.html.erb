@@ -1,0 +1,11 @@
+<% provide(:title, @category.name + ' - ' + @sector.name) %>
+<% provide(:nav_public, 'nav_public_sector') %>
+<div class="single-category-public">
+  <h2 class="single-category-name-public"><%= @category.name %></h2>
+  <%= render 'category_common' %>
+  <% if @calendars.any? %>
+    <div class="calendars-public">
+      <%= render @calendars %>
+    </div>
+  <% end %>
+</div>

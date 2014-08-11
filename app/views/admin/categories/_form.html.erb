@@ -4,36 +4,37 @@
   <li class="active"><%= yield(:title) %></li>
 </ol>
 <div class="page-container">
-<%= form_for [:admin, @category], :html => {multipart: true, role: "form", class: "form-center-full"} do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <h2 class="page-header-private"><%= yield(:title) %></h2>
-  <div class="alert alert-info">Ricorda di premere il tasto di
-    <strong>salvataggio</strong>
-    in fondo alla pagina, o le tue modifiche non verranno salvate.</div>
-  <div class="form-group">
-    <%= f.label :name, 'Nome della categoria' %>
-    <%= f.text_field :name, {class: "form-control", :required => true, :autofocus => true, placeholder: "Inserisci il nome della categoria"} %>
-  </div>
-  <div class="form-group">
-    <%= f.label :image, 'Foto di squadra' %>
-    <%= f.file_field :image %>
-    <p class="help-block">Le dimensioni consigliate sono 760x500 pixel, ma questo non è obbligatorio. Immagini troppo grandi saranno automaticamente ridimensionate.</p>
-  </div>
-  <% unless @category.image.url.nil? %>
+  <%= form_for [:admin, @category], :html => {multipart: true, role: "form", class: "form-center-full"} do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <h2 class="page-header-private"><%= yield(:title) %></h2>
+    <%= render yield(:other_settings) unless yield(:other_settings).empty? %>
+    <div class="alert alert-info">Ricorda di premere il tasto di
+      <strong>salvataggio</strong>
+      in fondo alla pagina, o le tue modifiche non verranno salvate.</div>
     <div class="form-group">
-      <%= label_tag @category.image_url, 'Foto attuale' %>
-      <div class="preview-lead-image"><%= image_tag @category.image.url(:small) %></div>
-      <div class="checkbox">
-        <%= f.label :remove_image do %>
-          <%= f.check_box :remove_image %>
-          Cancella foto attuale (sarà impostata la foto di default)
-        <% end %>
-      </div>
+      <%= f.label :name, 'Nome della categoria' %>
+      <%= f.text_field :name, {class: "form-control", :required => true, :autofocus => true, placeholder: "Inserisci il nome della categoria"} %>
     </div>
+    <div class="form-group">
+      <%= f.label :image, 'Foto di squadra' %>
+      <%= f.file_field :image %>
+      <p class="help-block">Le dimensioni consigliate sono 825x450 pixel, ma questo non è obbligatorio. Immagini troppo grandi saranno automaticamente ridimensionate.</p>
+    </div>
+    <% unless @category.image.url.nil? %>
+      <div class="form-group">
+        <%= label_tag @category.image_url, 'Foto attuale' %>
+        <div class="preview-lead-image"><%= image_tag @category.image.url(:small) %></div>
+        <div class="checkbox">
+          <%= f.label :remove_image do %>
+            <%= f.check_box :remove_image %>
+            Cancella foto attuale (sarà impostata la foto di default)
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <%= f.button(type: 'submit', class: "btn-save btn-final") do %>
+      <span class="icon"></span>
+      <%= yield(:action) %>
+    <% end %>
   <% end %>
-  <%= f.button(type: 'submit', class: "btn-save btn-final") do %>
-    <span class="icon"></span>
-    <%= yield(:action) %>
-  <% end %>
-<% end %>
 </div>

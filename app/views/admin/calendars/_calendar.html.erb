@@ -1,0 +1,9 @@
+<div class="calendar-cell" id="calendar_<%= calendar.id %>">
+  <div class="calendar-name"><%= calendar.name %></div>
+  <div class="calendar-buttons">
+    <%= link_to raw('<span class="icon"></span> Modifica'), edit_admin_category_calendar_path(@category, calendar), :class => "btn-edit" %>
+    <%= link_to raw('<span class="icon"></span> Elimina'), [:admin, @category, calendar], method: :delete,
+                                       data: { confirm: "Sei sicuro di voler eliminare il calendario e tutte le informazioni ad esso associate?" },
+                                       title: "Elimina calendario", :class => "btn-delete" %>
+  </div>
+</div>

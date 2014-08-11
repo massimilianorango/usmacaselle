@@ -1,10 +1,27 @@
 <% provide(:title, @category.name + ' - ' + @sector.name) %>
-<% @sector.is_root ? provide(:nav_public, 'nav_public_root') : provide(:nav_public, 'nav_public_sector') %>
+<% provide(:nav_public, 'nav_public_sector') %>
 <div class="single-category-public">
   <h2 class="single-category-name-public"><%= @category.name %></h2>
+  <%= render 'category_common' %>
   <div class="single-category-img-public">
     <%= image_tag @category.image.url(:normal), class: "img-single-category-public" %>
   </div>
+  <div class="people-public">
+    <h3 class="staff-title">Il nostro staff</h3>
+    <div class="row">
+      <% @category.people.each do |person| %>
+        <div class="person-cell-public">
+          <div class="person-public">
+            <div class="person-image-public"><%= image_tag person.image.url(:normal), class: "img-person-public" %></div>
+            <div class="person-info-public">
+              <div class="person-name-public"><%= person.first_name %>
+                <%= person.last_name %></div>
+              <div class="person-role-public"><%= person.role %></div>
+              <div class="person-description-public"><%= person.description %></div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<!-- TODO: STYLE -->

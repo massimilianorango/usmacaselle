@@ -1,0 +1,5 @@
+<ul class="nav-category" role="tablist">
+  <%= active_link_to 'Team', sector_category_path(@sector, @category), :wrap_tag => :li, :active => :exclusive %>
+  <%= active_link_to 'Calendari', calendars_sector_category_path(@sector, @category), :wrap_tag => :li %>
+  <%= active_link_to 'Orari di allenamento', schedules_sector_category_path(@sector, @category), :wrap_tag => :li %>
+</ul>

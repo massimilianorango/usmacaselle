@@ -1,0 +1,37 @@
+<% if !calendar.matches.empty? || !calendar.link.empty? %>
+  <div class="calendar-public">
+    <h3 class="calendar-name-public"><%= calendar.name %></h3>
+    <% if !calendar.link.empty? %>
+      <p>Consulta qui il calendario:
+        <%= link_to calendar.link, calendar.link, target: "_blank" %></p>
+    <% end %>
+    <% if !calendar.matches.empty? %>
+      <div class="table-responsive">
+        <table class="calendar-table-public">
+          <thead>
+            <tr>
+              <th>Locali</th>
+              <th>Ospiti</th>
+              <th>Luogo</th>
+              <th>Giorno</th>
+              <th>Data</th>
+              <th>Ora</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% calendar.matches.each do |match| %>
+              <tr>
+                <td><%= match.home %></td>
+                <td><%= match.guests %></td>
+                <td><%= match.where %></td>
+                <td><%= match.day %></td>
+                <td><%= match.date %></td>
+                <td><%= match.time %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <% end %>
+  </div>
+<% end %>

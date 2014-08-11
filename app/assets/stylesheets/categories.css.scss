@@ -1,3 +1,159 @@
 // Place all the styles related to the categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.nav-category {
+  @extend .nav;
+  @extend .nav-tabs;
+  @extend .nav-justified;
+  margin-bottom: 40px;
+  li > a {
+    border-radius: 3px 3px 0 0;
+  }
+  li.active > a.active {
+    background-color: transparent;
+    font-weight: bold;
+    color:#428bca;
+  }
+}
+
+.single-category-public {
+    .single-category-name-public {
+        @extend .page-header-public;
+    }
+    .single-category-img-public {
+        margin: 0 auto;
+        margin-bottom:20px;
+        .img-single-category-public {
+            width: 100%;
+        }
+    }
+}
+
+.calendars-public {
+    margin-top:40px;
+    .calendar-public {
+        margin-bottom: 40px;
+        .calendar-name-public {
+            font-size: 26px;
+        }
+    }
+}
+
+.calendar-table-public {
+    @extend .table;
+    @extend .table-bordered;
+    @extend .table-striped;
+    text-align: center;
+    th {
+        text-align: center;
+    }
+    & > tbody > tr:nth-child(2n+1) > td, & > tbody > tr:nth-child(2n+1) > th {
+        background-color: darken($gray-lighter, 3%);
+    }
+}
+
+.people-public {
+    margin-bottom: 40px;
+    .staff-title {
+        font-size: 30px;
+    }
+    .person-cell-public {
+        @extend .col-md-12;
+        @extend .col-sm-6;
+        @extend .col-xs-6;
+    }
+    .person-public {
+        @extend .row;
+        margin: 20px 0 0;
+        background-color: white;
+        border-radius:1px;
+        box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);
+        .person-image-public {
+            padding:10px;
+            @extend .col-md-3;
+            .img-person-public {
+                width:100%;
+            }
+        }
+        .person-info-public {
+            padding:10px;
+            @extend .col-md-9;
+            .person-name-public {
+                font-size: 25px;
+                font-weight: bold;
+                @media(max-width:480px) {
+                    font-size: 18px;
+                }
+            }
+            .person-role-public {
+                font-size: 18px;
+                font-style: italic;
+                color: $lightBlack;
+                @media(max-width:480px) {
+                    font-size: 15px;
+                }
+            }
+            .person-description-public {
+                margin-top:20px;
+                color: $gray-light;
+            }
+        }
+    }
+}
+
+.schedules-public {    
+    @extend .row;
+    margin-bottom: 40px;
+    .schedule-cell-public {
+        @extend .col-md-12;
+    }
+    .schedule-public {
+        @extend .row;
+        margin: 0 0 20px 0;
+        background-color: white;
+        border-radius:1px;
+        box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);
+        .schedule-info-public {
+            padding:10px;
+            @extend .col-md-4;
+            .schedule-day-public {
+                font-size: 25px;
+                font-weight: bold;
+                @media(max-width:480px) {
+                    font-size: 18px;
+                }
+            }
+            .schedule-time-public {
+                font-size: 18px;
+                font-style: italic;
+                color: $lightBlack;
+                @media(max-width:480px) {
+                    font-size: 15px;
+                }
+            }
+            .schedule-where-public {
+                margin-top:20px;
+                color: $gray-light;
+            }
+        }
+        .schedule-map-public {
+            padding:10px;
+            @extend .col-md-8;    
+            .schedule-google-maps-public {
+                position: relative;
+                padding-bottom: 40%; // This is the aspect ratio
+                height: 0;
+                overflow: hidden;
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100% !important;
+                    height: 100% !important;
+                }
+            }
+        }
+    }
+}
+

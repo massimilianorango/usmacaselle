@@ -1,0 +1,17 @@
+<tr id="match_<%= match.id %>">
+  <td><span class="glyphicon glyphicon-resize-vertical"></span></td>
+  <td><%= match.home %></td>
+  <td><%= match.guests %></td>
+  <td><%= match.where %></td>
+  <td><%= match.day %></td>
+  <td><%= match.date %></td>
+  <td><%= match.time %></td>
+  <td>
+    <%= link_to raw('<span class="icon"></span> Modifica'), edit_admin_category_calendar_match_path(@category, @calendar, match), :class => "btn-edit" %>
+  </td>
+  <td>
+    <%= link_to raw('<span class="icon"></span> Elimina'), [:admin, @category, @calendar, match], method: :delete,
+                                       data: { confirm: "Sei sicuro di voler eliminare la categoria e tutte le informazioni ad essa associate?" },
+                                       title: "Elimina categoria", :class => "btn-delete" %>
+  </td>
+</tr>

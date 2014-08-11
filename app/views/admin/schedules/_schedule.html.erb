@@ -1,0 +1,15 @@
+<tr id="schedule_<%= schedule.id %>">
+  <td><span class="glyphicon glyphicon-resize-vertical"></span></td>
+  <td><%= schedule.day %></td>
+  <td><%= schedule.time %></td>
+  <td><%= schedule.where %></td>  
+  <td><%= "Presente" if !schedule.map.empty? %></td>
+  <td>
+    <%= link_to raw('<span class="icon"></span> Modifica'), edit_admin_category_schedule_path(@category, schedule), :class => "btn-edit" %>
+  </td>
+  <td>
+    <%= link_to raw('<span class="icon"></span> Elimina'), [:admin, @category, schedule], method: :delete,
+                                       data: { confirm: "Sei sicuro di voler eliminare l'orario?" },
+                                       title: "Elimina orario", :class => "btn-delete" %>
+  </td>
+</tr>

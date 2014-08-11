@@ -1,0 +1,16 @@
+<div class="person-cell" id="person_<%= person.id %>">
+  <div class="person">
+    <div class="person-name"><%= person.first_name %> <%= person.last_name %></div>
+    <div class="person-img-container">
+      <span class="center-img-helper"></span><%= image_tag(person.image.url(:normal), class: "img-person") %>
+    </div>
+    <div class="person-bottom">
+      <div class="person-buttons">
+        <%= link_to raw('<span class="icon"></span> Modifica'), edit_admin_category_person_path(@category, person), :class => "btn-edit" %>
+        <%= link_to raw('<span class="icon"></span> Elimina'), [:admin, @category, person], method: :delete,
+                                       data: { confirm: "Sei sicuro di voler eliminare la persona e tutte le informazioni ad essa associate?" },
+                                       title: "Elimina persona", :class => "btn-delete" %>
+      </div>
+    </div>
+  </div>
+</div>

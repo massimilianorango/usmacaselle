@@ -1,0 +1,45 @@
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li><%= link_to 'Categorie', admin_categories_path %></li>
+  <li><%= link_to 'Modifica ' + @category.name, edit_admin_category_path(@category) %></li>
+  <li><%= link_to 'Calendari', admin_category_calendars_path(@category) %></li>
+  <li><%= link_to 'Modifica ' + @calendar.name, edit_admin_category_calendar_path(@category, @calendar) %></li>
+  <li class="active"><%= yield(:title) %></li>
+</ol>
+<div class="page-container">
+<%= form_for [:admin, @category, @calendar, @match], :html => {role: "form", class: "form-center-full"} do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <h2 class="page-header-private"><%= yield(:title) %></h2>
+  <div class="alert alert-info">Ricorda di premere il tasto di
+    <strong>salvataggio</strong>
+    in fondo alla pagina, o le tue modifiche non verranno salvate.</div>
+  <div class="form-group">
+    <%= f.label :home, 'Squadra locale' %>
+    <%= f.text_field :home, {class: "form-control", :required => true, :autofocus => true, placeholder: "Inserisci la squadra locale"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :guests, 'Squadra ospite' %>
+    <%= f.text_field :guests, {class: "form-control", :required => true, placeholder: "Inserisci la squadra ospite"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :where, 'Luogo' %>
+    <%= f.text_field :where, {class: "form-control", :required => true, placeholder: "Inserisci il luogo"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :day, 'Giorno della settimana' %>
+    <%= f.text_field :day, {class: "form-control", :required => true, placeholder: "Inserisci il giorno della settimana"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date, 'Data' %>
+    <%= f.text_field :date, {class: "form-control", :required => true, placeholder: "Inserisci la data"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :time, 'Ora' %>
+    <%= f.text_field :time, {class: "form-control", :required => true, placeholder: "Inserisci l'ora"} %>
+  </div>
+  <%= f.button(type: 'submit', class: "btn-save btn-final") do %>
+    <span class="icon"></span>
+    <%= yield(:action) %>
+  <% end %>
+<% end %>
+</div>

@@ -25,6 +25,7 @@ gem 'flickraw', '0.9.8'
 gem 'carrierwave-ftp', '0.2.6'
 gem 'mini_magick', '3.8.0'
 gem 'fancybox2-rails', '0.2.8'
+gem 'nokogiri', '1.6.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'

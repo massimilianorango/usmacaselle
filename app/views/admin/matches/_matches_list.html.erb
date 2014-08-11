@@ -1,0 +1,39 @@
+<div class="page-container">
+  <h2 class="page-header-private">Partite presenti:
+    <%= @calendar.matches.count %>
+  </h2>
+  <p class="alert alert-info">
+    Vuoi
+    <strong>ordinare</strong>
+    le partite? Trascinale e l'ordine verrà registrato.
+    <strong>Ricorda:</strong>
+    l'ordine va dall'alto al basso.</p>
+  <div class="category-top-buttons">
+    <%= link_to raw('<span class="icon"></span> Nuova partita'), new_admin_category_calendar_match_path(@category.id, @calendar.id), :class => "btn btn-new" %>
+    <span class="controller">categories/<%= @category.id %>/calendars/<%= @calendar.id %>/matches</span>
+  </div>
+  <% if @calendar.matches.any? %>
+    <div class="container-fluid">
+      <div class="table-responsive">
+        <table class="match-table">
+          <thead>
+            <tr>
+              <th>Sposta</th>
+              <th>Locali</th>
+              <th>Ospiti</th>
+              <th>Luogo</th>
+              <th>Giorno</th>
+              <th>Data</th>
+              <th>Ora</th>
+              <th>Modifica</th>
+              <th>Elimina</th>
+            </tr>
+          </thead>
+          <tbody class="sortable">
+            <%= render @matches %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% end %>
+</div>

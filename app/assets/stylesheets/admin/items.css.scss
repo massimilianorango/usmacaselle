@@ -2,20 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$category-height: 256px;
-$category-img-height: ($category-height - 20px)*(78/100);
-$category-border-height: ($category-height - 20px)*(11/100);
+$shop_item-height: 350px;
+$shop_item-img-height: ($shop_item-height - 20px)*(78/100);
+$shop_item-border-height: ($shop_item-height - 20px)*(11/100);
 
-.category-cell {
+.shop_item-cell {
     @extend .col-md-3;
     @extend .col-sm-4;
-    text-align: center;
     padding:10px;
-    height: $category-height;
+    height: $shop_item-height;
 }
 
-.categories-placeholder {
-    @extend .category-cell;
+.items-placeholder {
+    @extend .shop_item-cell;
     border: 1px solid $darkBlue;
     background: $lightBlue;
     border-radius: 4px;
@@ -23,62 +22,48 @@ $category-border-height: ($category-height - 20px)*(11/100);
     box-shadow: $placeholder-shadow;
 }
 
-.category { 
+.shop_item { 
     max-width:300px;
     height: 100%;
     margin: 0 auto;
     padding:0;
 }
 
-.category-border {
+.shop_item-border {
     background-color:black;
     color: white;
-    height:$category-border-height;
-    line-height:$category-border-height;
+    height:$shop_item-border-height;
+    line-height:$shop_item-border-height;
     padding-left:15px;
 }
 
-.category-name {
+.shop_item-name {
     @include border-top-radius(3px);
-    @extend .category-border;
+    @extend .shop_item-border;
 }
 
-.category-img-container {
+.shop_item-img-container {
     border-left: 1px solid $lightGray;
     border-right: 1px solid $lightGray;
     background-color: $gray-lighter;
-    height: $category-img-height;
+    height: $shop_item-img-height;
     text-align: center;
 }
 
-.img-category {
+.img-shop_item {
     vertical-align: middle;
-    max-height: $category-img-height;
+    max-height: $shop_item-img-height;
     max-width: 100%;
     margin: 0 auto;
 }
 
-.category-bottom {
+.shop_item-bottom {
     @include border-bottom-radius(3px);
-    @extend .category-border;
-    padding-left:0;
+    @extend .shop_item-border;
     position: relative;
-    .category-buttons {
-      a {
-          position: absolute;
-          bottom:2px;
-          @extend .btn-xs;
-          &.btn-edit {
-            left:3px;
-          }
-          &.btn-delete {
-            right:3px;
-          }
-      }
-    } 
 }
 
-.category-btn-delete {
+.shop_item-btn-delete {
   @extend .pull-right;
   @extend .btn-xs;
   position: absolute;

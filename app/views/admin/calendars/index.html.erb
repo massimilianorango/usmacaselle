@@ -1,0 +1,24 @@
+<% provide(:title, "Calendari") %>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li><%= link_to 'Categorie', admin_categories_path %></li>
+  <li><%= link_to 'Modifica ' + @category.name, edit_admin_category_path(@category) %></li>
+  <li class="active"><%= yield(:title) %></li>
+</ol>
+<div class="page-container">
+  <h2 class="page-header-private">Calendari presenti:
+    <%= @category.calendars.count %>
+  </h2>
+  <p class="alert alert-info"> Vuoi <strong>ordinare</strong> i calendari? Trascinali e l'ordine verrà registrato. <strong>Ricorda:</strong> l'ordine va dall'alto al basso.</p>
+  <div class="category-top-buttons">
+    <%= link_to raw('<span class="icon"></span> Nuovo calendario'), new_admin_category_calendar_path, :class => "btn btn-new" %>
+    <span class="controller">categories/<%= @category.id %>/calendars</span>
+  </div>
+  <% if @category.calendars.any? %>
+    <div class="container-fluid">
+      <div class="sortable row">
+        <%= render @calendars %>
+      </div>
+    </div>
+  <% end %>
+</div>

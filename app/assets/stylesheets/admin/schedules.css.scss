@@ -1,0 +1,23 @@
+// Place all the styles related to the admin/schedules controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.schedule-table {
+    @extend .table;
+    @extend .table-bordered;
+    margin-top:20px;
+    text-align: center;
+    .btn-edit, .btn-delete {
+        @extend .btn-xs;
+    }
+    th {
+        text-align: center;
+    }
+}
+
+.schedules-placeholder {
+    border: 1px solid $darkBlue;
+    background: $lightBlue;
+    border-radius: 4px;
+    @include box-shadow($placeholder-shadow);
+    box-shadow: $placeholder-shadow;
+}

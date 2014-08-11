@@ -10,4 +10,7 @@ class Category < ActiveRecord::Base
     validates :name, presence: {:message => "Devi inserire il nome della categoria." },
         length: { maximum: 30, :message => 'Il nome non può superare 30 caratteri.' }
 
+    has_many :calendars, dependent: :destroy
+    has_many :people, dependent: :destroy
+    has_many :schedules, dependent: :destroy
 end

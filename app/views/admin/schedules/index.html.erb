@@ -1,0 +1,39 @@
+<% provide(:title, "Orari") %>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li><%= link_to 'Categorie', admin_categories_path %></li>
+  <li><%= link_to 'Modifica ' + @category.name, edit_admin_category_path(@category) %></li>
+  <li class="active"><%= yield(:title) %></li>
+</ol>
+<div class="page-container">
+  <h2 class="page-header-private">Orari presenti:
+    <%= @category.schedules.count %>
+  </h2>
+  <p class="alert alert-info"> Vuoi <strong>ordinare</strong> gli orari? Trascinali e l'ordine verrà registrato. <strong>Ricorda:</strong> l'ordine va dall'alto al basso.</p>
+  <div class="category-top-buttons">
+    <%= link_to raw('<span class="icon"></span> Nuovo orario'), new_admin_category_schedule_path, :class => "btn btn-new" %>
+    <span class="controller">categories/<%= @category.id %>/schedules</span>
+  </div>
+  <% if @category.schedules.any? %>
+    <div class="container-fluid">
+      <div class="table-responsive">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Sposta</th>
+              <th>Giorno</th>
+              <th>Ora (dalle-alle)</th>
+              <th>Luogo</th>
+              <th>Mappa</th>
+              <th>Modifica</th>
+              <th>Elimina</th>
+            </tr>
+          </thead>
+          <tbody class="sortable">
+            <%= render @schedules %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% end %>
+</div>
