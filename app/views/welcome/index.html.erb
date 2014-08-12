@@ -8,7 +8,7 @@
     <% sector_size_class = "col-md-6" %>
     <% sector_size_class = "col-md-12" if index == sec_size - 1 %>
     <div class="sector-public <%= sector_size_class %>">
-      <%= link_to raw(image_tag("icon-"+sector.sector_class+".png", class: "sector-icon-public")+ sector.name), sector_path(sector.unique_name), class:"sector-link-public-" + sector.sector_class %>
+      <%= link_to raw(image_tag("sport-icons-home/icon-"+sector.sector_class+".png", class: "sector-icon-public")+ sector.name), sector_path(sector.unique_name), class:"sector-link-public-" + sector.sector_class %>
     </div>
   <% end %>
 </div>

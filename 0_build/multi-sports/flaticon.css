@@ -1,0 +1,916 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticon.eot");
+	src: url("flaticon.eot#iefix") format("embedded-opentype"),
+	url("flaticon.woff") format("woff"),
+	url("flaticon.ttf") format("truetype"),
+	url("flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}.flaticon-4x4:before {
+	content: "\e000";
+}
+.flaticon-81:before {
+	content: "\e001";
+}
+.flaticon-acrobatics:before {
+	content: "\e002";
+}
+.flaticon-acrobat:before {
+	content: "\e003";
+}
+.flaticon-adventure1:before {
+	content: "\e004";
+}
+.flaticon-adventure:before {
+	content: "\e005";
+}
+.flaticon-american12:before {
+	content: "\e006";
+}
+.flaticon-american13:before {
+	content: "\e007";
+}
+.flaticon-american14:before {
+	content: "\e008";
+}
+.flaticon-american17:before {
+	content: "\e009";
+}
+.flaticon-arrow571:before {
+	content: "\e00a";
+}
+.flaticon-artistic2:before {
+	content: "\e00b";
+}
+.flaticon-artistic4:before {
+	content: "\e00c";
+}
+.flaticon-artistic5:before {
+	content: "\e00d";
+}
+.flaticon-athlete2:before {
+	content: "\e00e";
+}
+.flaticon-athlete3:before {
+	content: "\e00f";
+}
+.flaticon-badminton3:before {
+	content: "\e010";
+}
+.flaticon-badminton4:before {
+	content: "\e011";
+}
+.flaticon-baseball16:before {
+	content: "\e012";
+}
+.flaticon-baseball17:before {
+	content: "\e013";
+}
+.flaticon-baseball18:before {
+	content: "\e014";
+}
+.flaticon-baseball19:before {
+	content: "\e015";
+}
+.flaticon-baseball20:before {
+	content: "\e016";
+}
+.flaticon-basketball21:before {
+	content: "\e017";
+}
+.flaticon-basketball22:before {
+	content: "\e018";
+}
+.flaticon-basketball23:before {
+	content: "\e019";
+}
+.flaticon-basketball24:before {
+	content: "\e01a";
+}
+.flaticon-basketball26:before {
+	content: "\e01b";
+}
+.flaticon-basketball27:before {
+	content: "\e01c";
+}
+.flaticon-basketball28:before {
+	content: "\e01d";
+}
+.flaticon-basketball29:before {
+	content: "\e01e";
+}
+.flaticon-basketball30:before {
+	content: "\e01f";
+}
+.flaticon-beach7:before {
+	content: "\e020";
+}
+.flaticon-billiard4:before {
+	content: "\e021";
+}
+.flaticon-black219:before {
+	content: "\e022";
+}
+.flaticon-black223:before {
+	content: "\e023";
+}
+.flaticon-black224:before {
+	content: "\e024";
+}
+.flaticon-black228:before {
+	content: "\e025";
+}
+.flaticon-boat14:before {
+	content: "\e026";
+}
+.flaticon-bobsleigh:before {
+	content: "\e027";
+}
+.flaticon-boot2:before {
+	content: "\e028";
+}
+.flaticon-bowling13:before {
+	content: "\e029";
+}
+.flaticon-bowling14:before {
+	content: "\e02a";
+}
+.flaticon-bowling15:before {
+	content: "\e02b";
+}
+.flaticon-box45:before {
+	content: "\e02c";
+}
+.flaticon-boxing2:before {
+	content: "\e02d";
+}
+.flaticon-boxing3:before {
+	content: "\e02e";
+}
+.flaticon-bridge1:before {
+	content: "\e02f";
+}
+.flaticon-bridge:before {
+	content: "\e030";
+}
+.flaticon-camels1:before {
+	content: "\e031";
+}
+.flaticon-camels2:before {
+	content: "\e032";
+}
+.flaticon-camels:before {
+	content: "\e033";
+}
+.flaticon-car86:before {
+	content: "\e034";
+}
+.flaticon-charreria1:before {
+	content: "\e035";
+}
+.flaticon-charreria:before {
+	content: "\e036";
+}
+.flaticon-chess13:before {
+	content: "\e037";
+}
+.flaticon-chess14:before {
+	content: "\e038";
+}
+.flaticon-climbing2:before {
+	content: "\e039";
+}
+.flaticon-climbing3:before {
+	content: "\e03a";
+}
+.flaticon-climbing4:before {
+	content: "\e03b";
+}
+.flaticon-climbing5:before {
+	content: "\e03c";
+}
+.flaticon-climbing:before {
+	content: "\e03d";
+}
+.flaticon-criquet1:before {
+	content: "\e03e";
+}
+.flaticon-criquet2:before {
+	content: "\e03f";
+}
+.flaticon-criquet:before {
+	content: "\e040";
+}
+.flaticon-dagger:before {
+	content: "\e041";
+}
+.flaticon-diver:before {
+	content: "\e042";
+}
+.flaticon-dove1:before {
+	content: "\e043";
+}
+.flaticon-dumbbell20:before {
+	content: "\e044";
+}
+.flaticon-equestrian1:before {
+	content: "\e045";
+}
+.flaticon-equestrian:before {
+	content: "\e046";
+}
+.flaticon-extreme1:before {
+	content: "\e047";
+}
+.flaticon-extreme2:before {
+	content: "\e048";
+}
+.flaticon-extreme:before {
+	content: "\e049";
+}
+.flaticon-female133:before {
+	content: "\e04a";
+}
+.flaticon-female139:before {
+	content: "\e04b";
+}
+.flaticon-fighter5:before {
+	content: "\e04c";
+}
+.flaticon-fight:before {
+	content: "\e04d";
+}
+.flaticon-fish19:before {
+	content: "\e04e";
+}
+.flaticon-fisher1:before {
+	content: "\e04f";
+}
+.flaticon-flying12:before {
+	content: "\e050";
+}
+.flaticon-football145:before {
+	content: "\e051";
+}
+.flaticon-four51:before {
+	content: "\e052";
+}
+.flaticon-golf18:before {
+	content: "\e053";
+}
+.flaticon-golf19:before {
+	content: "\e054";
+}
+.flaticon-golf21:before {
+	content: "\e055";
+}
+.flaticon-golf22:before {
+	content: "\e056";
+}
+.flaticon-gymnast53:before {
+	content: "\e057";
+}
+.flaticon-halterofilia:before {
+	content: "\e058";
+}
+.flaticon-head19:before {
+	content: "\e059";
+}
+.flaticon-hiker:before {
+	content: "\e05a";
+}
+.flaticon-hiking1:before {
+	content: "\e05b";
+}
+.flaticon-hiking2:before {
+	content: "\e05c";
+}
+.flaticon-hockey1:before {
+	content: "\e05d";
+}
+.flaticon-hockey2:before {
+	content: "\e05e";
+}
+.flaticon-hockey3:before {
+	content: "\e05f";
+}
+.flaticon-hunter:before {
+	content: "\e060";
+}
+.flaticon-hunting1:before {
+	content: "\e061";
+}
+.flaticon-hunting2:before {
+	content: "\e062";
+}
+.flaticon-hunting:before {
+	content: "\e063";
+}
+.flaticon-ice46:before {
+	content: "\e064";
+}
+.flaticon-ice48:before {
+	content: "\e065";
+}
+.flaticon-ice49:before {
+	content: "\e066";
+}
+.flaticon-ice50:before {
+	content: "\e067";
+}
+.flaticon-individual1:before {
+	content: "\e068";
+}
+.flaticon-individual2:before {
+	content: "\e069";
+}
+.flaticon-individual3:before {
+	content: "\e06a";
+}
+.flaticon-individual4:before {
+	content: "\e06b";
+}
+.flaticon-individual5:before {
+	content: "\e06c";
+}
+.flaticon-individual:before {
+	content: "\e06d";
+}
+.flaticon-jet2:before {
+	content: "\e06e";
+}
+.flaticon-jet3:before {
+	content: "\e06f";
+}
+.flaticon-jet4:before {
+	content: "\e070";
+}
+.flaticon-jockey2:before {
+	content: "\e071";
+}
+.flaticon-jockey3:before {
+	content: "\e072";
+}
+.flaticon-jumping23:before {
+	content: "\e073";
+}
+.flaticon-jumping24:before {
+	content: "\e074";
+}
+.flaticon-jumping25:before {
+	content: "\e075";
+}
+.flaticon-kickboxing:before {
+	content: "\e076";
+}
+.flaticon-kitesurf1:before {
+	content: "\e077";
+}
+.flaticon-kitesurfing:before {
+	content: "\e078";
+}
+.flaticon-kitesurf:before {
+	content: "\e079";
+}
+.flaticon-lacrosse1:before {
+	content: "\e07a";
+}
+.flaticon-lacrosse2:before {
+	content: "\e07b";
+}
+.flaticon-lacrosse:before {
+	content: "\e07c";
+}
+.flaticon-luge:before {
+	content: "\e07d";
+}
+.flaticon-martial2:before {
+	content: "\e07e";
+}
+.flaticon-martial3:before {
+	content: "\e07f";
+}
+.flaticon-martial4:before {
+	content: "\e080";
+}
+.flaticon-martial5:before {
+	content: "\e081";
+}
+.flaticon-motor3:before {
+	content: "\e082";
+}
+.flaticon-motorcycle6:before {
+	content: "\e083";
+}
+.flaticon-motorcycle7:before {
+	content: "\e084";
+}
+.flaticon-motorcycle8:before {
+	content: "\e085";
+}
+.flaticon-motorcyclist2:before {
+	content: "\e086";
+}
+.flaticon-motoring1:before {
+	content: "\e087";
+}
+.flaticon-motoring:before {
+	content: "\e088";
+}
+.flaticon-mountain18:before {
+	content: "\e089";
+}
+.flaticon-mountain19:before {
+	content: "\e08a";
+}
+.flaticon-mountain22:before {
+	content: "\e08b";
+}
+.flaticon-mountain23:before {
+	content: "\e08c";
+}
+.flaticon-olympic10:before {
+	content: "\e08d";
+}
+.flaticon-olympic11:before {
+	content: "\e08e";
+}
+.flaticon-olympic12:before {
+	content: "\e08f";
+}
+.flaticon-olympic13:before {
+	content: "\e090";
+}
+.flaticon-olympic14:before {
+	content: "\e091";
+}
+.flaticon-olympic15:before {
+	content: "\e092";
+}
+.flaticon-olympic17:before {
+	content: "\e093";
+}
+.flaticon-olympic18:before {
+	content: "\e094";
+}
+.flaticon-olympic19:before {
+	content: "\e095";
+}
+.flaticon-olympic3:before {
+	content: "\e096";
+}
+.flaticon-olympic4:before {
+	content: "\e097";
+}
+.flaticon-olympic5:before {
+	content: "\e098";
+}
+.flaticon-olympic6:before {
+	content: "\e099";
+}
+.flaticon-olympic7:before {
+	content: "\e09a";
+}
+.flaticon-olympic8:before {
+	content: "\e09b";
+}
+.flaticon-olympic9:before {
+	content: "\e09c";
+}
+.flaticon-paralympic10:before {
+	content: "\e09d";
+}
+.flaticon-paralympic11:before {
+	content: "\e09e";
+}
+.flaticon-paralympic12:before {
+	content: "\e09f";
+}
+.flaticon-paralympic13:before {
+	content: "\e0a0";
+}
+.flaticon-paralympic14:before {
+	content: "\e0a1";
+}
+.flaticon-paralympic15:before {
+	content: "\e0a2";
+}
+.flaticon-paralympic16:before {
+	content: "\e0a3";
+}
+.flaticon-paralympic17:before {
+	content: "\e0a4";
+}
+.flaticon-paralympic18:before {
+	content: "\e0a5";
+}
+.flaticon-paralympic19:before {
+	content: "\e0a6";
+}
+.flaticon-paralympic1:before {
+	content: "\e0a7";
+}
+.flaticon-paralympic20:before {
+	content: "\e0a8";
+}
+.flaticon-paralympic21:before {
+	content: "\e0a9";
+}
+.flaticon-paralympic22:before {
+	content: "\e0aa";
+}
+.flaticon-paralympic23:before {
+	content: "\e0ab";
+}
+.flaticon-paralympic24:before {
+	content: "\e0ac";
+}
+.flaticon-paralympic25:before {
+	content: "\e0ad";
+}
+.flaticon-paralympic26:before {
+	content: "\e0ae";
+}
+.flaticon-paralympic27:before {
+	content: "\e0af";
+}
+.flaticon-paralympic28:before {
+	content: "\e0b0";
+}
+.flaticon-paralympic29:before {
+	content: "\e0b1";
+}
+.flaticon-paralympic2:before {
+	content: "\e0b2";
+}
+.flaticon-paralympic30:before {
+	content: "\e0b3";
+}
+.flaticon-paralympic31:before {
+	content: "\e0b4";
+}
+.flaticon-paralympic3:before {
+	content: "\e0b5";
+}
+.flaticon-paralympic4:before {
+	content: "\e0b6";
+}
+.flaticon-paralympic5:before {
+	content: "\e0b7";
+}
+.flaticon-paralympic6:before {
+	content: "\e0b8";
+}
+.flaticon-paralympic7:before {
+	content: "\e0b9";
+}
+.flaticon-paralympic8:before {
+	content: "\e0ba";
+}
+.flaticon-paralympic9:before {
+	content: "\e0bb";
+}
+.flaticon-paralympics1:before {
+	content: "\e0bc";
+}
+.flaticon-paralympics2:before {
+	content: "\e0bd";
+}
+.flaticon-paralympics3:before {
+	content: "\e0be";
+}
+.flaticon-paralympics:before {
+	content: "\e0bf";
+}
+.flaticon-paralympic:before {
+	content: "\e0c0";
+}
+.flaticon-paratrooper:before {
+	content: "\e0c1";
+}
+.flaticon-parkour1:before {
+	content: "\e0c2";
+}
+.flaticon-parkour2:before {
+	content: "\e0c3";
+}
+.flaticon-parkour:before {
+	content: "\e0c4";
+}
+.flaticon-pentathlon1:before {
+	content: "\e0c5";
+}
+.flaticon-pentathlon:before {
+	content: "\e0c6";
+}
+.flaticon-person228:before {
+	content: "\e0c7";
+}
+.flaticon-person229:before {
+	content: "\e0c8";
+}
+.flaticon-person232:before {
+	content: "\e0c9";
+}
+.flaticon-person242:before {
+	content: "\e0ca";
+}
+.flaticon-person243:before {
+	content: "\e0cb";
+}
+.flaticon-person244:before {
+	content: "\e0cc";
+}
+.flaticon-ping1:before {
+	content: "\e0cd";
+}
+.flaticon-ping2:before {
+	content: "\e0ce";
+}
+.flaticon-polo1:before {
+	content: "\e0cf";
+}
+.flaticon-polo2:before {
+	content: "\e0d0";
+}
+.flaticon-races:before {
+	content: "\e0d1";
+}
+.flaticon-racquetball1:before {
+	content: "\e0d2";
+}
+.flaticon-racquetball:before {
+	content: "\e0d3";
+}
+.flaticon-riding1:before {
+	content: "\e0d4";
+}
+.flaticon-road19:before {
+	content: "\e0d5";
+}
+.flaticon-rodeo1:before {
+	content: "\e0d6";
+}
+.flaticon-rodeo2:before {
+	content: "\e0d7";
+}
+.flaticon-rodeo:before {
+	content: "\e0d8";
+}
+.flaticon-rowing:before {
+	content: "\e0d9";
+}
+.flaticon-rugby96:before {
+	content: "\e0da";
+}
+.flaticon-runner2:before {
+	content: "\e0db";
+}
+.flaticon-runner3:before {
+	content: "\e0dc";
+}
+.flaticon-sailing7:before {
+	content: "\e0dd";
+}
+.flaticon-scrabble20:before {
+	content: "\e0de";
+}
+.flaticon-scrabble21:before {
+	content: "\e0df";
+}
+.flaticon-scrabble22:before {
+	content: "\e0e0";
+}
+.flaticon-shooting2:before {
+	content: "\e0e1";
+}
+.flaticon-shooting3:before {
+	content: "\e0e2";
+}
+.flaticon-shooting4:before {
+	content: "\e0e3";
+}
+.flaticon-shooting5:before {
+	content: "\e0e4";
+}
+.flaticon-shot1:before {
+	content: "\e0e5";
+}
+.flaticon-shot:before {
+	content: "\e0e6";
+}
+.flaticon-skateboard1:before {
+	content: "\e0e7";
+}
+.flaticon-skateboard2:before {
+	content: "\e0e8";
+}
+.flaticon-skateboard3:before {
+	content: "\e0e9";
+}
+.flaticon-skateboard4:before {
+	content: "\e0ea";
+}
+.flaticon-skateboard:before {
+	content: "\e0eb";
+}
+.flaticon-skater1:before {
+	content: "\e0ec";
+}
+.flaticon-skiing4:before {
+	content: "\e0ed";
+}
+.flaticon-skiing5:before {
+	content: "\e0ee";
+}
+.flaticon-skii:before {
+	content: "\e0ef";
+}
+.flaticon-skydiving:before {
+	content: "\e0f0";
+}
+.flaticon-snowboard1:before {
+	content: "\e0f1";
+}
+.flaticon-snowboard:before {
+	content: "\e0f2";
+}
+.flaticon-soccer22:before {
+	content: "\e0f3";
+}
+.flaticon-soccer23:before {
+	content: "\e0f4";
+}
+.flaticon-soccer24:before {
+	content: "\e0f5";
+}
+.flaticon-soccer25:before {
+	content: "\e0f6";
+}
+.flaticon-soccer26:before {
+	content: "\e0f7";
+}
+.flaticon-soccer27:before {
+	content: "\e0f8";
+}
+.flaticon-soccer28:before {
+	content: "\e0f9";
+}
+.flaticon-soccer29:before {
+	content: "\e0fa";
+}
+.flaticon-soccer30:before {
+	content: "\e0fb";
+}
+.flaticon-softball:before {
+	content: "\e0fc";
+}
+.flaticon-speed6:before {
+	content: "\e0fd";
+}
+.flaticon-speed7:before {
+	content: "\e0fe";
+}
+.flaticon-sportive29:before {
+	content: "\e0ff";
+}
+.flaticon-squash1:before {
+	content: "\e100";
+}
+.flaticon-squash:before {
+	content: "\e101";
+}
+.flaticon-strong2:before {
+	content: "\e102";
+}
+.flaticon-strong3:before {
+	content: "\e103";
+}
+.flaticon-surf1:before {
+	content: "\e104";
+}
+.flaticon-surf2:before {
+	content: "\e105";
+}
+.flaticon-surfing:before {
+	content: "\e106";
+}
+.flaticon-swimmer6:before {
+	content: "\e107";
+}
+.flaticon-swimmer7:before {
+	content: "\e108";
+}
+.flaticon-swimming17:before {
+	content: "\e109";
+}
+.flaticon-synchronized1:before {
+	content: "\e10a";
+}
+.flaticon-synchronized:before {
+	content: "\e10b";
+}
+.flaticon-table36:before {
+	content: "\e10c";
+}
+.flaticon-taekwondo1:before {
+	content: "\e10d";
+}
+.flaticon-taekwondo2:before {
+	content: "\e10e";
+}
+.flaticon-taekwondo:before {
+	content: "\e10f";
+}
+.flaticon-tai1:before {
+	content: "\e110";
+}
+.flaticon-tai2:before {
+	content: "\e111";
+}
+.flaticon-tai3:before {
+	content: "\e112";
+}
+.flaticon-tai:before {
+	content: "\e113";
+}
+.flaticon-tennis15:before {
+	content: "\e114";
+}
+.flaticon-tennis16:before {
+	content: "\e115";
+}
+.flaticon-tent7:before {
+	content: "\e116";
+}
+.flaticon-trail:before {
+	content: "\e117";
+}
+.flaticon-triathlon1:before {
+	content: "\e118";
+}
+.flaticon-triathlon:before {
+	content: "\e119";
+}
+.flaticon-two152:before {
+	content: "\e11a";
+}
+.flaticon-two155:before {
+	content: "\e11b";
+}
+.flaticon-vehicles:before {
+	content: "\e11c";
+}
+.flaticon-volleyball1:before {
+	content: "\e11d";
+}
+.flaticon-volleyball2:before {
+	content: "\e11e";
+}
+.flaticon-volleyball3:before {
+	content: "\e11f";
+}
+.flaticon-volleyball4:before {
+	content: "\e120";
+}
+.flaticon-water36:before {
+	content: "\e121";
+}
+.flaticon-water37:before {
+	content: "\e122";
+}
+.flaticon-waterpolo1:before {
+	content: "\e123";
+}
+.flaticon-waterpolo:before {
+	content: "\e124";
+}
+.flaticon-weightlifting1:before {
+	content: "\e125";
+}
+.flaticon-weightlifting2:before {
+	content: "\e126";
+}
+.flaticon-weightlifting3:before {
+	content: "\e127";
+}
+.flaticon-weightlifting:before {
+	content: "\e128";
+}
+.flaticon-wheels:before {
+	content: "\e129";
+}
+.flaticon-whip:before {
+	content: "\e12a";
+}
+.flaticon-windsurf1:before {
+	content: "\e12b";
+}

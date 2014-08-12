@@ -6,23 +6,25 @@
   <li class="active"><%= yield(:title) %></li>
 </ol>
 <div class="page-container">
-<%= form_for [:admin, @page], :html => {multipart: true, role: "form", class: "form-center-full"} do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <h2 class="page-header-private"><%= yield(:title) %></h2>
-  <div class="alert alert-info">Ricorda di premere il tasto di
-    <strong>salvataggio</strong>
-    in fondo alla pagina, o le tue modifiche non verranno salvate.</div>
-  <div class="form-group">
-    <%= f.label :title, 'Titolo della pagina' %>
-    <%= f.text_field :title, {class: "form-control", :required => true, placeholder: "Inserisci il titolo della pagina"} %>
-  </div>
-  <div class="form-group">
-    <%= f.label :content, 'Contenuto della pagina' %>
-    <%= f.cktext_area :content %>
-  </div>
-  <%= f.button(type: 'submit', class: "btn-save btn-final") do %>
-    <span class="icon"></span>
-    <%= yield(:action) %>
+  <%= form_for [:admin, @page], :html => {multipart: true, role: "form", class: "form-center-full"} do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <h2 class="page-header-private"><%= yield(:title) %></h2>
+    <div class="alert alert-danger"><strong>Attenzione!</strong>
+      Presta molta attenzione quando modifichi queste pagine. La vista "a blocchi" può aiutarti a non cancellare blocchi importanti per la visualizzazione.</div>
+    <div class="alert alert-info">Ricorda di premere il tasto di
+      <strong>salvataggio</strong>
+      in fondo alla pagina, o le tue modifiche non verranno salvate.</div>
+    <div class="form-group">
+      <%= f.label :title, 'Titolo della pagina' %>
+      <%= f.text_field :title, {class: "form-control", :required => true, placeholder: "Inserisci il titolo della pagina"} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :content, 'Contenuto della pagina' %>
+      <%= f.cktext_area :content %>
+    </div>
+    <%= f.button(type: 'submit', class: "btn-save btn-final") do %>
+      <span class="icon"></span>
+      <%= yield(:action) %>
+    <% end %>
   <% end %>
-<% end %>
 </div>

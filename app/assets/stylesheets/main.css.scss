@@ -360,14 +360,7 @@ footer {
 
     /* TABLET 7 */
     @media(max-width: 991px) {
-        .public-navbar .public-navbar-brand {
-            padding:0;
-            height: 60px;
-            margin-top:5px;
-            img {
-                height:100%;
-            }
-        }
+        
         .public-navbar .public-nav li > a{
             font-size:14px;
         }
@@ -514,7 +507,7 @@ footer {
 
 @mixin body_bg($sector) {
     .body-public-#{$sector} {
-        background: url(image-path('bg-#{$sector}.jpg')) no-repeat center center fixed;
+        background: url(image-path('backgrounds/bg-#{$sector}.jpg')) no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
