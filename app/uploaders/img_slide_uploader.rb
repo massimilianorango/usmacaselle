@@ -39,7 +39,7 @@ class ImgSlideUploader < CarrierWave::Uploader::Base
   end
 
   version :normal do
-    process :resize_to_fit => [1920, nil]
+    process :resize_to_fit => [1280, nil]
   end
 
   # private

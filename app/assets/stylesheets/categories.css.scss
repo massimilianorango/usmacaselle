@@ -47,7 +47,8 @@
     .calendar-public {
         margin-bottom: 40px;
         .calendar-name-public {
-            font-size: 26px;
+            //font-size: 26px;
+            font-weight:bold;
         }
     }
 }
@@ -106,14 +107,14 @@
             padding:10px;
             @extend .col-md-9;
             .person-name-public {
-                font-size: 25px;
+                // font-size: 25px;
                 font-weight: bold;
                 @media(max-width:480px) {
                     font-size: 18px;
                 }
             }
             .person-role-public {
-                font-size: 18px;
+                font-size: 16px;
                 font-style: italic;
                 color: $lightBlack;
                 @media(max-width:480px) {
@@ -144,14 +145,14 @@
             padding:10px;
             @extend .col-md-4;
             .schedule-day-public {
-                font-size: 25px;
+                //font-size: 25px;
                 font-weight: bold;
                 @media(max-width:480px) {
                     font-size: 18px;
                 }
             }
             .schedule-time-public {
-                font-size: 18px;
+                font-size: 16px;
                 font-style: italic;
                 color: $lightBlack;
                 @media(max-width:480px) {

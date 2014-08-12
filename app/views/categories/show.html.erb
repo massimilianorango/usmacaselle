@@ -15,10 +15,10 @@
           <div class="person-public">
             <div class="person-image-public"><%= image_tag person.image.url(:normal), class: "img-person-public" %></div>
             <div class="person-info-public">
-              <div class="person-name-public"><%= person.first_name %>
-                <%= person.last_name %></div>
-              <div class="person-role-public"><%= person.role %></div>
-              <div class="person-description-public"><%= person.description %></div>
+              <h3 class="person-name-public"><%= person.first_name %>
+                <%= person.last_name %></h3>
+              <p class="person-role-public"><%= person.role %></p>
+              <p class="person-description-public"><%= person.description %></p>
             </div>
           </div>
         </div>

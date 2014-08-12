@@ -5,7 +5,7 @@
     margin-bottom: 40px;
 }
 .content-box-public {
-    padding:20px;
+    padding:15px;
     background-color: white;
     border-radius:1px;
     box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);
@@ -15,4 +15,53 @@
     @extend .btn-lg;
     @extend .btn-success;
     border-radius:1px;
+}
+.contacts-public {
+    @extend .row;
+    margin-bottom: 40px;
+    padding:0 15px;
+    .contact-cell-public {
+        @extend .col-md-12;
+        margin-bottom:20px;
+        .contact-public {
+            @extend .row;
+            @extend .content-box-public;
+            padding:0;
+            .contact-info-public {
+                @extend .col-md-4;
+                padding:15px;
+                .contact-where-public {
+                    color: $gray;
+                    font-style: italic;
+                }
+            }
+            .contact-map-public {
+                @extend .col-md-8;
+                padding:15px;
+                .contact-google-maps-public {
+                    position: relative;
+                    padding-bottom: 40%; // This is the aspect ratio
+                    height: 0;
+                    overflow: hidden;
+                    iframe {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100% !important;
+                        height: 100% !important;
+                    }
+                }
+            }
+        }
+        .contact-public-text {
+            @extend .row;
+            @extend .content-box-public;
+        }
+        .contact-what-public {
+            font-weight: bold;
+            @media(max-width:480px) {
+                font-size: 18px;
+            }
+        }
+    }
 }
