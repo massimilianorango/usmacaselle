@@ -6,10 +6,10 @@ $(document).ready(function() {
             title   : {
                 type: 'outside'
             },
-            thumbs  : {
+            /*thumbs  : {
                 width   : 50,
                 height  : 50
-            },
+            },*/
             buttons : {}
         }
     });
