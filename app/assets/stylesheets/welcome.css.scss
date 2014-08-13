@@ -9,8 +9,8 @@
     @extend .btn-info;
     @extend .admin-btn;
     text-shadow: 1px 1px 1px $gray-dark;
-    font-family: "Boogaloo", sans-serif;
-    font-size: 4.5em;
+    font-family: "Oswald", sans-serif;
+    font-size: 4em;
     border-radius:1px;
     background-color: $color;
     border: solid 1px darken($color, 5%);
@@ -26,7 +26,7 @@
   }
   @media(max-width:768px) {
     .sector-link-public-#{$class} {
-      font-size: 3.5em;
+      font-size: 3em;
     }
     .sector-icon-public {
       height: 50px;

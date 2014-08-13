@@ -24,6 +24,5 @@ doc/
 .DS_Store
 .idea
 .secret
-/1st_meeting
 /config/*.secret
 /config/initializers/*.secret

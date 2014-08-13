@@ -1,0 +1,53 @@
+*sport = settori
+*blog = news 
+
+*1. Logo nuovo
+
+*2. Foto varie
+
+*3. Colori ufficiali? giallo, rosso
+
+*4. Carousel: raccoglitore + solo società - solo società - solo raccoglitore?
+solo società
+
+*5. News: raccoglitore + solo società - solo società - solo raccoglitore?
+solo società, anche senza immagine
+
+*6. Sponsor: diversi per ogni sport? no.
+
+*7. Shop: raccoglitore + solo società - solo società - solo raccoglitore?
+solo raccoglitore
+ogni articolo ha un settore.
+
+  Quanti dettagli? Codice articolo, prezzo visibile, email preimpostata ...?
+  dettaglio articolo: prezzo, nome, img grande
+  maggiori info -> nome, cognome, mail, telefono, fai la tua domanda -> mail di settore.
+
+8. Pagine editabili dal rootAdmin: contatti, la società, polisportiva, statuto, storia, codice etico.
+statuto scaricabile
+codice etico scaricabile
+polisportiva: descrizione per ogni sport + foto
+
+*9. Photo gallery: contenitore + solo società - solo società - solo contenitore?
+
+foto protette
+
+  Picasa -> 6 account diversi (5 sport + 1 società) collegati a 6/10 email @usmacaselle.it
+   (basket.usmacaselle@gmail.it = basket@usmacaselle.it)
+   solo segreteria@usmacaselle.it
+
+*10. Chi gestisce  vari sottositi?
+
+*11. Facebook: 1 per tutti? si
+
+*12. Calendari: solo immagini, pdf o editabili?
+
+calendari: jpg cliccabile espandibile XOR calendario vero 
+
+13. Netsons: pagamento dominio
+
+*14. Luglio: 1^ metà (gestione: amministratori, blog, sponsor, shop, categorie, home, contatti & pagine società) + (layout sito web)
+	Agosto: 2^ metà (photo gallery, calendari, staff, orari, strutture)
+
+? calendario eventi ? -> visibile in home ducati.it
+settore oltre motoria -> eventi
