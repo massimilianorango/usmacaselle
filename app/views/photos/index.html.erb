@@ -4,17 +4,21 @@
 <div class="pagination-div-public"><%= will_paginate @albums %></div>
 <%# TODO cache ("flickr_albums") do %>
   <div class="albums-public">
-    <% @albums.each do |album| %>
-      <div class="album-public-cell">
-        <div class="album-public">
-          <%= image_tag album[:cover], class: "album-img-public" %>
-          <%= link_to raw('<div class="album-title-public">' + album[:title].upcase + '</div>'), sector_photo_path(@sector, album[:id]), class: "album-bottom-public" %>
-          <div class="album-bottom-info-public">
-            <div class="album-date-public"><%= l DateTime.strptime(album[:date],'%s'), format: '%-d %b %Y' %></div>
-            <div class="album-photo_count-public"><%= album[:photo_count] %> foto.</div>
+    <% unless @albums.empty? %>
+      <% @albums.each do |album| %>
+        <div class="album-public-cell">
+          <div class="album-public">
+            <%= image_tag album[:cover], class: "album-img-public" %>
+            <%= link_to raw('<div class="album-title-public">' + album[:title].upcase + '</div>'), sector_photo_path(@sector, album[:id]), class: "album-bottom-public" %>
+            <div class="album-bottom-info-public">
+              <div class="album-date-public"><%= l DateTime.strptime(album[:date],'%s'), format: '%-d %b %Y' %></div>
+              <div class="album-photo_count-public"><%= album[:photo_count] %> foto.</div>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
+    <% else %>
+      <div class="more-news">Non sono presenti album fotografici al momento.</div>
     <% end %>
   </div>
   <%# end %>

@@ -3,6 +3,10 @@
 <% provide(:header_bottom, 'carousel_public') %>
 <div class="news-public">
   <h2 class="page-header-public">LE ULTIME NEWS</h2>
-  <%= render 'posts/posts' %>
-  <div class="more-news"><%= link_to 'Leggi altre news...', sector_posts_path(@sector) %></div>
+  <% unless @posts.empty? %>
+    <%= render 'posts/posts' %>
+    <div class="more-news"><%= link_to 'Leggi altre news...', sector_posts_path(@sector) %></div>
+  <% else %>
+    <div class="more-news">Non sono presenti news al momento.</div>
+  <% end %>
 </div>

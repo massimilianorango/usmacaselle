@@ -1,5 +1,5 @@
 <% provide(:title, @page.title) %>
-<% provide(:nav_public, 'nav_public_root') %>
+<% @sector.is_root ? provide(:nav_public, 'nav_public_root') : provide(:nav_public, 'nav_public_sector') %>
 <h2 class="page-header-public"><%= @page.title.upcase %></h2>
 <div class="static_page_container">
   <%= raw @page.content %>

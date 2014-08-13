@@ -3,9 +3,11 @@
 <div class="single-category-public">
   <h2 class="single-category-name-public"><%= @category.name %></h2>
   <%= render 'category_common' %>
-  <% if @calendars.any? %>
-    <div class="calendars-public">
+  <div class="calendars-public">
+    <% unless @calendars.empty? %>
       <%= render @calendars %>
-    </div>
-  <% end %>
+    <% else %>
+      <div class="row"><div class="more-news">Non sono presenti calendari al momento.</div></div>
+    <% end %>
+  </div>
 </div>

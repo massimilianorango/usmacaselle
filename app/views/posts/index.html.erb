@@ -3,6 +3,10 @@
 <h2 class="page-header-public">ARCHIVIO NEWS</h2>
 <div class="pagination-div-public"><%= will_paginate @posts %></div>
 <div class="news-public">
-  <%= render 'posts' %>
+    <% unless @posts.empty? %>
+        <%= render 'posts' %>
+    <% else %>
+        <div class="more-news">Non sono presenti news al momento.</div>
+    <% end %>
 </div>
 <div class="pagination-div-public"><%= will_paginate @posts %></div>

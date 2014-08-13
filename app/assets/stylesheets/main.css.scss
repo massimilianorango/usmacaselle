@@ -762,9 +762,20 @@ footer {
           background-color:rgba(0, 0, 0, 0.8);
           -moz-transition: opacity 0.5s;
           transition: opacity 0.5s;
+          text-align: center;
+          &:before {
+              content: '';
+              display: inline-block;
+              height: 100%;
+              vertical-align: middle;
+              //margin-right: -0.25em; /* Adjusts for spacing */
+            }
           .eye {
             @extend .glyphicon;
             @extend .glyphicon-eye-open;
+            display: inline-block;
+            vertical-align: middle;
+            width: 300px;
             font-size: 80px;
             color:white;
             line-height: inherit;
@@ -800,18 +811,18 @@ footer {
       }
     }
   }
-  .more-news {
-    @extend .col-md-12;
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    & a {
-      @extend .btn-lg;
-      color: $brand-primary;
-      border: none;
-      &:hover {
-        color: darken($brand-primary, 20%);
-      }
+}
+.more-news {
+  @extend .col-md-12;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  & a {
+    @extend .btn-lg;
+    color: $brand-primary;
+    border: none;
+    &:hover {
+      color: darken($brand-primary, 20%);
     }
   }
 }

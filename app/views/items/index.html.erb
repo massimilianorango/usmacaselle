@@ -4,18 +4,22 @@
 <%#TODO= render 'posts/sector_select' if @sector.is_root %>
 <div class="pagination-div-public"><%= will_paginate @items %></div>
 <div class="items-public">
-  <% @items.each do |item| %>
-    <div class="shop_item-cell-public">
-      <div class="shop_item-public">
-        <%= link_to raw('<div class="shop_item-img-container-public"><span class="center-img-helper"></span>' + image_tag(item.image.url(:small), class: "img-shop_item-public") + '<div class="shop_item-price-public">
+  <% unless @items.empty? %>
+    <% @items.each do |item| %>
+      <div class="shop_item-cell-public">
+        <div class="shop_item-public">
+          <%= link_to raw('<div class="shop_item-img-container-public"><span class="center-img-helper"></span>' + image_tag(item.image.url(:small), class: "img-shop_item-public") + '<div class="shop_item-price-public">
             <span class="shop_item-price-text">Prezzo: </span>'+ item.price + ' €</div>
             </div>'), 
             sector_item_path(@sector, item), class:"shop_item-img-link-public" %>
-        <div class="shop_item-bottom-public">
-          <h3 class="shop_item-name-public"><%= link_to item.name, sector_item_path(@sector, item) %></h3>
+          <div class="shop_item-bottom-public">
+            <h3 class="shop_item-name-public"><%= link_to item.name, sector_item_path(@sector, item) %></h3>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
+  <% else %>
+    <div class="more-news">Non sono presenti news al momento.</div>
   <% end %>
 </div>
 <div class="pagination-div-public"><%= will_paginate @items %></div>
