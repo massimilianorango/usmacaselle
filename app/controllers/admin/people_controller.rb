@@ -60,6 +60,6 @@ class Admin::PeopleController < AuthAdminController
 
     private
     def person_params
-        params.require(:person).permit(:first_name, :last_name, :image, :role, :description)
+        params.require(:person).permit(:first_name, :last_name, :image, :role, :description, :remove_image)
     end
 end
