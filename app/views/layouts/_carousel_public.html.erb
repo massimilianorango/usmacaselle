@@ -11,7 +11,7 @@
       <div class="carousel-inner">
         <% @slides.each do |slide| %>
           <div class="item <%= "active" if slide.first? %>">
-            <div class="item-bg"><%= link_to image_tag(image_path(slide.image.url(:normal))), slide.link %></div>
+            <div class="item-bg"><%= link_to image_tag(slide.image.url(:normal)), slide.link %></div>
             <div class="container">
               <div class="carousel-caption">
                 <h1><%= link_to slide.text, slide.link %></h1>
