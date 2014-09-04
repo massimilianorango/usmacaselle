@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
         user_id = ENV['FLICKR_USER_ID']
         begin
             collections = flickr.collections.getTree(:user_id => user_id)
-            right_collection = collections.select {|k| k.title == @sector.name}.first
+            right_collection = !collections.respond_to?("collections") ? collections.select {|k| k.title == @sector.name}.first : nil
             photosets = right_collection.nil? ? [] : right_collection.set
             @albums = Array.new
             photosets.each_with_index do |p, i|

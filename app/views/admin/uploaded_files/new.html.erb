@@ -13,7 +13,7 @@
       <%= label_tag :uploaded_url, "Conserva il seguente link per poter utilizzare il file all'interno del sito:" %>
       <div class="input-group">
         <span class="input-group-addon"><strong>Premi CTRL + C per copiare il link.</strong></span>
-        <%= text_field_tag :uploaded_url, params[:uploaded_url], class: "form-control", :autofocus => true %>
+        <%= text_field_tag :uploaded_url, params[:uploaded_url], class: "form-control", :autofocus => true, :onFocus => "this.select();" %>
       </div>
     </div>
   <% end %>
