@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       post :sort, on: :collection
     end
 
-    resources :items, except: [:edit, :update, :show] do
+    resources :items, except: [:show] do
       post :sort, on: :collection
     end
 

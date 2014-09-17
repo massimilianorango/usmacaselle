@@ -1,0 +1,40 @@
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', admin_path %></li>
+  <li><%= link_to 'Shop', admin_items_path %></li>
+  <li class="active"><%= yield(:title) %></li>
+</ol>
+<div class="page-container">
+  <h2 class="page-header-private"><%= yield(:title) %></h2>
+  <%= form_for [:admin, @item], :html => {multipart: true, :class => "form-center-full"} do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="form-group">
+      <%= f.label :name, "Nome dell'articolo" %>
+      <%= f.text_field :name, {class: "form-control", :required => true, :autofocus => true, placeholder: "Inserisci il nome dell'articolo..."} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :image, 'Immagine' %>
+      <% if @item.image_url.nil? %>
+        <%= f.file_field :image, {:required => true} %>
+      <% else %>
+        <%= f.file_field :image %>
+      <% end %>
+      <p class="help-block">Inserisci l'immagine più dettagliata (e grande in dimensioni) possibile. Il sistema penserà ad ottimizzare le prestazioni.</p>
+    </div>
+    <div class="form-group">
+      <%= label_tag @item.image_url, 'Immagine attuale' %>
+      <div class="preview-lead-image"><%= image_tag @item.image.url(:small) %></div>
+    </div>
+    <div class="form-group">
+      <%= f.label :price, "Prezzo dell'articolo" %>
+      <div class="input-group">
+        <div class="input-group-addon">€</div>
+        <%= f.text_field :price, {class: "form-control", :required => true, 
+    placeholder: "Inserisci il prezzo dell'articolo"} %>
+      </div>
+    </div>
+    <%= f.button(type: 'submit', class: "btn-save btn-final") do %>
+      <span class="icon"></span>
+      <%= yield(:action) %>
+    <% end %>
+  <% end %>
+</div>

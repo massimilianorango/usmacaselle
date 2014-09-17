@@ -61,12 +61,12 @@ $shop_item-border-height: ($shop_item-height - 20px)*(11/100);
     @include border-bottom-radius(3px);
     @extend .shop_item-border;
     position: relative;
+    a {
+      @extend .btn-xs;
+      margin-right:3px;
+    }
 }
 
-.shop_item-btn-delete {
+.shop_item-buttons {
   @extend .pull-right;
-  @extend .btn-xs;
-  position: absolute;
-  bottom: 20%;
-  right: 5%;
 }

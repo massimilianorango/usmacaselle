@@ -1,5 +1,5 @@
 class Admin::ItemsController < AuthAdminController
-    before_action :correct_sector, only: [:destroy]
+    before_action :correct_sector, only: [:edit, :update, :destroy]
     before_action :not_root
 
     def index
@@ -18,6 +18,19 @@ class Admin::ItemsController < AuthAdminController
             redirect_to admin_items_url
         else
             render 'new'
+        end
+    end
+
+    def edit
+
+    end
+
+    def update
+        if @item.update_attributes(item_params)
+            flash[:success] = "Articolo modificato correttamente!"
+            redirect_to admin_items_url
+        else
+            render 'edit'
         end
     end
 
