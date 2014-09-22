@@ -1,7 +1,7 @@
-<%= active_link_to 'Home', sector_path(@sector), :active => :exclusive, :wrap_tag => :li %>
+<%= active_link_to @sector.name, sector_path(@sector), :active => :exclusive, :wrap_tag => :li %>
 <% unless @categories.nil? || @categories.empty? %>
 <li class="dropdown <%= 'active' if params[:controller] == 'categories' %>">
-  <%= link_to 'Categorie <b class="caret"></b>'.html_safe, '#', :data => {:toggle=>"dropdown"}, :class => "dropdown-toggle"  %>
+  <%= link_to 'Squadre <b class="caret"></b>'.html_safe, '#', :data => {:toggle=>"dropdown"}, :class => "dropdown-toggle"  %>
   <% if !@categories.blank? %>
     <ul class="dropdown-menu">
       <% @categories.each do |cat| %>
